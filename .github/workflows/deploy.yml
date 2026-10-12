@@ -1,0 +1,48 @@
+name: Publish approved release
+on:
+  workflow_dispatch:
+    inputs:
+      release_id:
+        required: true
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: portfolio-production
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    env:
+      PORTFOLIO_RELEASE_ID: ${{ inputs.release_id }}
+      PORTFOLIO_CONTENT_FILE: release-input.json
+      PORTFOLIO_MACHINE_TOKEN: ${{ secrets.PORTFOLIO_MACHINE_TOKEN }}
+      VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
+      VITE_SUPABASE_PUBLISHABLE_KEY: ${{ vars.VITE_SUPABASE_PUBLISHABLE_KEY }}
+      PORTFOLIO_SSH_TARGET: ${{ vars.PORTFOLIO_SSH_TARGET }}
+      PORTFOLIO_DEPLOY_ROOT: ${{ vars.PORTFOLIO_DEPLOY_ROOT }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 24.16.0
+          cache: npm
+      - run: npm ci
+      - run: npm run release:fetch
+      - run: npm run verify
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:browser
+      - name: Prepare pinned SSH host and deployment key
+        env:
+          SSH_KEY: ${{ secrets.PORTFOLIO_SSH_KEY }}
+          SSH_KNOWN_HOSTS: ${{ secrets.PORTFOLIO_SSH_KNOWN_HOSTS }}
+        run: |
+          install -d -m 700 ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/id_ed25519
+          printf '%s\n' "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/id_ed25519 ~/.ssh/known_hosts
+      - run: npm run deploy
+      - name: Report build or upload failure
+        if: failure()
+        run: npm run release:report -- failed

@@ -1,0 +1,38 @@
+project_id = "martin-portfolio"
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+[db]
+port = 54322
+major_version = 17
+[auth]
+enabled = true
+site_url = "https://spatovaliyski.com/admin/"
+additional_redirect_urls = ["http://127.0.0.1:5173/admin/", "http://127.0.0.1:4173/admin/", "https://spatovaliyski.com/admin/"]
+enable_signup = false
+enable_anonymous_sign_ins = false
+minimum_password_length = 12
+[auth.email]
+enable_signup = false
+enable_confirmations = true
+max_frequency = "1m"
+otp_length = 8
+secure_password_change = true
+[auth.mfa.totp]
+enroll_enabled = true
+verify_enabled = true
+[storage]
+enabled = true
+file_size_limit = "20MiB"
+[functions.content]
+verify_jwt = false
+import_map = "./functions/deno.json"
+[functions.publication]
+verify_jwt = false
+import_map = "./functions/deno.json"
+[functions.automation]
+verify_jwt = false
+import_map = "./functions/deno.json"

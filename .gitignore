@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.cache/
+.env*
+!.env.example
+release-input.json
+migration-export/
+backups/
+test-results/
+playwright-report/
+coverage/
+.codegraph/
+*.log
+supabase/.temp/
+supabase/.branches/
+content/imported-drafts.json

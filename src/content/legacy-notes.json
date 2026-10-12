@@ -1,0 +1,309 @@
+[
+  {
+    "id": "wp-spatovaliyski-media-231",
+    "kind": "media",
+    "status": "published",
+    "sortOrder": 231,
+    "data": {
+      "path": "legacy/wp-231.jpeg",
+      "mime": "image/jpeg",
+      "width": 1612,
+      "height": 904,
+      "bytes": 346585,
+      "alt": "",
+      "caption": "Unity_dk5WNTqJV1",
+      "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2024/04/Unity_dk5WNTqJV1.jpg",
+      "rights": "Previously published portfolio media; confirm publication rights."
+    }
+  },
+  {
+    "id": "wp-spatovaliyski-media-228",
+    "kind": "media",
+    "status": "published",
+    "sortOrder": 228,
+    "data": {
+      "path": "legacy/wp-228.png",
+      "mime": "image/png",
+      "width": 1432,
+      "height": 807,
+      "bytes": 1781426,
+      "alt": "",
+      "caption": "chrome_vB6fK73AnS",
+      "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2024/04/chrome_vB6fK73AnS.png",
+      "rights": "Previously published portfolio media; confirm publication rights."
+    }
+  },
+  {
+    "id": "wp-spatovaliyski-media-226",
+    "kind": "media",
+    "status": "published",
+    "sortOrder": 226,
+    "data": {
+      "path": "legacy/wp-226.png",
+      "mime": "image/png",
+      "width": 1295,
+      "height": 726,
+      "bytes": 265542,
+      "alt": "",
+      "caption": "image-5",
+      "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2024/04/image-5.png",
+      "rights": "Previously published portfolio media; confirm publication rights."
+    }
+  },
+  {
+    "id": "wp-spatovaliyski-media-225",
+    "kind": "media",
+    "status": "published",
+    "sortOrder": 225,
+    "data": {
+      "path": "legacy/wp-225.png",
+      "mime": "image/png",
+      "width": 1090,
+      "height": 613,
+      "bytes": 1237404,
+      "alt": "",
+      "caption": "image-4",
+      "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2024/04/image-4.png",
+      "rights": "Previously published portfolio media; confirm publication rights."
+    }
+  },
+  {
+    "id": "wp-spatovaliyski-media-224",
+    "kind": "media",
+    "status": "published",
+    "sortOrder": 224,
+    "data": {
+      "path": "legacy/wp-224.png",
+      "mime": "image/png",
+      "width": 1095,
+      "height": 614,
+      "bytes": 377190,
+      "alt": "",
+      "caption": "image-3",
+      "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2024/04/image-3.png",
+      "rights": "Previously published portfolio media; confirm publication rights."
+    }
+  },
+  {
+    "id": "wp-spatovaliyski-media-223",
+    "kind": "media",
+    "status": "published",
+    "sortOrder": 223,
+    "data": {
+      "path": "legacy/wp-223.png",
+      "mime": "image/png",
+      "width": 550,
+      "height": 87,
+      "bytes": 23932,
+      "alt": "",
+      "caption": "image-2",
+      "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2024/04/image-2.png",
+      "rights": "Previously published portfolio media; confirm publication rights."
+    }
+  },
+  {
+    "id": "wp-spatovaliyski-media-195",
+    "kind": "media",
+    "status": "published",
+    "sortOrder": 195,
+    "data": {
+      "path": "legacy/wp-195.jpeg",
+      "mime": "image/jpeg",
+      "width": 1200,
+      "height": 600,
+      "bytes": 221119,
+      "alt": "",
+      "caption": "before_after_rework",
+      "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2024/01/before_after_rework.jpg",
+      "rights": "Previously published portfolio media; confirm publication rights."
+    }
+  },
+  {
+    "id": "wp-spatovaliyski-posts-220",
+    "kind": "note",
+    "status": "published",
+    "sortOrder": 220,
+    "data": {
+      "slug": "ludum-dare-55-summoning",
+      "title": "Ludum Dare 55: Sumo & Ning – Summoning!",
+      "summary": "Sumo & Ning teamed up to battle angry humans. If someone had told me in the past that I’d be participating in Game Jams, I would’ve said, “Get out of here.” But here we are, embarking on the second iteration of what prom",
+      "publishedAt": "2024-04-17T22:28:53Z",
+      "modifiedAt": "2024-04-17T22:44:20Z",
+      "tags": [],
+      "blocks": [
+        {
+          "id": "wp-220-block-0",
+          "type": "prose",
+          "markdown": "Sumo & Ning teamed up to battle angry humans. If someone had told me in the past that I’d be participating in Game Jams, I would’ve said, “Get out of here.” But here we are, embarking on the second iteration of what promises to be many more, and it’s been one of the most incredible dynamics I’ve experienced.  \n  \n**What’s Ludum Dare?**"
+        },
+        {
+          "id": "wp-220-block-1",
+          "type": "image",
+          "mediaId": "wp-spatovaliyski-media-223",
+          "alt": "Image accompanying Ludum Dare 55: Sumo & Ning – Summoning!",
+          "caption": ""
+        },
+        {
+          "id": "wp-220-block-2",
+          "type": "prose",
+          "markdown": "**Ludum Dare** (**LD**; [Classical Latin](https://en.wikipedia.org/wiki/Classical_Latin_language): [\\[ˈluːdũː ˈdarɛ\\]](https://en.wikipedia.org/wiki/Help:IPA/Latin), meaning ‘to give a game’,[\\[1\\]](https://en.wikipedia.org/wiki/Ludum_Dare#cite_note-1) also referenced as **LDJAM**) is a [game jam](https://en.wikipedia.org/wiki/Game_jam) competition. It was founded by Geoff Howland and was first held in April 2002. Participants are required to create a [video game](https://en.wikipedia.org/wiki/Video_game) that fits within a given theme in two or three days\n\nThe same group (with some new faces) that amazed me during LD48 invited me to join them again for this entry, and it was a blast—a mix of fun, challenge, and motivation.\n\nThis time, the theme revolved around “Summonings.” The announcement came at 3 AM CET, so as soon as we woke up, we hopped onto Discord to brainstorm ideas. The first two hours were chaotic, with no settled gameplay approach, but two general ideas were floating around. Eventually, we decided to create an “Overcooked”-style game with several unique twists.  \n  \nInterestingly, we didn’t even think of the game’s name until the second day.\n\n## The first day"
+        },
+        {
+          "id": "wp-220-block-3",
+          "type": "image",
+          "mediaId": "wp-spatovaliyski-media-224",
+          "alt": "Image accompanying Ludum Dare 55: Sumo & Ning – Summoning!",
+          "caption": ""
+        },
+        {
+          "id": "wp-220-block-4",
+          "type": "prose",
+          "markdown": "The initial day comprised several key moments: discussing the game’s direction and defining basic systems. We opted to handle two games as one—an Idle auto-combat game and the main game, which employed a “cooking-ingredients” style to combine recipes. With a larger design team this time, we swiftly obtained textures and sprites, enabling us to envision the game quicker than anticipated.\n\nThe first prototype of the combat systems immediately featured essential elements: items to collect, pots to store them in, and an auto-battler. After some proposals, the design team hit upon “Sumo & Ning!”\n\nWe focused on several key areas:\n\n*   Getting the combat system working, who attacks who\n*   Creating the health & damage system working\n*   Recipes and how they can be combined, where the dropoff area is and what happens if you mix A+B\n*   Creating the movement system, defining velocity as a measurement\n\n## The second day"
+        },
+        {
+          "id": "wp-220-block-5",
+          "type": "image",
+          "mediaId": "wp-spatovaliyski-media-225",
+          "alt": "Image accompanying Ludum Dare 55: Sumo & Ning – Summoning!",
+          "caption": ""
+        },
+        {
+          "id": "wp-220-block-6",
+          "type": "prose",
+          "markdown": "Day 2 was even more intense. We paused to address a key issue: linearity. While the game played well initially, it felt too straightforward. With most features defined, we decided to enhance and polish each one.\n\nKey improvements included:\n\n*   Health system saw a more robust approach to calculations and how it displays information\n*   Recipes list saw massive improvements\n*   Combat system was redesigned\n*   The movement mechanic saw a redesign, adding Walking as baseline movement and the sprint (ball) as a “fast but hard to control” option\n\n##   \nThe last day"
+        },
+        {
+          "id": "wp-220-block-7",
+          "type": "image",
+          "mediaId": "wp-spatovaliyski-media-228",
+          "alt": "Image accompanying Ludum Dare 55: Sumo & Ning – Summoning!",
+          "caption": ""
+        },
+        {
+          "id": "wp-220-block-8",
+          "type": "prose",
+          "markdown": "Day 3 posed its challenges, especially since it fell on a Monday, slowing down development. However, a few crucial tasks remained: addressing the game’s linearity and lack of definitive progression. Just before Day 3, we decided to introduce power-ups to spice up the gameplay. This turned out to be an incredible addition, with one developer instantly clicking how it can be implemented and doing it in one sitting overnight, winning us crucial time. By the morning of Day 3, the entire system was functional.  \n\nWhat we focused on for day 3:\n\n*   Re-balance the combat one last time with power-ups in mind\n*   Animate everything, add various animations to each character\n*   Add a particle system, improve the graphics\n*   Fix a ton of bugs and polish the crafting system\n*   Add various small to notice but great features, like the delayed healthbar system (easier than one would think actually, just add two textures and delay one with a courotine turns out) ~10 lines of code\n\nAnd with that, the game was completed!"
+        },
+        {
+          "id": "wp-220-block-9",
+          "type": "image",
+          "mediaId": "wp-spatovaliyski-media-226",
+          "alt": "Image accompanying Ludum Dare 55: Sumo & Ning – Summoning!",
+          "caption": ""
+        },
+        {
+          "id": "wp-220-block-10",
+          "type": "image",
+          "mediaId": "wp-spatovaliyski-media-231",
+          "alt": "Image accompanying Ludum Dare 55: Sumo & Ning – Summoning!",
+          "caption": ""
+        },
+        {
+          "id": "wp-220-block-11",
+          "type": "prose",
+          "markdown": "## Final words\n\nThis was a wonderful game to make. It may not look like an AAA game, but it definitely taught us a lot. I’m definitely hooked and left wanting more. ‘Till next time LD\n\nYou can read more and play the game over at: https://ldjam.com/events/ludum-dare/55/sumo-ning-2"
+        }
+      ],
+      "projectIds": [],
+      "seo": {
+        "title": "Ludum Dare 55: Sumo & Ning – Summoning!",
+        "description": "Sumo & Ning teamed up to battle angry humans. If someone had told me in the past that I’d be participating in Game Jams, I would’ve said, “Get out of here.” But"
+      }
+    }
+  },
+  {
+    "id": "wp-spatovaliyski-redirect-220",
+    "kind": "redirect",
+    "status": "published",
+    "sortOrder": 220,
+    "data": {
+      "from": "/blog/220",
+      "to": "/notes/ludum-dare-55-summoning/",
+      "status": 301,
+      "reason": "Preserve the original article URL."
+    }
+  },
+  {
+    "id": "wp-spatovaliyski-posts-189",
+    "kind": "note",
+    "status": "published",
+    "sortOrder": 189,
+    "data": {
+      "slug": "improving-the-interface",
+      "title": "Improving the interface",
+      "summary": "One of the bittersweet traits a designer can possess is never being fully satisfied with their own work. This notion resonates with developers as well, to a large extent.\n\nAs interfaces evolve, there arises an insatiable",
+      "publishedAt": "2024-01-21T00:01:38Z",
+      "modifiedAt": "2024-02-19T13:41:22Z",
+      "tags": [],
+      "blocks": [
+        {
+          "id": "wp-189-block-0",
+          "type": "prose",
+          "markdown": "One of the bittersweet traits a designer can possess is never being fully satisfied with their own work. This notion resonates with developers as well, to a large extent.\n\nAs interfaces evolve, there arises an insatiable thirst to optimize every aspect of the UI, with the haunting refrain of “it’s so X year” echoing in the minds of developers striving to distinguish their creations.\n\nOccasionally, it’s refreshing to take a step back and appreciate the simplicity of things. That’s essentially how this portfolio design came to be, yet even so, it fell short!\n\nA few months back, precisely three, I put the finishing touches on my relatively straightforward and swift design, introduced the /experience page, and called it a day. However, upon revisiting it now (pre-Jan 21), it feels lacking in pizzazz. Recently, I stumbled upon an intriguing post on LinkedIn that caught my attention—a clever approach to glowing borders by Jhey Tompkins ([https://www.linkedin.com/in/jheytompkins/recent-activity/all/](https://www.linkedin.com/in/jheytompkins/recent-activity/all/)), which immediately sparked a lightbulb moment: “This will look gooooood on the light/dark mode I’ve implemented for the portfolio.” And so, the changes began!\n\nA minor visual overhaul, nothing too extravagant, but it brought the website into alignment with what it had been missing, ever so slightly."
+        },
+        {
+          "id": "wp-189-block-1",
+          "type": "image",
+          "mediaId": "wp-spatovaliyski-media-195",
+          "alt": "Image accompanying Improving the interface",
+          "caption": ""
+        }
+      ],
+      "projectIds": [],
+      "seo": {
+        "title": "Improving the interface",
+        "description": "One of the bittersweet traits a designer can possess is never being fully satisfied with their own work. This notion resonates with developers as well, to a lar"
+      }
+    }
+  },
+  {
+    "id": "wp-spatovaliyski-redirect-189",
+    "kind": "redirect",
+    "status": "published",
+    "sortOrder": 189,
+    "data": {
+      "from": "/blog/189",
+      "to": "/notes/improving-the-interface/",
+      "status": 301,
+      "reason": "Preserve the original article URL."
+    }
+  },
+  {
+    "id": "wp-spatovaliyski-posts-121",
+    "kind": "note",
+    "status": "published",
+    "sortOrder": 121,
+    "data": {
+      "slug": "is-anyone-there",
+      "title": "Is anyone there?",
+      "summary": "If you’re seeing this, then the post is definitely being grabbed from my WP database, which is great!\n\nWhat was done here? Simply put, this is a headless WordPress and my blog posts, and perhaps some other information is",
+      "publishedAt": "2023-10-07T07:12:35Z",
+      "modifiedAt": "2023-10-07T07:12:35Z",
+      "tags": [],
+      "blocks": [
+        {
+          "id": "wp-121-block-0",
+          "type": "prose",
+          "markdown": "If you’re seeing this, then the post is definitely being grabbed from my WP database, which is great!\n\nWhat was done here? Simply put, this is a headless WordPress and my blog posts, and perhaps some other information is being filled into the WP backend, so no more editing the repo to add experience or a new project. Yay!"
+        }
+      ],
+      "projectIds": [],
+      "seo": {
+        "title": "Is anyone there?",
+        "description": "If you’re seeing this, then the post is definitely being grabbed from my WP database, which is great!\n\nWhat was done here? Simply put, this is a headless WordPr"
+      }
+    }
+  },
+  {
+    "id": "wp-spatovaliyski-redirect-121",
+    "kind": "redirect",
+    "status": "published",
+    "sortOrder": 121,
+    "data": {
+      "from": "/blog/121",
+      "to": "/notes/is-anyone-there/",
+      "status": 301,
+      "reason": "Preserve the original article URL."
+    }
+  }
+]

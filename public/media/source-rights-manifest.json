@@ -1,0 +1,250 @@
+[
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2024/04/6237c.png.480x384.fit_.jpg",
+    "path": "public/media/project-sumo-ning.jpg",
+    "purpose": "Historical project screenshot; owner supplied through old portfolio",
+    "rights": "Previously published portfolio media; preserve attribution; confirm right to reuse client images",
+    "alt": "Screenshot of Team Gamejam: “Sumo & Ning”",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "250a39cfda61caf3f0f5b231ed0b3aaf40fef97c2f54ff8832da4a3d8a78efab",
+    "bytes": 81938
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2023/12/chrome_DAKF5X2kTy.png",
+    "path": "public/media/project-cilect.png",
+    "purpose": "Historical project screenshot; owner supplied through old portfolio",
+    "rights": "Previously published portfolio media; preserve attribution; confirm right to reuse client images",
+    "alt": "Screenshot of CILECT",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "8f2fd5d5fefc44a13f34a309e7ab14d36b3beff8e01438ec6e7b9555dc8aecfd",
+    "bytes": 320564
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2023/10/handshake-sx-03.jpg",
+    "path": "public/media/project-portfolio-v2-0-next.jpg",
+    "purpose": "Historical project screenshot; owner supplied through old portfolio",
+    "rights": "Previously published portfolio media; preserve attribution; confirm right to reuse client images",
+    "alt": "Screenshot of Portfolio v2.0 (Current)",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "73e6fa30aed1afab5c7a52ab8b064e46a5d87b5aaacd1a326aa102c4560dd9fe",
+    "bytes": 7369
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2023/10/chrome_NI4DZVqn4B.webp",
+    "path": "public/media/project-portfolio-v1-0-react.webp",
+    "purpose": "Historical project screenshot; owner supplied through old portfolio",
+    "rights": "Previously published portfolio media; preserve attribution; confirm right to reuse client images",
+    "alt": "Screenshot of Portfolio v1.0 (React)",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "4c73a89b2c1d8df3c51e6a118073e80685a303cd6dc43d9b334280cbf240b7f3",
+    "bytes": 31500
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2023/10/chrome_oKHPxdr4zL.webp",
+    "path": "public/media/project-portfolio-v1-0-wordpress.webp",
+    "purpose": "Historical project screenshot; owner supplied through old portfolio",
+    "rights": "Previously published portfolio media; preserve attribution; confirm right to reuse client images",
+    "alt": "Screenshot of Portfolio v1.0 (WordPress)",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "b222e100fa9b7ccb8960ce4e080833d9c2f62c6beb0f7633c2716be9c0c06aea",
+    "bytes": 32516
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2023/10/CaqWzGe.webp",
+    "path": "public/media/project-granny-goes-deep.webp",
+    "purpose": "Historical project screenshot; owner supplied through old portfolio",
+    "rights": "Previously published portfolio media; preserve attribution; confirm right to reuse client images",
+    "alt": "Screenshot of Team Gamejam: “Granny Goes Deep”",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "15be4d9535603ab8bb3e00a9f9eafc8e5b09c74c89ec64dae9943320d7bb0420",
+    "bytes": 41614
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2023/10/chrome_qEbCacuGel.webp",
+    "path": "public/media/project-league-of-legends-beta-launcher-html5-challenge.webp",
+    "purpose": "Historical project screenshot; owner supplied through old portfolio",
+    "rights": "Previously published portfolio media; preserve attribution; confirm right to reuse client images",
+    "alt": "Screenshot of League of Legends – Beta Launcher HTML5 Challenge",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "1a1b81a0a4cb58a01d040cf9ef001e3e84343f8f5dce1b3568e314f02dc31938",
+    "bytes": 49454
+  },
+  {
+    "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/0a/6f/a2/0a6fa2b8-576e-d61b-007c-40870529e58e/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+    "path": "public/media/bausy-icon.jpg",
+    "purpose": "Bausy App Store product icon",
+    "rights": "Owner product artwork from Apple public listing; used to identify Bausy",
+    "alt": "Bausy app icon",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "49e215b70daa01515cd8b954ca33f271b61e9e1feb4b377345d560c27e6951da",
+    "bytes": 23806
+  },
+  {
+    "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/0e/e9/d4/0ee9d4cc-050c-bc6d-4916-6dc41f209753/01-home.png/1284x2778bb.jpg",
+    "path": "public/media/bausy-screen-1.jpg",
+    "purpose": "Bausy App Store product screenshot",
+    "rights": "Owner product marketing screenshot from Apple public listing; no generated product UI",
+    "alt": "Bausy published product screenshot 1",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "9890c795729935b365d7dd2f5c40f280d9ac720195d01b6a2146822ea759be38",
+    "bytes": 328420
+  },
+  {
+    "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5a/7e/56/5a7e5670-d3bc-25c9-fbb6-ef880c611ec2/02-pets.png/1284x2778bb.jpg",
+    "path": "public/media/bausy-screen-2.jpg",
+    "purpose": "Bausy App Store product screenshot",
+    "rights": "Owner product marketing screenshot from Apple public listing; no generated product UI",
+    "alt": "Bausy published product screenshot 2",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "6d967af9ea0fa5126522cceafea9ba70a11fb020528c2d0b1b423713c245f9a0",
+    "bytes": 284419
+  },
+  {
+    "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/06/54/0f/06540fed-fa83-fad8-8930-1c8046394fdc/03-finder.png/1284x2778bb.jpg",
+    "path": "public/media/bausy-screen-3.jpg",
+    "purpose": "Bausy App Store product screenshot",
+    "rights": "Owner product marketing screenshot from Apple public listing; no generated product UI",
+    "alt": "Bausy published product screenshot 3",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "aebe75847549341fd55a93ef05f01c7d308c1feab404e0bc64df92a0dba7d90e",
+    "bytes": 524649
+  },
+  {
+    "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f0/42/b6/f042b603-0ae9-d86f-ef42-ce624a4bb849/04-groups.png/1284x2778bb.jpg",
+    "path": "public/media/bausy-screen-4.jpg",
+    "purpose": "Bausy App Store product screenshot",
+    "rights": "Owner product marketing screenshot from Apple public listing; no generated product UI",
+    "alt": "Bausy published product screenshot 4",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "cbb585d48e5b7c1a8464bf4eaab1b936dc4e7bb0122ca60b58c8d613b3739fd7",
+    "bytes": 258405
+  },
+  {
+    "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ff/a8/39/ffa8390d-faff-1b91-f46d-a1ff93aedbdf/05-weight.png/1284x2778bb.jpg",
+    "path": "public/media/bausy-screen-5.jpg",
+    "purpose": "Bausy App Store product screenshot",
+    "rights": "Owner product marketing screenshot from Apple public listing; no generated product UI",
+    "alt": "Bausy published product screenshot 5",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "ba7fd55c75205b7459af38b7f23c26fcc9cf42de85f48cbb40cd4141c0994b84",
+    "bytes": 305871
+  },
+  {
+    "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7b/fc/9c/7bfc9cb7-b15b-1528-01b3-881a32768e24/06-sharo-chat.png/1284x2778bb.jpg",
+    "path": "public/media/bausy-screen-6.jpg",
+    "purpose": "Bausy App Store product screenshot",
+    "rights": "Owner product marketing screenshot from Apple public listing; no generated product UI",
+    "alt": "Bausy published product screenshot 6",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "fcfa683a1207bf2a6f0ede0cedc2b709b59385476ce3de7a26e3988a5c966a35",
+    "bytes": 397322
+  },
+  {
+    "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8c/70/6b/8c706bd5-e096-6b0c-2d9d-ed7e3d17623d/07-sharo-questions.png/1284x2778bb.jpg",
+    "path": "public/media/bausy-screen-7.jpg",
+    "purpose": "Bausy App Store product screenshot",
+    "rights": "Owner product marketing screenshot from Apple public listing; no generated product UI",
+    "alt": "Bausy published product screenshot 7",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "575c94a43f92643f1920884350fc049781b513ae7ee87da06253f5c1fcde109d",
+    "bytes": 315346
+  },
+  {
+    "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b2/e9/95/b2e99504-f5e1-f58b-30b9-52ead2c2376f/08-activity.png/1284x2778bb.jpg",
+    "path": "public/media/bausy-screen-8.jpg",
+    "purpose": "Bausy App Store product screenshot",
+    "rights": "Owner product marketing screenshot from Apple public listing; no generated product UI",
+    "alt": "Bausy published product screenshot 8",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "79442ad8b5dc4bc70730df6c8f6028fe583bdf727781f036d304d9e85e36aba5",
+    "bytes": 303661
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2023/12/chrome_T3hOZ8zGm1-e1702640198808.png",
+    "sourcePage": "https://spatovaliyski.com/projects",
+    "path": "public/media/project-cilect-interface.png",
+    "purpose": "Legacy owner portfolio project screenshot",
+    "rights": "Published on the owner portfolio; confirm client imagery reuse before final publication",
+    "alt": "CILECT homepage showing association navigation and editorial cards",
+    "retrievedAt": "2026-10-12T16:24:11.3074695Z",
+    "sha256": "00e2238b600613d4110081a5bd7cb98669fb0ee3cdb70fac67bf6d731d27d42c",
+    "bytes": 775781
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2022/10/1620037891381.jpg",
+    "sourcePage": "https://spatovaliyski.com/",
+    "path": "public/media/martin-portrait.jpg",
+    "purpose": "Owner portrait from the existing portfolio",
+    "rights": "Previously published owner portrait; owner requested portfolio migration",
+    "alt": "Portrait of Martin Spatovaliyski",
+    "retrievedAt": "2026-10-12T16:24:11.3074695Z",
+    "sha256": "bf5b20f752effe543e59ac1e664461ed6966f56efaa05dcf2e85a614b7a8075a",
+    "bytes": 138883
+  },
+  {
+    "sourceUrl": "https://media.forgecdn.net/attachments/2043/596/platesct_damage1-png.png",
+    "sourcePage": "https://www.curseforge.com/wow/addons/platesct/gallery",
+    "path": "public/media/addon-platesct-combat.png",
+    "purpose": "Published addon combat screenshot",
+    "rights": "Owner addon screenshot from author distribution page; World of Warcraft imagery belongs to Blizzard Entertainment",
+    "alt": "PlateSCT damage numbers over a World of Warcraft enemy nameplate",
+    "retrievedAt": "2026-10-12T16:24:11.3074695Z",
+    "sha256": "6ed2ed3a36c22956411c49a9fee03e4964523a62c92d64c4999cf955946ece85",
+    "bytes": 200125
+  },
+  {
+    "sourceUrl": "https://media.forgecdn.net/attachments/2040/936/platesct_settings1.png",
+    "sourcePage": "https://www.curseforge.com/wow/addons/platesct/gallery",
+    "path": "public/media/addon-platesct-settings.png",
+    "purpose": "Published addon settings screenshot",
+    "rights": "Owner addon screenshot from author distribution page; World of Warcraft imagery belongs to Blizzard Entertainment",
+    "alt": "PlateSCT settings window with combat options and appearance preview",
+    "retrievedAt": "2026-10-12T16:24:11.3074695Z",
+    "sha256": "2f8ff020e8fc2fb346e6a1af7f2536e87db92caefdd8f2756b193263d1abe8e1",
+    "bytes": 68056
+  },
+  {
+    "sourceUrl": "https://raw.githubusercontent.com/Spatovaliyski/PlateSCT/main/Media/psct-logo-mini.png",
+    "sourcePage": "https://github.com/Spatovaliyski/PlateSCT",
+    "path": "public/media/addon-platesct-icon.png",
+    "purpose": "Addon product icon",
+    "rights": "Owner addon asset from its public source repository; license is not declared by the GitHub API",
+    "alt": "PlateSCT addon icon",
+    "retrievedAt": "2026-10-12T16:24:11.3074695Z",
+    "sha256": "309c1e1904fa01d940f9b46c1a2effc8e6a5738848408c30273d7cb7bbda451c",
+    "bytes": 21246
+  },
+  {
+    "sourceUrl": "https://media.forgecdn.net/attachments/1466/992/raidopacity.png",
+    "sourcePage": "https://www.curseforge.com/wow/addons/raidopacity",
+    "path": "public/media/addon-raidopacity.png",
+    "purpose": "Published addon screenshot",
+    "rights": "Owner addon screenshot from author distribution page; World of Warcraft imagery belongs to Blizzard Entertainment",
+    "alt": "RaidOpacity showing raid members at different opacity levels",
+    "retrievedAt": "2026-10-12T16:24:11.3074695Z",
+    "sha256": "9c5c10c312520080e37bbc6e012c798dff0ae98618b9dd251faab7d67057186d",
+    "bytes": 236137
+  },
+  {
+    "sourceUrl": "https://media.forgecdn.net/attachments/1435/816/easysummon_1.jpg",
+    "sourcePage": "https://www.curseforge.com/wow/addons/easysummon",
+    "path": "public/media/addon-easysummon.jpg",
+    "purpose": "Published addon screenshot",
+    "rights": "Owner addon screenshot from author distribution page; World of Warcraft imagery belongs to Blizzard Entertainment",
+    "alt": "EasySummon request queue in World of Warcraft",
+    "retrievedAt": "2026-10-12T16:24:11.3074695Z",
+    "sha256": "b3ba363882a49d73d19ef5d569b728a0bd1ee62061e53c442b14e94f4b37669c",
+    "bytes": 109699
+  },
+  {
+    "sourceUrl": "https://media.forgecdn.net/attachments/1246/528/easymill_01.png",
+    "sourcePage": "https://www.curseforge.com/wow/addons/easymill",
+    "path": "public/media/addon-easymill.png",
+    "purpose": "Published addon screenshot",
+    "rights": "Owner addon screenshot from author distribution page; World of Warcraft imagery belongs to Blizzard Entertainment",
+    "alt": "EasyMill milling interface and pricing details",
+    "retrievedAt": "2026-10-12T16:24:11.3074695Z",
+    "sha256": "ed27b5a5a116d6e42ba530a9ee9dfb2b79075bd7b8b9db53b27da83223f7a71a",
+    "bytes": 590169
+  }
+]

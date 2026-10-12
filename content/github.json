@@ -1,0 +1,687 @@
+{
+  "account": "Spatovaliyski",
+  "fetchedAt": "2026-10-12T16:58:24.185Z",
+  "repositories": [
+    {
+      "id": 1343190310,
+      "fullName": "Spatovaliyski/PlateSCT",
+      "description": "Midnight Nameplate Scrolling Combat Text",
+      "url": "https://github.com/Spatovaliyski/PlateSCT",
+      "languages": {
+        "Lua": 456755
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false,
+      "updatedAt": "2026-10-12T12:29:21Z",
+      "commits": [
+        {
+          "sha": "21b630c19121df49928aa06330b2ae9416837ab4",
+          "message": "Add documentation",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/commit/21b630c19121df49928aa06330b2ae9416837ab4",
+          "date": "2026-10-12T12:29:00Z"
+        },
+        {
+          "sha": "94911a8e3aae5f6d412941166d0eb193899a05a3",
+          "message": "Update Impact style",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/commit/94911a8e3aae5f6d412941166d0eb193899a05a3",
+          "date": "2026-10-12T12:22:28Z"
+        },
+        {
+          "sha": "67344890234c19453169aab1116268376fceb113",
+          "message": "Update offsets",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/commit/67344890234c19453169aab1116268376fceb113",
+          "date": "2026-10-12T09:20:05Z"
+        },
+        {
+          "sha": "c10660d6441403f24a77c4f3fb60d0a99aa19f7e",
+          "message": "Code tweaks, adjust anim styles",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/commit/c10660d6441403f24a77c4f3fb60d0a99aa19f7e",
+          "date": "2026-10-11T21:35:30Z"
+        },
+        {
+          "sha": "af0eabfd94fc1eb4efa7f38c720e6a2775912b72",
+          "message": "Update animation styles",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/commit/af0eabfd94fc1eb4efa7f38c720e6a2775912b72",
+          "date": "2026-10-11T21:04:03Z"
+        },
+        {
+          "sha": "e800c5e5ba87aa5774af2f029c6907a5bd5bd475",
+          "message": "Add new animation style",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/commit/e800c5e5ba87aa5774af2f029c6907a5bd5bd475",
+          "date": "2026-10-11T20:22:54Z"
+        },
+        {
+          "sha": "74b4ec0f0af44b0d8755b788512c18b6d4af1d2b",
+          "message": "Update Classic damage display approach",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/commit/74b4ec0f0af44b0d8755b788512c18b6d4af1d2b",
+          "date": "2026-10-11T19:24:23Z"
+        },
+        {
+          "sha": "9a1d5bee3251942b5950ba7b699fec296ff1e8e9",
+          "message": "Update options and previewer",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/commit/9a1d5bee3251942b5950ba7b699fec296ff1e8e9",
+          "date": "2026-10-11T18:15:03Z"
+        },
+        {
+          "sha": "6125ddc482da4396f4c95efde0f901c6c446fe70",
+          "message": "Update ignore",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/commit/6125ddc482da4396f4c95efde0f901c6c446fe70",
+          "date": "2026-10-11T17:25:58Z"
+        },
+        {
+          "sha": "ea27d5be1418417f6350af9d2df041761b052416",
+          "message": "Update the UI",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/commit/ea27d5be1418417f6350af9d2df041761b052416",
+          "date": "2026-10-11T14:24:41Z"
+        },
+        {
+          "sha": "9319feb3194dee9a80f2358eb6faa5118743332f",
+          "message": "Update logo",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/commit/9319feb3194dee9a80f2358eb6faa5118743332f",
+          "date": "2026-10-11T09:22:09Z"
+        },
+        {
+          "sha": "d8acb8ed5c39549417cf4c722e9ce6d5f8bfdbdb",
+          "message": "Updates",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/commit/d8acb8ed5c39549417cf4c722e9ce6d5f8bfdbdb",
+          "date": "2026-10-08T17:41:27Z"
+        },
+        {
+          "sha": "f8140c6c9ac9cd2121f0417e6f1b99375eb6b1fe",
+          "message": "Add Forever support",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/commit/f8140c6c9ac9cd2121f0417e6f1b99375eb6b1fe",
+          "date": "2026-10-03T19:07:23Z"
+        },
+        {
+          "sha": "3bb9cad73b502d04e989ae92fa20b61800d85bfb",
+          "message": "Add school type filter",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/commit/3bb9cad73b502d04e989ae92fa20b61800d85bfb",
+          "date": "2026-09-09T16:33:25Z"
+        },
+        {
+          "sha": "2f9a9007ca386c3106da76c5a6c544ee03d80f1f",
+          "message": "Add Crit sound and \"Very strict\" profile",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/commit/2f9a9007ca386c3106da76c5a6c544ee03d80f1f",
+          "date": "2026-09-05T22:13:19Z"
+        },
+        {
+          "sha": "fdc7e80aefeb524e4bed7a5715c1cb668c5f28c3",
+          "message": "Fix preview in classic mode",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/commit/fdc7e80aefeb524e4bed7a5715c1cb668c5f28c3",
+          "date": "2026-09-05T07:50:46Z"
+        },
+        {
+          "sha": "4301f18326437bf233f4030aa8957d8ab9b4032b",
+          "message": "Fix Classic damage disappear when target dies",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/commit/4301f18326437bf233f4030aa8957d8ab9b4032b",
+          "date": "2026-09-05T07:22:18Z"
+        },
+        {
+          "sha": "e3585710797516f4450d843be66663500533fccc",
+          "message": "Add new previewer, separator and bugfixes",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/commit/e3585710797516f4450d843be66663500533fccc",
+          "date": "2026-09-04T23:03:55Z"
+        },
+        {
+          "sha": "348f3417723b8136c8cc5ac4426bab78f7f9c4e5",
+          "message": "Update version",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/commit/348f3417723b8136c8cc5ac4426bab78f7f9c4e5",
+          "date": "2026-09-02T21:18:14Z"
+        },
+        {
+          "sha": "0390433e1ef11a3b80c57ecf0f55c1e40f8dbcca",
+          "message": "Update double damage bug fix",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/commit/0390433e1ef11a3b80c57ecf0f55c1e40f8dbcca",
+          "date": "2026-09-02T21:17:37Z"
+        },
+        {
+          "sha": "55304a3dbe765b8146d9ebaf5769faeb8b0bfbab",
+          "message": "Bug fixes",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/commit/55304a3dbe765b8146d9ebaf5769faeb8b0bfbab",
+          "date": "2026-09-01T22:32:47Z"
+        },
+        {
+          "sha": "1750a713594817cda7d2ca167fc44750ff97511b",
+          "message": "Add previewer",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/commit/1750a713594817cda7d2ca167fc44750ff97511b",
+          "date": "2026-08-31T07:49:40Z"
+        },
+        {
+          "sha": "e09aea5c0a31fad1573b4e0c00d9217ad69004f4",
+          "message": "Add other version support, add bugfixes",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/commit/e09aea5c0a31fad1573b4e0c00d9217ad69004f4",
+          "date": "2026-08-28T21:42:39Z"
+        },
+        {
+          "sha": "ebeb6acbf03190c25ee9b70f57d4dfd50e7ba4ca",
+          "message": "Bump ver",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/commit/ebeb6acbf03190c25ee9b70f57d4dfd50e7ba4ca",
+          "date": "2026-08-23T20:39:56Z"
+        },
+        {
+          "sha": "05bea9edde3aa55b43e287ee700eb7d3072fc94f",
+          "message": "Add new features and options, including new animations",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/commit/05bea9edde3aa55b43e287ee700eb7d3072fc94f",
+          "date": "2026-08-23T20:38:55Z"
+        },
+        {
+          "sha": "8309f4691ff147e428f009c2decc6143d08ad2d6",
+          "message": "Update spaces",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/commit/8309f4691ff147e428f009c2decc6143d08ad2d6",
+          "date": "2026-08-23T13:35:55Z"
+        },
+        {
+          "sha": "856e79e4971497c7f0b8137b42da9b6a711cfe42",
+          "message": "Bump version",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/commit/856e79e4971497c7f0b8137b42da9b6a711cfe42",
+          "date": "2026-08-23T13:29:08Z"
+        },
+        {
+          "sha": "60b4fb4c3b0c6656d22daebf01900aa076dc1951",
+          "message": "Add strictness check and several bugfixes",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/commit/60b4fb4c3b0c6656d22daebf01900aa076dc1951",
+          "date": "2026-08-23T11:46:29Z"
+        },
+        {
+          "sha": "f7a89ae8cd6ac2eb9ea17b6fb3036e05aa6c1fc6",
+          "message": "Update addon version",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/commit/f7a89ae8cd6ac2eb9ea17b6fb3036e05aa6c1fc6",
+          "date": "2026-08-22T22:27:37Z"
+        },
+        {
+          "sha": "ea716f668f70bbb216b88e1f761ce9e2ff5382ee",
+          "message": "Update addon version support",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/commit/ea716f668f70bbb216b88e1f761ce9e2ff5382ee",
+          "date": "2026-08-22T22:27:20Z"
+        },
+        {
+          "sha": "97e0431362f192a317ed30f23028811afddf98cd",
+          "message": "First update, bugfixes",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/commit/97e0431362f192a317ed30f23028811afddf98cd",
+          "date": "2026-08-22T22:25:32Z"
+        },
+        {
+          "sha": "eac9b7f04e4ca8ed40253e8f2ca4b3869b0ba24c",
+          "message": "First commit",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/commit/eac9b7f04e4ca8ed40253e8f2ca4b3869b0ba24c",
+          "date": "2026-08-22T22:03:14Z"
+        }
+      ],
+      "releases": [
+        {
+          "tag": "1.2.1",
+          "name": "1.2.1 - Add New Impact style",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/releases/tag/1.2.1",
+          "date": "2026-10-12T12:29:22Z"
+        },
+        {
+          "tag": "1.2.0",
+          "name": "1.2.0 - Major UI upgrade, Classic Style upgrade",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/releases/tag/1.2.0",
+          "date": "2026-10-11T19:32:25Z"
+        },
+        {
+          "tag": "1.1.5",
+          "name": "1.1.5 - Minor fixes",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/releases/tag/1.1.5",
+          "date": "2026-10-11T09:22:54Z"
+        },
+        {
+          "tag": "1.1.4",
+          "name": "1.1.4 - Improvements",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/releases/tag/1.1.4",
+          "date": "2026-10-08T17:44:14Z"
+        },
+        {
+          "tag": "1.1.3",
+          "name": "1.1.3 - Add Forever support",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/releases/tag/1.1.3",
+          "date": "2026-10-03T19:08:10Z"
+        },
+        {
+          "tag": "1.1.2",
+          "name": "1.1.2 - Add Damage school filters",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/releases/tag/1.1.2",
+          "date": "2026-09-09T16:42:00Z"
+        },
+        {
+          "tag": "1.1.1",
+          "name": "1.1.1 - Add Sound effects & Very Strict profile",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/releases/tag/1.1.1",
+          "date": "2026-09-05T22:15:08Z"
+        },
+        {
+          "tag": "1.1.0",
+          "name": "1.1.0 - Update previewer, add more features",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/releases/tag/1.1.0",
+          "date": "2026-09-05T08:16:47Z"
+        },
+        {
+          "tag": "1.0.8",
+          "name": "1.0.8 - Fix double damage bug",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/releases/tag/1.0.8",
+          "date": "2026-09-02T21:19:07Z"
+        },
+        {
+          "tag": "1.0.7",
+          "name": "1.0.7 - Bug fixes",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/releases/tag/1.0.7",
+          "date": "2026-09-01T22:33:39Z"
+        },
+        {
+          "tag": "1.0.6",
+          "name": "1.0.6 - Add damage previewer",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/releases/tag/1.0.6",
+          "date": "2026-08-31T07:50:57Z"
+        },
+        {
+          "tag": "1.0.5",
+          "name": "1.0.5 - Add new version support, bugfixes",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/releases/tag/1.0.5",
+          "date": "2026-08-28T21:47:11Z"
+        },
+        {
+          "tag": "1.0.3",
+          "name": "1.0.3 - Add new animations and more options",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/releases/tag/1.0.3",
+          "date": "2026-08-23T20:43:55Z"
+        },
+        {
+          "tag": "1.0.2",
+          "name": "1.0.2 - Add strictness for damage control",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/releases/tag/1.0.2",
+          "date": "2026-08-23T14:01:57Z"
+        },
+        {
+          "tag": "1.0.1",
+          "name": "1.0.1 - Bug fixes",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/releases/tag/1.0.1",
+          "date": "2026-08-23T07:08:11Z"
+        },
+        {
+          "tag": "1.0.0",
+          "name": "1.0.0 - First release",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/releases/tag/1.0.0",
+          "date": "2026-08-22T22:26:09Z"
+        }
+      ],
+      "pullRequests": [
+        {
+          "number": 1,
+          "title": "Animation styles",
+          "url": "https://github.com/Spatovaliyski/PlateSCT/pull/1",
+          "mergedAt": "2026-10-12T12:25:31Z"
+        }
+      ],
+      "coverage": {
+        "from": "2026-07-14T16:58:24.185Z",
+        "to": "2026-10-12T16:58:24.185Z",
+        "complete": true,
+        "releasesComplete": true,
+        "pullRequestsComplete": true
+      },
+      "freshness": {
+        "metadata": "2026-10-12T16:58:24.185Z",
+        "languages": "2026-10-12T16:58:24.185Z",
+        "commits": "2026-10-12T16:58:24.185Z",
+        "releases": "2026-10-12T16:58:24.185Z",
+        "pullRequests": "2026-10-12T16:58:24.185Z"
+      }
+    },
+    {
+      "id": 841917085,
+      "fullName": "Spatovaliyski/ClassicNumbersEx",
+      "description": "ClassicNumbersTWW",
+      "url": "https://github.com/Spatovaliyski/ClassicNumbersEx",
+      "languages": {
+        "Lua": 810404
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false,
+      "updatedAt": "2026-08-23T07:25:36Z",
+      "commits": [
+        {
+          "sha": "77e4ff0d8fb524d31ac6d355e5b404bce15ba143",
+          "message": "Final update",
+          "url": "https://github.com/Spatovaliyski/ClassicNumbersEx/commit/77e4ff0d8fb524d31ac6d355e5b404bce15ba143",
+          "date": "2026-08-23T07:23:43Z"
+        }
+      ],
+      "releases": [
+        {
+          "tag": "3.0.0",
+          "name": "",
+          "url": "https://github.com/Spatovaliyski/ClassicNumbersEx/releases/tag/3.0.0",
+          "date": "2026-08-23T07:25:36Z"
+        },
+        {
+          "tag": "2.0.0",
+          "name": "2.0.0",
+          "url": "https://github.com/Spatovaliyski/ClassicNumbersEx/releases/tag/2.0.0",
+          "date": "2025-08-22T17:46:42Z"
+        }
+      ],
+      "pullRequests": [],
+      "coverage": {
+        "from": "2026-07-14T16:58:24.185Z",
+        "to": "2026-10-12T16:58:24.185Z",
+        "complete": true,
+        "releasesComplete": true,
+        "pullRequestsComplete": true
+      },
+      "freshness": {
+        "metadata": "2026-10-12T16:58:24.185Z",
+        "languages": "2026-10-12T16:58:24.185Z",
+        "commits": "2026-10-12T16:58:24.185Z",
+        "releases": "2026-10-12T16:58:24.185Z",
+        "pullRequests": "2026-10-12T16:58:24.185Z"
+      }
+    },
+    {
+      "id": 959503918,
+      "fullName": "Spatovaliyski/EasySummon",
+      "description": "",
+      "url": "https://github.com/Spatovaliyski/EasySummon",
+      "languages": {
+        "Lua": 71917
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false,
+      "updatedAt": "2026-02-14T20:14:57Z",
+      "commits": [],
+      "releases": [
+        {
+          "tag": "2.0.5",
+          "name": "2.0.5",
+          "url": "https://github.com/Spatovaliyski/EasySummon/releases/tag/2.0.5",
+          "date": "2026-02-14T20:14:57Z"
+        },
+        {
+          "tag": "2.0.4",
+          "name": "2.0.4",
+          "url": "https://github.com/Spatovaliyski/EasySummon/releases/tag/2.0.4",
+          "date": "2026-01-17T23:47:54Z"
+        },
+        {
+          "tag": "2.0.3",
+          "name": "2.0.3",
+          "url": "https://github.com/Spatovaliyski/EasySummon/releases/tag/2.0.3",
+          "date": "2026-01-14T21:22:04Z"
+        },
+        {
+          "tag": "2.0.2",
+          "name": "2.0.2",
+          "url": "https://github.com/Spatovaliyski/EasySummon/releases/tag/2.0.2",
+          "date": "2026-01-14T09:10:54Z"
+        },
+        {
+          "tag": "2.0.1",
+          "name": "2.0.1",
+          "url": "https://github.com/Spatovaliyski/EasySummon/releases/tag/2.0.1",
+          "date": "2026-01-14T08:45:36Z"
+        },
+        {
+          "tag": "2.0.0",
+          "name": "2.0.0",
+          "url": "https://github.com/Spatovaliyski/EasySummon/releases/tag/2.0.0",
+          "date": "2026-01-09T19:47:54Z"
+        },
+        {
+          "tag": "1.3.1",
+          "name": "1.3.1",
+          "url": "https://github.com/Spatovaliyski/EasySummon/releases/tag/1.3.1",
+          "date": "2026-01-02T17:03:11Z"
+        },
+        {
+          "tag": "1.3.0",
+          "name": "1.3.0",
+          "url": "https://github.com/Spatovaliyski/EasySummon/releases/tag/1.3.0",
+          "date": "2025-12-22T23:27:56Z"
+        },
+        {
+          "tag": "1.2.4",
+          "name": "1.2.4",
+          "url": "https://github.com/Spatovaliyski/EasySummon/releases/tag/1.2.4",
+          "date": "2025-11-24T23:22:49Z"
+        },
+        {
+          "tag": "1.2.3",
+          "name": "1.2.3",
+          "url": "https://github.com/Spatovaliyski/EasySummon/releases/tag/1.2.3",
+          "date": "2025-11-23T15:12:11Z"
+        },
+        {
+          "tag": "1.2.2a",
+          "name": "1.2.2a",
+          "url": "https://github.com/Spatovaliyski/EasySummon/releases/tag/1.2.2a",
+          "date": "2025-11-22T00:07:04Z"
+        },
+        {
+          "tag": "1.2.2",
+          "name": "1.2.2 - Custom summon keywords",
+          "url": "https://github.com/Spatovaliyski/EasySummon/releases/tag/1.2.2",
+          "date": "2025-11-22T00:00:31Z"
+        },
+        {
+          "tag": "1.2.1",
+          "name": "1.2.1",
+          "url": "https://github.com/Spatovaliyski/EasySummon/releases/tag/1.2.1",
+          "date": "2025-06-14T10:29:04Z"
+        },
+        {
+          "tag": "1.2.0",
+          "name": "1.2.0",
+          "url": "https://github.com/Spatovaliyski/EasySummon/releases/tag/1.2.0",
+          "date": "2025-06-14T10:20:21Z"
+        },
+        {
+          "tag": "1.1.0",
+          "name": "1.1.0",
+          "url": "https://github.com/Spatovaliyski/EasySummon/releases/tag/1.1.0",
+          "date": "2025-05-03T18:01:35Z"
+        },
+        {
+          "tag": "1.0.4",
+          "name": "1.0.4",
+          "url": "https://github.com/Spatovaliyski/EasySummon/releases/tag/1.0.4",
+          "date": "2025-04-16T17:57:56Z"
+        },
+        {
+          "tag": "1.0.3",
+          "name": "1.0.3",
+          "url": "https://github.com/Spatovaliyski/EasySummon/releases/tag/1.0.3",
+          "date": "2025-04-12T16:11:17Z"
+        },
+        {
+          "tag": "1.0.2",
+          "name": "1.0.2",
+          "url": "https://github.com/Spatovaliyski/EasySummon/releases/tag/1.0.2",
+          "date": "2025-04-09T17:18:27Z"
+        },
+        {
+          "tag": "1.0.1",
+          "name": "1.0.1",
+          "url": "https://github.com/Spatovaliyski/EasySummon/releases/tag/1.0.1",
+          "date": "2025-04-07T21:47:27Z"
+        },
+        {
+          "tag": "1.0.0",
+          "name": "1.0.0",
+          "url": "https://github.com/Spatovaliyski/EasySummon/releases/tag/1.0.0",
+          "date": "2025-04-06T21:07:23Z"
+        },
+        {
+          "tag": "0.1.4",
+          "name": "0.1.4",
+          "url": "https://github.com/Spatovaliyski/EasySummon/releases/tag/0.1.4",
+          "date": "2025-04-06T15:45:28Z"
+        },
+        {
+          "tag": "0.1.3",
+          "name": "0.1.3",
+          "url": "https://github.com/Spatovaliyski/EasySummon/releases/tag/0.1.3",
+          "date": "2025-04-06T11:51:33Z"
+        },
+        {
+          "tag": "0.1.2",
+          "name": "0.1.2",
+          "url": "https://github.com/Spatovaliyski/EasySummon/releases/tag/0.1.2",
+          "date": "2025-04-06T11:47:42Z"
+        },
+        {
+          "tag": "0.1.1",
+          "name": "0.1.1",
+          "url": "https://github.com/Spatovaliyski/EasySummon/releases/tag/0.1.1",
+          "date": "2025-04-04T15:01:53Z"
+        }
+      ],
+      "pullRequests": [],
+      "coverage": {
+        "from": "2026-07-14T16:58:24.185Z",
+        "to": "2026-10-12T16:58:24.185Z",
+        "complete": true,
+        "releasesComplete": true,
+        "pullRequestsComplete": true
+      },
+      "freshness": {
+        "metadata": "2026-10-12T16:58:24.185Z",
+        "languages": "2026-10-12T16:58:24.185Z",
+        "commits": "2026-10-12T16:58:24.185Z",
+        "releases": "2026-10-12T16:58:24.185Z",
+        "pullRequests": "2026-10-12T16:58:24.185Z"
+      }
+    },
+    {
+      "id": 1134458912,
+      "fullName": "Spatovaliyski/RaidOpacity",
+      "description": "",
+      "url": "https://github.com/Spatovaliyski/RaidOpacity",
+      "languages": {
+        "Lua": 783701
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false,
+      "updatedAt": "2026-01-14T18:45:20Z",
+      "commits": [],
+      "releases": [],
+      "pullRequests": [],
+      "coverage": {
+        "from": "2026-07-14T16:58:24.185Z",
+        "to": "2026-10-12T16:58:24.185Z",
+        "complete": true,
+        "releasesComplete": true,
+        "pullRequestsComplete": true
+      },
+      "freshness": {
+        "metadata": "2026-10-12T16:58:24.185Z",
+        "languages": "2026-10-12T16:58:24.185Z",
+        "commits": "2026-10-12T16:58:24.185Z",
+        "releases": "2026-10-12T16:58:24.185Z",
+        "pullRequests": "2026-10-12T16:58:24.185Z"
+      }
+    },
+    {
+      "id": 1053249260,
+      "fullName": "Spatovaliyski/sBoard",
+      "description": "Channel Spam board in a tidy list",
+      "url": "https://github.com/Spatovaliyski/sBoard",
+      "languages": {
+        "Lua": 12777
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false,
+      "updatedAt": "2025-09-09T23:19:31Z",
+      "commits": [],
+      "releases": [],
+      "pullRequests": [],
+      "coverage": {
+        "from": "2026-07-14T16:58:24.185Z",
+        "to": "2026-10-12T16:58:24.185Z",
+        "complete": true,
+        "releasesComplete": true,
+        "pullRequestsComplete": true
+      },
+      "freshness": {
+        "metadata": "2026-10-12T16:58:24.185Z",
+        "languages": "2026-10-12T16:58:24.185Z",
+        "commits": "2026-10-12T16:58:24.185Z",
+        "releases": "2026-10-12T16:58:24.185Z",
+        "pullRequests": "2026-10-12T16:58:24.185Z"
+      }
+    },
+    {
+      "id": 1016232714,
+      "fullName": "Spatovaliyski/EasyMill",
+      "description": "",
+      "url": "https://github.com/Spatovaliyski/EasyMill",
+      "languages": {
+        "Lua": 93229
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false,
+      "updatedAt": "2025-07-28T18:54:36Z",
+      "commits": [],
+      "releases": [
+        {
+          "tag": "1.1.0",
+          "name": "1.1.0",
+          "url": "https://github.com/Spatovaliyski/EasyMill/releases/tag/1.1.0",
+          "date": "2025-07-28T18:54:36Z"
+        },
+        {
+          "tag": "1.0.4",
+          "name": "1.0.4",
+          "url": "https://github.com/Spatovaliyski/EasyMill/releases/tag/1.0.4",
+          "date": "2025-07-25T23:26:51Z"
+        },
+        {
+          "tag": "1.0.3",
+          "name": "1.0.3",
+          "url": "https://github.com/Spatovaliyski/EasyMill/releases/tag/1.0.3",
+          "date": "2025-07-22T12:27:51Z"
+        },
+        {
+          "tag": "1.0.2",
+          "name": "1.0.2",
+          "url": "https://github.com/Spatovaliyski/EasyMill/releases/tag/1.0.2",
+          "date": "2025-07-12T21:14:05Z"
+        },
+        {
+          "tag": "1.0.1",
+          "name": "1.0.1",
+          "url": "https://github.com/Spatovaliyski/EasyMill/releases/tag/1.0.1",
+          "date": "2025-07-09T18:12:08Z"
+        },
+        {
+          "tag": "1.0.0",
+          "name": "1.0.0",
+          "url": "https://github.com/Spatovaliyski/EasyMill/releases/tag/1.0.0",
+          "date": "2025-07-08T20:07:27Z"
+        }
+      ],
+      "pullRequests": [],
+      "coverage": {
+        "from": "2026-07-14T16:58:24.185Z",
+        "to": "2026-10-12T16:58:24.185Z",
+        "complete": true,
+        "releasesComplete": true,
+        "pullRequestsComplete": true
+      },
+      "freshness": {
+        "metadata": "2026-10-12T16:58:24.185Z",
+        "languages": "2026-10-12T16:58:24.185Z",
+        "commits": "2026-10-12T16:58:24.185Z",
+        "releases": "2026-10-12T16:58:24.185Z",
+        "pullRequests": "2026-10-12T16:58:24.185Z"
+      }
+    }
+  ],
+  "errors": [],
+  "excludedIds": []
+}
