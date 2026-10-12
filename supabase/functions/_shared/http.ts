@@ -18,7 +18,8 @@ export function headers(request: Request) {
     'Cache-Control': 'no-store',
     'X-Robots-Tag': 'noindex, nofollow',
     'Access-Control-Allow-Origin': origins.has(origin) ? origin : 'https://spatovaliyski.com',
-    'Access-Control-Allow-Headers': 'authorization, apikey, content-type, x-machine-token',
+    'Access-Control-Allow-Headers':
+      'authorization, apikey, content-type, x-client-info, x-machine-token',
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
     Vary: 'Origin',
   };

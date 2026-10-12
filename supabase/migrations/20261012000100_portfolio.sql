@@ -104,7 +104,7 @@ begin
     on conflict(id) do update set status=excluded.status,sort_order=excluded.sort_order,slug=excluded.slug,classification=excluded.classification,start_date=excluded.start_date,end_date=excluded.end_date,github_id=excluded.github_id,data=excluded.data,version=excluded.version,updated_at=now();
   insert into public.portfolio_revisions(entity_id,version,entity,author) values(v_id,v_version,p_entity,auth.uid()) returning id into v_revision;
   update public.portfolio_entities set current_revision=v_revision where id=v_id;
-  delete from public.portfolio_entity_links;
+  delete from public.portfolio_entity_links where source_id is not null;
   insert into public.portfolio_entity_links(source_id,target_id)
     select distinct e.id, r.target from public.portfolio_entities e cross join lateral portfolio_private.references(e.data) r(target)
     join public.portfolio_entities t on t.id=r.target where e.status <> 'archived';
