@@ -58,27 +58,28 @@ The admin’s **Import starter drafts** action can prepare editable records imme
 
 ## Deployment setup
 
-Use a separate **private** source repository to keep development originals and editorial fixtures private. Do not replace `portfolio-next`. Add `GITHUB_REPOSITORY` and an Actions-write `GITHUB_DISPATCH_TOKEN` as Portfolio Edge secrets. Set a random machine token of at least 32 characters as `PORTFOLIO_MACHINE_TOKEN` in both protected GitHub secrets and Portfolio Edge secrets. Provider setup is restricted to this Portfolio project; no paid upgrade is required.
+A push to `main` builds this repository and uploads `dist/client` to `/var/www/spatovaliyski.com/current`. The public pages are the content committed in git. The admin page is included in that build and signs in with the public Supabase key. Saving in the admin does not change the live pages until those edits are committed and pushed.
 
-The workflows are ready:
+The workflows are:
 
-- `ci.yml`: strict typing, domain/database/import/recovery tests, generated HTML, bundle/credential checks, Linux activation tests, browser accessibility/navigation/performance checks.
-- `deploy.yml`: fetch approved release ID and signed originals, build from that fixed snapshot, verify, upload a separate candidate over pinned SSH, recheck approval, smoke-test, atomically activate, and report status.
-- `github-sync.yml`: hourly public REST synchronization; deployed editorial content refreshes approximately every six hours. Bounded pagination and per-dataset timestamps/coverage expose partial and stale results. Activity counts distinct owner-authored, non-merge default-branch commits in the previous 90 days using UTC dates. Private contribution aggregates are disabled.
-- `reconcile.yml`: compare the actual VPS manifest with backend status and recover delayed/lost callbacks.
+- `ci.yml`: checks on every push and pull request.
+- `deploy.yml`: on `main` only, install, build, upload, and reload Nginx.
+- `github-sync.yml`: hourly public GitHub synchronization.
+- `reconcile.yml`: compare the server manifest with backend status.
 
 Set GitHub environment **production** values:
 
-| Name                            | Location         | Purpose                                                                                       |
-| ------------------------------- | ---------------- | --------------------------------------------------------------------------------------------- |
-| `VITE_SUPABASE_URL`             | Variable         | Project URL, for example `https://your-project.supabase.co`                                   |
-| `VITE_SUPABASE_PUBLISHABLE_KEY` | Variable         | Supplied public admin key                                                                     |
-| `PORTFOLIO_SSH_TARGET`          | Variable         | `deployment-user@host`                                                                        |
-| `PORTFOLIO_DEPLOY_ROOT`         | Variable         | `/var/www/spatovaliyski.com`                                                                  |
-| `PORTFOLIO_SSH_KEY`             | Secret           | Dedicated deployment key                                                                      |
-| `PORTFOLIO_SSH_KNOWN_HOSTS`     | Secret           | Independently verified SSH host key; never use blind host scanning                            |
-| `PORTFOLIO_MACHINE_TOKEN`       | Secret           | Narrow automation credential                                                                  |
-| `GITHUB_PUBLIC_TOKEN`           | Secret, optional | Read-only public GitHub acquisition; six repositories also work without it within rate limits |
+| Name                            | Location         | Purpose                                               |
+| ------------------------------- | ---------------- | ----------------------------------------------------- |
+| `VITE_SUPABASE_URL`             | Variable         | `https://lmxukzcvxhpbwtgsbrai.supabase.co`            |
+| `VITE_SUPABASE_PUBLISHABLE_KEY` | Variable         | Public admin key, so `/admin/` can sign in            |
+| `PORTFOLIO_SSH_TARGET`          | Variable         | `root@your-server`                                    |
+| `PORTFOLIO_DEPLOY_ROOT`         | Variable         | `/var/www/spatovaliyski.com`                          |
+| `PORTFOLIO_SSH_KEY`             | Secret           | Private key that can log in as that user              |
+| `PORTFOLIO_SSH_KNOWN_HOSTS`     | Secret           | One line: hostname, then the server `ssh-ed25519` key |
+| `GITHUB_PUBLIC_TOKEN`           | Secret, optional | Read-only token for the hourly GitHub sync            |
+
+No release UUID is required. `PORTFOLIO_MACHINE_TOKEN` is not used by this deploy.
 
 The VPS needs Nginx, bash, Python 3, curl, tar, flock, and a dedicated deployment directory/user. The deployer needs narrowly scoped passwordless `nginx -t` and `systemctl reload nginx`, not general sudo. Install `deploy/portfolio-security.conf` as `/etc/nginx/snippets/portfolio-security.conf`, adapt `deploy/nginx.conf` to the preserved TLS/site configuration, and create the initial `current` release/redirect map before enabling that include. Verify with `nginx -t`. See [docs/operations.md](docs/operations.md) for first cutover and recovery.
 

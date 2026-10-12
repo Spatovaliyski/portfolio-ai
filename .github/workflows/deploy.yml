@@ -1,10 +1,7 @@
-name: Publish approved release
+name: Deploy
 on:
-  workflow_dispatch:
-    inputs:
-      release_id:
-        required: true
-        type: string
+  push:
+    branches: [main]
 permissions:
   contents: read
 concurrency:
@@ -14,14 +11,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     environment: production
-    env:
-      PORTFOLIO_RELEASE_ID: ${{ inputs.release_id }}
-      PORTFOLIO_CONTENT_FILE: release-input.json
-      PORTFOLIO_MACHINE_TOKEN: ${{ secrets.PORTFOLIO_MACHINE_TOKEN }}
-      VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
-      VITE_SUPABASE_PUBLISHABLE_KEY: ${{ vars.VITE_SUPABASE_PUBLISHABLE_KEY }}
-      PORTFOLIO_SSH_TARGET: ${{ vars.PORTFOLIO_SSH_TARGET }}
-      PORTFOLIO_DEPLOY_ROOT: ${{ vars.PORTFOLIO_DEPLOY_ROOT }}
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
@@ -29,20 +18,30 @@ jobs:
           node-version: 24.16.0
           cache: npm
       - run: npm ci
-      - run: npm run release:fetch
-      - run: npm run verify
-      - run: npx playwright install --with-deps chromium
-      - run: npm run test:browser
-      - name: Prepare pinned SSH host and deployment key
+      - run: npm run build
+        env:
+          VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_PUBLISHABLE_KEY: ${{ vars.VITE_SUPABASE_PUBLISHABLE_KEY }}
+      - name: Upload the built site
         env:
           SSH_KEY: ${{ secrets.PORTFOLIO_SSH_KEY }}
           SSH_KNOWN_HOSTS: ${{ secrets.PORTFOLIO_SSH_KNOWN_HOSTS }}
+          SSH_TARGET: ${{ vars.PORTFOLIO_SSH_TARGET }}
+          DEPLOY_ROOT: ${{ vars.PORTFOLIO_DEPLOY_ROOT }}
         run: |
+          if [ -z "$SSH_TARGET" ] || [ -z "$SSH_KEY" ] || [ -z "$SSH_KNOWN_HOSTS" ]; then
+            echo "Set PORTFOLIO_SSH_TARGET, PORTFOLIO_SSH_KEY, and PORTFOLIO_SSH_KNOWN_HOSTS." >&2
+            exit 1
+          fi
+          root="${DEPLOY_ROOT:-/var/www/spatovaliyski.com}"
+          if ! printf '%s' "$root" | grep -Eq '^/[a-zA-Z0-9._/-]+$'; then
+            echo "Invalid PORTFOLIO_DEPLOY_ROOT." >&2
+            exit 1
+          fi
           install -d -m 700 ~/.ssh
           printf '%s\n' "$SSH_KEY" > ~/.ssh/id_ed25519
           printf '%s\n' "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
           chmod 600 ~/.ssh/id_ed25519 ~/.ssh/known_hosts
-      - run: npm run deploy
-      - name: Report build or upload failure
-        if: failure()
-        run: npm run release:report -- failed
+          ssh -o BatchMode=yes -o StrictHostKeyChecking=yes "$SSH_TARGET" "mkdir -p ${root}/current"
+          rsync -avzr --delete -e "ssh -o BatchMode=yes -o StrictHostKeyChecking=yes" dist/client/ "${SSH_TARGET}:${root}/current/"
+          ssh -o BatchMode=yes -o StrictHostKeyChecking=yes "$SSH_TARGET" "nginx -t && systemctl reload nginx"
