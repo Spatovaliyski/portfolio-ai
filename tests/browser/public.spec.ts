@@ -121,6 +121,31 @@ test('representative pages pass automated accessibility and reflow checks', asyn
     await page.setViewportSize({ width, height: 1000 });
     for (const path of [...representativePaths, '/admin/']) {
       await page.goto(path);
+      await page.evaluate(async () => {
+        await new Promise((resolve) => requestAnimationFrame(() => resolve(undefined)));
+        await new Promise((resolve) => requestAnimationFrame(() => resolve(undefined)));
+
+        const runningAnimations = () => {
+          const animations: Animation[] = [];
+          const visit = (element: Element) => {
+            animations.push(
+              ...element.getAnimations().filter((animation) => animation.playState === 'running'),
+            );
+
+            for (const child of element.children) visit(child);
+          };
+
+          visit(document.documentElement);
+
+          return animations;
+        };
+        let running = runningAnimations();
+
+        while (running.length) {
+          await Promise.all(running.map((animation) => animation.finished));
+          running = runningAnimations();
+        }
+      });
       expect(
         await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1),
         `${path} at ${width}`,
