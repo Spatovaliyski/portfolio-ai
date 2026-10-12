@@ -38,7 +38,11 @@ test('React page switches preserve the document, CSS and fonts, with metadata an
   });
   await expect.poll(() => page.evaluate(() => scrollY)).toBe(450);
   await expect
-    .poll(() => page.evaluate(() => document.querySelector('[data-drift]')?.style.translate ?? ''))
+    .poll(() =>
+      page.evaluate(
+        () => document.querySelector<HTMLElement>('[data-drift]')?.style.translate ?? '',
+      ),
+    )
     .toContain('px');
 
   const requests: string[] = [];
