@@ -2,7 +2,7 @@ import { execFileSync } from 'node:child_process';
 import { machine } from './machine.ts';
 
 const target = process.env.PORTFOLIO_SSH_TARGET;
-const root = process.env.PORTFOLIO_DEPLOY_ROOT ?? '/srv/portfolio';
+const root = process.env.PORTFOLIO_DEPLOY_ROOT || '/var/www/spatovaliyski.com';
 
 if (
   !target ||

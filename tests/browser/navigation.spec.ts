@@ -59,8 +59,9 @@ test('React page switches preserve the document, CSS and fonts, with metadata an
   await expect
     .poll(() =>
       page.evaluate(() => {
-        const effect = document.querySelector('main header, main [data-drift]')?.getAnimations()[0]
-          ?.effect;
+        const effect = document
+          .querySelector('main header, main [data-drift]')
+          ?.getAnimations()[0]?.effect;
 
         if (!(effect instanceof KeyframeEffect)) return null;
 

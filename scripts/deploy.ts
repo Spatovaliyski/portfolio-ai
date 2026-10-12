@@ -4,7 +4,7 @@ import { machine } from './machine.ts';
 
 const id = process.env.PORTFOLIO_RELEASE_ID;
 const target = process.env.PORTFOLIO_SSH_TARGET;
-const root = process.env.PORTFOLIO_DEPLOY_ROOT ?? '/srv/portfolio';
+const root = process.env.PORTFOLIO_DEPLOY_ROOT || '/var/www/spatovaliyski.com';
 
 if (
   !id ||

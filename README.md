@@ -74,7 +74,7 @@ Set GitHub environment **production** values:
 | `VITE_SUPABASE_URL`             | Variable         | Project URL, for example `https://your-project.supabase.co`                                   |
 | `VITE_SUPABASE_PUBLISHABLE_KEY` | Variable         | Supplied public admin key                                                                     |
 | `PORTFOLIO_SSH_TARGET`          | Variable         | `deployment-user@host`                                                                        |
-| `PORTFOLIO_DEPLOY_ROOT`         | Variable         | `/srv/portfolio` by default                                                                   |
+| `PORTFOLIO_DEPLOY_ROOT`         | Variable         | `/var/www/spatovaliyski.com`                                                                  |
 | `PORTFOLIO_SSH_KEY`             | Secret           | Dedicated deployment key                                                                      |
 | `PORTFOLIO_SSH_KNOWN_HOSTS`     | Secret           | Independently verified SSH host key; never use blind host scanning                            |
 | `PORTFOLIO_MACHINE_TOKEN`       | Secret           | Narrow automation credential                                                                  |
