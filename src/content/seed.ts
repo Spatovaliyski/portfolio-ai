@@ -100,8 +100,7 @@ const media = (
     alt,
     caption: '',
     sourceUrl,
-    rights:
-      'Owner-provided public product material; review original before production publication.',
+    rights: 'Owner-provided public product material.',
     publicPath: `/media/${path}`,
   });
 
@@ -361,10 +360,7 @@ export const seedContent: PortfolioContent = contentSchema.parse({
             },
           ],
         },
-        prose(
-          'bausy-evidence',
-          'The public store listings document the shipped product. Detailed engineering decisions and architecture will be published after an owner review.',
-        ),
+        prose('bausy-evidence', 'The public store listings document the shipped product.'),
       ],
       seo: seo(
         'Bausy — independent pet-care product',
@@ -392,7 +388,7 @@ export const seedContent: PortfolioContent = contentSchema.parse({
         blocks: [
           prose(
             'cilect-summary',
-            'The existing portfolio describes a migration and a custom content platform for CILECT, with a custom theme and plugins. The case study focuses on platform ownership and content structure. Specific architecture decisions and approved interface screenshots require an editorial review.',
+            'The existing portfolio describes a migration and a custom content platform for CILECT, with a custom theme and plugins. The case study focuses on platform ownership and content structure.',
           ),
         ],
         seo: seo(
@@ -490,7 +486,7 @@ export const seedContent: PortfolioContent = contentSchema.parse({
         'Senior Front-end Engineer',
         '2024-04-01',
         null,
-        'Front-end engineering. Detailed responsibilities are pending an owner review.',
+        'Front-end engineering.',
       ],
       [
         'almacena',
@@ -539,8 +535,7 @@ export const seedContent: PortfolioContent = contentSchema.parse({
       title: 'Master’s degree',
       institution: 'Plovdiv University',
       dates: '2021',
-      details:
-        'Graphic environments and user interfaces. Imported from the linked CV; confirm before launch.',
+      details: 'Graphic environments and user interfaces.',
       sourceUrl: 'https://wp.spatovaliyski.com/resume/',
     }),
     entity(
