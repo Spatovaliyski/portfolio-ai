@@ -1,7 +1,0 @@
-## Interface: 120100
-## Version: 3.0.0
-## Title: ClassicNumbersEx
-## Author: zeldarsprod, Limitedby
-## Notes: No longer supported. Features moved to PlateSCT for Midnight. Type /cn for info.
-
-ClassicNumbersEx.lua
