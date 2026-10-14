@@ -1,10 +1,10 @@
 import { expect, test } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
-import { readFileSync } from 'node:fs';
+import { seedContent } from '../fixtures/content.ts';
 import { contentSchema, records, type Project } from '../../src/domain/schema.ts';
 import { routePaths } from '../../src/domain/publication.ts';
 
-const content = contentSchema.parse(JSON.parse(readFileSync('dist/content-snapshot.json', 'utf8')));
+const content = contentSchema.parse(seedContent);
 const settings = records(content, 'settings')[0];
 const projectPath = (project: Project) =>
   `/${project.kind === 'pet-project' ? 'pet-projects' : 'projects'}/${project.slug}/`;

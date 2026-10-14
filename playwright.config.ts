@@ -5,12 +5,14 @@ export default defineConfig({
   use: { baseURL: 'http://127.0.0.1:4173' },
   webServer: [
     {
-      command: 'npm run preview',
+      command: 'node --import tsx scripts/test-server.ts',
+      env: { PORTFOLIO_TEST_RUNTIME: '1' },
       url: 'http://127.0.0.1:4173',
       reuseExistingServer: !process.env.CI,
     },
     {
       command: 'npm run dev -- --port 5174',
+      env: { PORTFOLIO_TEST_RUNTIME: '1' },
       url: 'http://127.0.0.1:5174',
       reuseExistingServer: !process.env.CI,
     },

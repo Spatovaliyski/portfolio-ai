@@ -9,7 +9,7 @@ import {
   restoreSql,
   type BackupManifest,
 } from '../scripts/backup-format.ts';
-import { seedContent } from '../src/content/seed.ts';
+import { seedContent } from './fixtures/content.ts';
 
 it('restores actual revisions, release generations and originals and detects corruption', async () => {
   const db = await portfolioDatabase();

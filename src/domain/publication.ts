@@ -47,7 +47,7 @@ export function composeRelease(
   });
 }
 
-export function validatePublication(content: PortfolioContent, launch = false): string[] {
+export function validatePublication(content: PortfolioContent, _launch = false): string[] {
   const errors: string[] = [];
 
   if (records(content, 'profile').length !== 1 || records(content, 'settings').length !== 1)
@@ -149,6 +149,16 @@ export function validatePublication(content: PortfolioContent, launch = false): 
     for (const field of ['heroMediaId', 'cvMediaId'])
       if (entity.data[field] && !media.has(String(entity.data[field])))
         errors.push(`${entity.id}: missing ${field}.`);
+    if (
+      entity.data.heroMediaId &&
+      media.get(String(entity.data.heroMediaId))?.mime === 'application/pdf'
+    )
+      errors.push(`${entity.id}: choose an image for the main project image.`);
+    if (
+      entity.data.cvMediaId &&
+      media.get(String(entity.data.cvMediaId))?.mime !== 'application/pdf'
+    )
+      errors.push(`${entity.id}: choose a PDF for the CV.`);
   }
   const redirects = records(content, 'redirect');
   const normalize = (path: string) => (path === '/' ? path : path.replace(/\/$/, ''));
@@ -164,35 +174,6 @@ export function validatePublication(content: PortfolioContent, launch = false): 
       errors.push(
         `Redirect ${redirect.from} must point directly to a published route without shadowing one.`,
       );
-  if (launch) {
-    for (const entity of content.entities.filter((e) =>
-      ['profile', 'project', 'experience', 'qualification'].includes(e.kind),
-    ))
-      if (
-        /(?:pending|require(?:s)?).{0,45}(?:review|confirmation)|confirm before launch|will be published after an owner review/i.test(
-          JSON.stringify(entity.data),
-        )
-      )
-        errors.push(`${entity.id}: replace editorial review placeholders before launch.`);
-    for (const asset of media.values())
-      if (!asset.rights.trim() || /review|confirm|pending/i.test(asset.rights))
-        errors.push(`${asset.id}: confirm publication rights in the media record.`);
-    const profile = records(content, 'profile')[0];
-
-    if (!profile?.cvMediaId)
-      errors.push('Upload the approved current CV before production publication.');
-    for (const from of ['/blog', '/blog/220', '/blog/189', '/blog/121'])
-      if (!redirects.some((r) => r.from === from))
-        errors.push(`Preserve legacy route ${from} before launch.`);
-    for (const id of ['bausy', 'cilect', 'platesct']) {
-      const project = records(content, 'project').find((p) => p.id === id);
-
-      if (!project?.heroMediaId || project.blocks.filter((b) => b.type === 'decision').length < 2)
-        errors.push(
-          `${id}: approved evidence and two engineering decisions are required for launch.`,
-        );
-    }
-  }
 
   return errors;
 }

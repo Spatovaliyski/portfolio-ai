@@ -5,21 +5,15 @@ export const supabase = createClient(
   import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY || 'not-configured',
 );
 
-export async function invoke<T>(name: string, body: Record<string, unknown>): Promise<T> {
-  const { data, error } = await supabase.functions.invoke(name, { body });
+export async function editorRequest<T>(path: string, init: RequestInit = {}): Promise<T> {
+  const { data } = await supabase.auth.getSession();
+  const response = await fetch('/api/admin/' + path, {
+    ...init,
+    headers: { Authorization: 'Bearer ' + (data.session?.access_token ?? ''), ...init.headers },
+  });
+  const result = await response.json();
 
-  if (error) {
-    let detail = error.message;
+  if (!response.ok) throw new Error(result.error ?? 'Unable to save. Try again.');
 
-    if (error.context instanceof Response) {
-      try {
-        detail = (await error.context.json()).error ?? detail;
-      } catch {
-        /* retain provider message */
-      }
-    }
-    throw new Error(detail);
-  }
-
-  return data as T;
+  return result as T;
 }

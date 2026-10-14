@@ -2,7 +2,7 @@ import { useAdminWorkspace } from './useAdminWorkspace.ts';
 import { LoginPage } from './pages/login/LoginPage.tsx';
 import { PasswordRecoveryPage } from './pages/recovery/PasswordRecoveryPage.tsx';
 import { AuthenticatorPage } from './pages/authenticator/AuthenticatorPage.tsx';
-import { AdminShell } from './components/AdminShell.tsx';
+import { OwnerEditor } from './OwnerEditor.tsx';
 
 export function AdminApp() {
   const workspace = useAdminWorkspace();
@@ -11,5 +11,5 @@ export function AdminApp() {
   if (workspace.recovery) return <PasswordRecoveryPage workspace={workspace} />;
   if (!workspace.aal) return <AuthenticatorPage workspace={workspace} />;
 
-  return <AdminShell workspace={workspace} />;
+  return <OwnerEditor workspace={workspace} />;
 }

@@ -1,27 +1,15 @@
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { randomUUID } from 'node:crypto';
 import { machine } from './machine.ts';
-import { githubSchema, type GitHubSnapshot, type GitHubRepository } from '../src/domain/schema.ts';
+import { type GitHubSnapshot, type GitHubRepository } from '../src/domain/schema.ts';
 import { ownerCommits, coherentSnapshot, type GitHubCommit } from '../src/domain/github.ts';
-import { seedContent } from '../src/content/seed.ts';
-import { records } from '../src/domain/schema.ts';
 
 type Config = {
   repositories: Array<{ githubId: number; fullName: string }>;
   previous: GitHubSnapshot | null;
   jobId: string;
 };
-const local = process.argv.includes('--local');
 const token = randomUUID();
-const config = local
-  ? {
-      repositories: records(seedContent, 'repository'),
-      previous: await readFile('content/github.json', 'utf8')
-        .then((s) => githubSchema.parse(JSON.parse(s)))
-        .catch(() => null),
-      jobId: 'local',
-    }
-  : await machine<Config>({ action: 'sync-config', token });
+const config = await machine<Config>({ action: 'sync-config', token });
 const now = new Date().toISOString();
 const from = new Date(Date.now() - 90 * 86400000).toISOString();
 const headers: Record<string, string> = {
@@ -230,16 +218,13 @@ async function synchronize() {
     errors,
   );
 
-  await mkdir('content', { recursive: true });
-  await writeFile('content/github.json', JSON.stringify(snapshot, null, 2));
-  if (!local)
-    await machine({
-      action: 'sync-result',
-      token,
-      jobId: config.jobId,
-      snapshot,
-      refresh: process.argv.includes('--refresh'),
-    });
+  await machine({
+    action: 'sync-result',
+    token,
+    jobId: config.jobId,
+    snapshot,
+    refresh: process.argv.includes('--refresh'),
+  });
   console.log(
     `Synchronized ${snapshot.repositories.length} public repositories; ${errors.length} dataset warnings; ${excludedIds.length} excluded.`,
   );
@@ -247,7 +232,7 @@ async function synchronize() {
 try {
   await synchronize();
 } catch (error) {
-  if (!local) {
+  {
     try {
       await machine({
         action: 'sync-failure',

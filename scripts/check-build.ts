@@ -3,7 +3,7 @@ import { gzipSync } from 'node:zlib';
 import { resolve } from 'node:path';
 
 type Chunk = { file: string; imports?: string[]; css?: string[] };
-const manifest = JSON.parse(await readFile('dist/.vite/manifest.json', 'utf8')) as Record<
+const manifest = JSON.parse(await readFile('dist/client/.vite/manifest.json', 'utf8')) as Record<
   string,
   Chunk
 >;

@@ -1,5 +1,5 @@
 import { mkdir, writeFile } from 'node:fs/promises';
-import { seedContent } from '../src/content/seed.ts';
+import { seedContent } from '../tests/fixtures/content.ts';
 import { supabaseCli } from './supabase-cli.ts';
 
 const quote = (value: unknown) => `'${JSON.stringify(value).replaceAll("'", "''")}'::jsonb`;

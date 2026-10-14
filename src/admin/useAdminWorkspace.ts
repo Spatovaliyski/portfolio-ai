@@ -1,390 +1,288 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { ZodError } from 'zod';
 import { useOwnerAuthentication } from './useOwnerAuthentication.ts';
-import { uploadOriginal } from './uploadOriginal.ts';
-import { invoke } from './api.ts';
-import { entitySchema, type Entity, type EntityKind } from '../domain/schema.ts';
-import { seedContent } from '../content/seed.ts';
-import { composeRelease, validatePublication } from '../domain/publication.ts';
-import { type Row, type Dashboard, rowEntity } from './model.ts';
+import { editorRequest } from './api.ts';
+import { entitySchema, type Entity, type PortfolioContent } from '../domain/schema.ts';
+import type { ContentRow } from '../server/store.ts';
 
 export function useAdminWorkspace() {
   const auth = useOwnerAuthentication();
-  const { aal } = auth;
-  const [error, setError] = useState('');
-  const [busy, setBusy] = useState(false);
-  const [dashboard, setDashboard] = useState<Dashboard>({
-    entities: [],
-    releases: [],
-    jobs: [],
-    control: { desiredReleaseId: null, activeReleaseId: null },
-    github: null,
-  });
-  const [section, setSection] = useState<EntityKind | 'dashboard' | 'pet-project'>('dashboard');
+  const [rows, setRows] = useState<ContentRow[]>([]);
+  const [content, setContent] = useState<PortfolioContent | null>(null);
   const [editing, setEditing] = useState<Entity | null>(null);
   const [version, setVersion] = useState(0);
   const [dirty, setDirty] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState('');
   const [saveStatus, setSaveStatus] = useState('');
-  const [autosave, setAutosave] = useState(true);
-  const [selected, setSelected] = useState<string[]>([]);
-  const [history, setHistory] = useState<Array<{ id: string; version: number; entity: Entity }>>(
-    [],
-  );
-  const [picked, setPicked] = useState<Record<string, Entity>>({});
-  const publicationKey = useRef({ signature: '', key: '' });
-  const [preview, setPreview] = useState(false);
-  const [previewWidth, setPreviewWidth] = useState('100%');
-  const saving = useRef(false);
-  const editSerial = useRef(0);
-  const [references, setReferences] = useState<string[]>([]);
-
-  useEffect(() => {
-    const listener = (event: BeforeUnloadEvent) => {
-      if (dirty) event.preventDefault();
-    };
-
-    window.addEventListener('beforeunload', listener);
-
-    return () => window.removeEventListener('beforeunload', listener);
-  }, [dirty]);
-
+  const [section, setSection] = useState<Entity['kind']>('experience');
+  const serial = useRef(0);
+  const pending = useRef(false);
+  const request = useRef({ signature: '', key: '' });
   const refresh = useCallback(async () => {
-    setDashboard(await invoke<Dashboard>('content', { action: 'list' }));
+    const data = await editorRequest<{ entities: ContentRow[]; content: PortfolioContent }>(
+      'content',
+    );
+
+    setRows(data.entities);
+    setContent(data.content);
+
+    return data;
   }, []);
 
   useEffect(() => {
-    if (aal) refresh().catch((e) => setError(e.message));
-  }, [aal, refresh]);
-
+    if (auth.aal) refresh().catch((e) => setError(e.message));
+  }, [auth.aal, refresh]);
   useEffect(() => {
-    setReferences([]);
-    if (editing?.kind !== 'media') return;
-    let disposed = false;
-
-    invoke<{ references: Array<{ source_id: string }> }>('content', {
-      action: 'references',
-      entityId: editing.id,
-    })
-      .then((result) => {
-        if (!disposed) setReferences(result.references.map((r) => r.source_id));
-      })
-      .catch((e) => setError(e.message));
-
-    return () => {
-      disposed = true;
+    const guard = (e: BeforeUnloadEvent) => {
+      if (dirty) e.preventDefault();
     };
-  }, [editing?.id, editing?.kind]);
+
+    window.addEventListener('beforeunload', guard);
+
+    return () => window.removeEventListener('beforeunload', guard);
+  }, [dirty]);
+
+  async function run(action: () => Promise<unknown>) {
+    if (pending.current) return;
+    pending.current = true;
+    setBusy(true);
+    setError('');
+    try {
+      await action();
+    } catch (e) {
+      setError(
+        e instanceof ZodError
+          ? e.issues
+              .map((issue) => {
+                const field = issue.path
+                  .filter((part) => part !== 'data')
+                  .map((part) =>
+                    typeof part === 'number'
+                      ? String(part + 1)
+                      : String(part).replace(/([A-Z])/g, ' $1'),
+                  )
+                  .join(' › ');
+
+                return `${field ? field + ': ' : ''}${issue.message}`;
+              })
+              .join('\n')
+          : (e as Error).message,
+      );
+    } finally {
+      pending.current = false;
+      setBusy(false);
+    }
+  }
 
   function change(next: Entity) {
-    editSerial.current++;
+    serial.current++;
     setEditing(next);
     setDirty(true);
     setError('');
     setSaveStatus('Unsaved changes');
   }
 
-  const save = useCallback(async () => {
-    if (!editing || saving.current) return;
-    const serial = editSerial.current;
-    const parsed = entitySchema.safeParse(editing);
-
-    if (!parsed.success) {
-      setError(
-        parsed.error.issues.map((issue) => `${issue.path.join('.')}: ${issue.message}`).join('\n'),
-      );
+  function open(row: ContentRow) {
+    if (dirty || pending.current) {
+      setError('Save or discard your changes before opening another item.');
 
       return;
     }
-    saving.current = true;
+    setEditing({
+      id: row.id,
+      kind: row.kind,
+      status: row.status,
+      sortOrder: row.sort_order,
+      data: structuredClone(row.data),
+    });
+    setVersion(row.version);
+    setSaveStatus('');
+  }
+
+  function chooseSection(next: Entity['kind']) {
+    if (dirty || pending.current) {
+      setError('Save or discard your changes first.');
+
+      return;
+    }
+    setSection(next);
+    setEditing(null);
+    setError('');
+  }
+
+  async function save(override?: Entity) {
+    const item = override ?? editing;
+
+    if (!item) return;
+    const captured = serial.current;
+    const entity = entitySchema.parse({
+      ...item,
+      status: item.status === 'archived' ? 'archived' : 'published',
+    });
+    const signature = JSON.stringify([entity, version]);
+
+    if (request.current.signature !== signature)
+      request.current = { signature, key: crypto.randomUUID() };
     setSaveStatus('Saving…');
     try {
-      const saved = await invoke<{ version: number; revisionId: string }>('content', {
-        action: 'save',
-        entity: parsed.data,
-        expectedVersion: version,
+      const result = await editorRequest<{ version: number }>('content', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ entity, expectedVersion: version, requestKey: request.current.key }),
       });
 
-      setVersion(saved.version);
-      if (serial === editSerial.current) {
+      setVersion(result.version);
+      if (captured === serial.current) {
         setDirty(false);
-        setSaveStatus('Saved');
-      } else setSaveStatus('New changes pending');
-      await refresh();
+        setEditing(entity);
+        setSaveStatus('Saved and live');
+      } else setSaveStatus('Saved; newer edits are unsaved');
+      // The write is already committed. A refresh failure must not misreport a successful save.
+      try {
+        await refresh();
+      } catch {
+        setError(
+          'Saved and live. The list could not refresh; reload when your connection returns.',
+        );
+      }
     } catch (e) {
-      setSaveStatus('Save failed');
+      setSaveStatus('Save failed — your edits are still here');
       throw e;
-    } finally {
-      saving.current = false;
     }
-  }, [editing, version, refresh]);
+  }
 
-  useEffect(() => {
-    if (!dirty || !autosave || !editing || error) return;
-    const timer = setTimeout(() => {
-      save().catch((error: Error) => setError(error.message));
-    }, 1200);
-
-    return () => clearTimeout(timer);
-  }, [dirty, editing, autosave, error, save]);
-
-  async function run(action: () => Promise<void>) {
-    setBusy(true);
+  function discardChanges() {
+    serial.current++;
+    setDirty(false);
+    setEditing(null);
     setError('');
-    try {
-      await action();
-    } catch (e) {
-      setError((e as Error).message);
-    } finally {
-      setBusy(false);
-    }
+    setSaveStatus('');
   }
 
-  async function bootstrap() {
-    for (const entity of seedContent.entities) {
-      const existing = dashboard.entities.find((row) => row.id === entity.id);
-
-      if (!existing)
-        await invoke('content', {
-          action: 'save',
-          entity: { ...entity, status: 'draft' },
-          expectedVersion: 0,
-        });
-    }
-    await refresh();
-  }
-
-  function open(row: Row) {
-    if (dirty || saving.current) {
-      setError('Save or discard the current changes before opening another record.');
-
-      return;
-    }
-    setEditing(rowEntity(row));
-    setVersion(row.version);
-    setHistory([]);
-    setSaveStatus('Saved');
-  }
-
-  function create(kind: EntityKind) {
-    if (dirty || saving.current) {
-      setError('Save or discard the current changes first.');
-
-      return;
-    }
-    if (['profile', 'settings'].includes(kind) && dashboard.entities.some((e) => e.kind === kind)) {
-      setError('Use the existing singleton record.');
-
-      return;
-    }
-    const sample = seedContent.entities.find((e) => e.kind === kind);
-    const data: Record<string, unknown> = sample
-      ? structuredClone(sample.data)
-      : {
-          slug: 'new-note',
-          title: 'New note',
-          summary: '',
-          publishedAt: new Date().toISOString().slice(0, 10),
-          modifiedAt: new Date().toISOString().slice(0, 10),
-          tags: [],
-          blocks: [],
-          projectIds: [],
-          seo: { title: '', description: '' },
-        };
-
-    if (kind === 'media') {
-      setError('Upload a private original to create a media record.');
-
-      return;
-    }
-    const id = ['profile', 'settings'].includes(kind)
-      ? kind
-      : `${kind}-${crypto.randomUUID().slice(0, 8)}`;
-
-    if ('slug' in data) data.slug = id;
-    if ('title' in data) data.title = 'New ' + kind;
-    if ('blocks' in data) data.blocks = [];
-    if (kind === 'project' && section === 'pet-project') data.kind = 'pet-project';
-    setEditing({ id, kind, status: 'draft', sortOrder: dashboard.entities.length, data });
-    setVersion(0);
-    setDirty(true);
-    setHistory([]);
-  }
-
-  async function publish(action: 'publish' | 'rollback' | 'retry', releaseId?: string) {
-    const signature = JSON.stringify([
-      action,
-      dashboard.control.desiredReleaseId,
-      selected,
-      releaseId,
-    ]);
-
-    if (publicationKey.current.signature !== signature)
-      publicationKey.current = { signature, key: crypto.randomUUID() };
-    const result = await invoke<{ state: string; error?: string }>('publication', {
-      action,
-      baseReleaseId: dashboard.control.desiredReleaseId,
-      requestKey: publicationKey.current.key,
-      revisionIds: action === 'publish' ? selected : [],
-      ...(releaseId ? { releaseId } : {}),
+  function loadRevision(entity: Entity) {
+    if (!editing || editing.id !== entity.id || editing.kind !== entity.kind) return;
+    // Earlier media revisions may predate Storage migration. Restore descriptions,
+    // retaining the immutable file metadata of the current asset.
+    change({
+      ...entity,
+      status: 'published',
+      data:
+        editing.kind === 'media'
+          ? {
+              ...editing.data,
+              alt: entity.data.alt,
+              caption: entity.data.caption,
+              sourceUrl: entity.data.sourceUrl,
+              rights: entity.data.rights,
+            }
+          : entity.data,
     });
-
-    await refresh();
-    if (result.error) throw new Error(result.error);
-    setSelected([]);
   }
 
-  async function upload(file: File) {
-    if (dirty || saving.current)
-      throw new Error('Save or discard the current record before uploading.');
-
-    const entity = await uploadOriginal(file);
-
-    setEditing(entity);
-    setVersion(0);
-    setDirty(true);
-    setSaveStatus('Original uploaded privately; save its description.');
-  }
-
-  async function loadCurrentRevision() {
-    if (!editing) return;
-
-    const latest = await invoke<Dashboard>('content', { action: 'list' });
-    const row = latest.entities.find((row) => row.id === editing.id);
+  async function reload() {
+    const data = await refresh();
+    const row = data.entities.find((r) => r.id === editing?.id);
 
     if (row) {
-      setEditing(rowEntity(row));
-      setVersion(row.version);
       setDirty(false);
+      setEditing({
+        id: row.id,
+        kind: row.kind,
+        status: row.status,
+        sortOrder: row.sort_order,
+        data: row.data,
+      });
+      setVersion(row.version);
       setError('');
-      setSaveStatus('Current revision loaded');
+      setSaveStatus('Latest saved content loaded');
+    }
+  }
+
+  async function upload(file: File, alt = '') {
+    const result = await editorRequest<{ entity: Entity; version: number; revisionId: string }>(
+      'media',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': file.type,
+          'X-File-Name': encodeURIComponent(file.name),
+          'X-Image-Description': encodeURIComponent(alt),
+        },
+        body: file,
+      },
+    );
+
+    setRows((current) => [
+      ...current.filter((row) => row.id !== result.entity.id),
+      {
+        id: result.entity.id,
+        kind: 'media',
+        status: 'published',
+        sort_order: 0,
+        data: result.entity.data,
+        version: result.version,
+        current_revision: result.revisionId,
+      },
+    ]);
+    try {
+      await refresh();
+    } catch {
+      /* The uploaded file is already available in the local picker. */
     }
 
-    setDashboard(latest);
+    return result;
   }
 
-  async function loadRevisionHistory() {
-    if (!editing) return;
+  async function uploadAndOpen(file: File) {
+    if (dirty) throw new Error('Save or discard your current changes before uploading a new file.');
+    const result = await upload(file);
 
-    const result = await invoke<{ revisions: typeof history }>('content', {
-      action: 'history',
-      entityId: editing.id,
-    });
-
-    setHistory(result.revisions);
+    setEditing(result.entity);
+    setVersion(result.version);
+    setDirty(false);
+    setSaveStatus('Uploaded to your media library');
   }
 
-  async function synchronizeGitHub() {
-    await invoke('content', { action: 'sync' });
-    await refresh();
+  function create(entity: Entity) {
+    if (dirty || pending.current) {
+      setError('Save or discard your changes first.');
+
+      return;
+    }
+    setVersion(0);
+    change(entity);
   }
 
   async function recoverAccess() {
     await auth.recoverAccess();
-    setSaveStatus('If this owner account exists, a recovery email has been requested.');
+    setSaveStatus('Recovery email requested.');
   }
-
-  function discardChanges() {
-    editSerial.current++;
-    setEditing(null);
-    setDirty(false);
-    setError('');
-  }
-
-  function chooseSection(next: typeof section) {
-    if (dirty || saving.current) {
-      setError('Save or discard your current changes before changing sections.');
-
-      return;
-    }
-
-    setSection(next);
-    setEditing(null);
-  }
-
-  const kind = section === 'pet-project' ? 'project' : section;
-  const rows = dashboard.entities.filter(
-    (row) =>
-      row.kind === kind &&
-      (section !== 'project' || row.data.kind !== 'pet-project') &&
-      (section !== 'pet-project' || row.data.kind === 'pet-project'),
-  );
-  const draftEntities = dashboard.entities.map(
-    (row) =>
-      ({
-        ...rowEntity(row),
-        status: row.status === 'archived' ? 'archived' : 'published',
-      }) as Entity,
-  );
-  let previewContent: typeof seedContent | null = null;
-  let previewError = '';
-
-  try {
-    previewContent = composeRelease(
-      { ...seedContent, entities: [] },
-      editing
-        ? [...draftEntities.filter((e) => e.id !== editing.id), { ...editing, status: 'published' }]
-        : draftEntities,
-      'private-preview',
-      0,
-      seedContent.generatedAt,
-    );
-    const missing = validatePublication(previewContent);
-
-    if (missing.length) {
-      previewError = missing.join('\n');
-      previewContent = null;
-    }
-  } catch (e) {
-    previewError = (e as Error).message;
-  }
-
-  const previewPath =
-    editing?.kind === 'project'
-      ? `/${editing.data.kind === 'pet-project' ? 'pet-projects' : 'projects'}/${editing.data.slug}/`
-      : editing?.kind === 'note'
-        ? `/notes/${editing.data.slug}/`
-        : editing?.kind === 'page'
-          ? String(editing.data.path)
-          : '/';
 
   return {
     ...auth,
-    saveStatus,
-    busy,
-    setPreview,
-    preview,
-    autosave,
-    setAutosave,
-    run,
-    history,
+    recoverAccess,
+    rows,
+    content,
     editing,
+    version,
+    dirty,
+    busy,
+    error,
+    saveStatus,
+    section,
+    chooseSection,
+    open,
     change,
     create,
-    kind,
-    section,
-    upload,
-    rows,
-    open,
+    run,
     save,
-    references,
-    error,
-    previewWidth,
-    setPreviewWidth,
-    previewContent,
-    previewPath,
-    previewError,
-    dashboard,
-    bootstrap,
-    selected,
-    setPicked,
-    picked,
-    setSelected,
-    publish,
-    loadCurrentRevision,
-    loadRevisionHistory,
-    synchronizeGitHub,
-    recoverAccess,
+    refresh,
+    reload,
+    upload,
+    uploadAndOpen,
     discardChanges,
-    chooseSection,
+    loadRevision,
   };
 }
 

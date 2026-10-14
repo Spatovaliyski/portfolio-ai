@@ -61,6 +61,8 @@ handler(async (request, body) => {
       ),
     };
   if (body.action === 'save') {
+    if (checked(await service().rpc('portfolio_live_content')))
+      throw new Error('The editor has been upgraded. Refresh the dashboard before saving.');
     const entity = entitySchema.parse(body.entity);
 
     if (

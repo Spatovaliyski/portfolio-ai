@@ -22,15 +22,12 @@
     "check:build": "tsx scripts/check-build.ts",
     "import:wordpress": "tsx scripts/import-wordpress.ts",
     "sync:github": "tsx scripts/sync-github.ts",
-    "release:fetch": "tsx scripts/fetch-release.ts",
     "content:validate": "tsx scripts/validate-content.ts",
     "backup": "tsx scripts/backup.ts",
-    "deploy": "tsx scripts/deploy.ts",
-    "reconcile": "tsx scripts/reconcile.ts",
-    "release:report": "tsx scripts/report.ts",
     "setup:owner": "tsx scripts/setup-owner.ts",
-    "seed:drafts": "tsx scripts/seed-drafts.ts",
-    "backup:verify": "tsx scripts/restore.ts --verify"
+    "backup:verify": "tsx scripts/restore.ts --verify",
+    "start": "node dist/server/index.js",
+    "migrate:live": "tsx scripts/migrate-live.ts"
   },
   "dependencies": {
     "@fontsource-variable/manrope": "5.3.0",
@@ -39,7 +36,8 @@
     "react": "19.3.0",
     "react-dom": "19.3.0",
     "react-markdown": "10.1.0",
-    "zod": "4.6.6"
+    "zod": "4.6.6",
+    "sharp": "0.35.5"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.13.0",
@@ -57,7 +55,6 @@
     "globals": "17.13.0",
     "prettier": "3.9.10",
     "sanitize-html": "2.18.0",
-    "sharp": "0.35.5",
     "tsx": "4.23.15",
     "turndown": "7.2.4",
     "typescript": "6.0.3",

@@ -1,7 +1,7 @@
-import { handler, machine, service, checked, dispatch } from '../_shared/http.ts';
+import { handler, machine, service, checked } from '../_shared/http.ts';
 import { z } from 'zod';
 import { contentSchema, githubSchema, records } from '../../../src/domain/schema.ts';
-import { excludedReferences, purgeRepositories } from '../../../src/domain/privacy.ts';
+import { purgeRepositories } from '../../../src/domain/privacy.ts';
 import { validatePublication } from '../../../src/domain/publication.ts';
 
 handler(async (request, body) => {
@@ -102,7 +102,7 @@ handler(async (request, body) => {
   }
   if (body.action === 'sync-failure')
     return checked(
-      await client.rpc('portfolio_finish_sync', {
+      await client.rpc('portfolio_finish_live_sync', {
         p_token: z.uuid().parse(body.token),
         p_job: z.uuid().parse(body.jobId),
         p_snapshot: null,
@@ -150,10 +150,7 @@ handler(async (request, body) => {
           .single(),
       );
       const base = contentSchema.parse(desired.snapshot);
-      const privacyRemoval = excludedReferences(base, snapshot.excludedIds);
-      const refresh =
-        privacyRemoval ||
-        (Boolean(body.refresh) && current.activeReleaseId === current.desiredReleaseId);
+      const refresh = true;
       // Purge before replacing GitHub data so removed repository names remain available for link redaction.
       const purged = purgeRepositories(base, snapshot.excludedIds);
       const next = contentSchema.parse({
@@ -173,7 +170,7 @@ handler(async (request, body) => {
       );
 
       if (refresh) {
-        const errors = validatePublication(next, true);
+        const errors = validatePublication(next);
 
         if (errors.length) throw new Error(errors.join('\n'));
       }
@@ -188,20 +185,6 @@ handler(async (request, body) => {
 
       if (result.error?.code === '40001' && attempt < 2) continue;
       const committed = checked(result);
-
-      if (committed.refreshed) {
-        try {
-          await dispatch(committed.releaseId);
-        } catch (error) {
-          await client.rpc('portfolio_report_deployment', {
-            p_id: committed.releaseId,
-            p_build: 'dispatch',
-            p_state: 'failed',
-            p_error: (error as Error).message,
-          });
-          throw error;
-        }
-      }
 
       return committed;
     }

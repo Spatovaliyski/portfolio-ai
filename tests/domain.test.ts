@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { seedContent } from '../src/content/seed.ts';
+import { seedContent } from './fixtures/content.ts';
 import { composeRelease, escapedJson, validatePublication } from '../src/domain/publication.ts';
 import { entitySchema } from '../src/domain/schema.ts';
 import { purgeRepositories, excludedReferences } from '../src/domain/privacy.ts';

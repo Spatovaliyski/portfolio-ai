@@ -3,7 +3,7 @@ import {
   type Entity,
   type EntityKind,
   type PortfolioContent,
-} from '../domain/schema.ts';
+} from '../../src/domain/schema.ts';
 import legacyNotes from './legacy-notes.json' with { type: 'json' };
 
 const entity = (

@@ -1,7 +1,7 @@
 import { PGlite } from '@electric-sql/pglite';
 import { portfolioDatabase } from './database-fixture.ts';
 import { beforeAll, afterAll, describe, expect, it } from 'vitest';
-import { seedContent } from '../src/content/seed.ts';
+import { seedContent } from './fixtures/content.ts';
 import { purgeRepositories } from '../src/domain/privacy.ts';
 
 let db: PGlite;

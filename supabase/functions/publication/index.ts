@@ -22,6 +22,11 @@ const requestSchema = z
 
 handler(async (request, input) => {
   const { user } = await owner(request);
+
+  if (checked(await service().rpc('portfolio_live_content')))
+    throw new Error(
+      'Content now updates immediately through the owner API. Refresh the dashboard.',
+    );
   const body = requestSchema.parse(input);
   const client = service();
   const control = checked(await client.rpc('portfolio_release_status')) as {

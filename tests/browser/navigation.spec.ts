@@ -1,10 +1,10 @@
 import { expect, test, type Page } from '@playwright/test';
-import { readFileSync } from 'node:fs';
+import { seedContent } from '../fixtures/content.ts';
 import { contentSchema, records } from '../../src/domain/schema.ts';
 import { pageMetadata } from '../../src/public/metadata.ts';
 import { routePaths } from '../../src/domain/publication.ts';
 
-const content = contentSchema.parse(JSON.parse(readFileSync('dist/content-snapshot.json', 'utf8')));
+const content = contentSchema.parse(seedContent);
 
 async function waitForNavigation(page: Page, path: string) {
   await expect(page.locator('html')).toHaveAttribute('data-path', path);

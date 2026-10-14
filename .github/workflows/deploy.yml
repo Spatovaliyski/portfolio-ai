@@ -18,39 +18,40 @@ jobs:
           node-version: 24.16.0
           cache: npm
       - run: npm ci
-      - name: Deploy Edge Functions
-        env:
-          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
-        run: |
-          if [ -z "$SUPABASE_ACCESS_TOKEN" ]; then
-            echo "SUPABASE_ACCESS_TOKEN is not set. Skipping Edge Function deploy."
-            exit 0
-          fi
-          npx --yes supabase@2.120.0 functions deploy content publication automation --project-ref lmxukzcvxhpbwtgsbrai
-      - run: npm run build
+      - run: npm run typecheck && npm run build && npm run check:build
         env:
           VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
           VITE_SUPABASE_PUBLISHABLE_KEY: ${{ vars.VITE_SUPABASE_PUBLISHABLE_KEY }}
-      - name: Upload the built site
+      - name: Update GitHub synchronization function
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+        run: |
+          if [ -n "$SUPABASE_ACCESS_TOKEN" ]; then
+            npx --yes supabase@2.120.0 functions deploy content publication automation public-content --project-ref lmxukzcvxhpbwtgsbrai
+          fi
+      - name: Deploy the application runtime
         env:
           SSH_KEY: ${{ secrets.PORTFOLIO_SSH_KEY }}
           SSH_KNOWN_HOSTS: ${{ secrets.PORTFOLIO_SSH_KNOWN_HOSTS }}
           SSH_TARGET: ${{ vars.PORTFOLIO_SSH_TARGET }}
-          DEPLOY_ROOT: ${{ vars.PORTFOLIO_DEPLOY_ROOT }}
+          PORTFOLIO_NGINX_SITE: ${{ vars.PORTFOLIO_NGINX_SITE }}
+          VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_PUBLISHABLE_KEY: ${{ vars.VITE_SUPABASE_PUBLISHABLE_KEY }}
         run: |
+          set -euo pipefail
           if [ -z "$SSH_TARGET" ] || [ -z "$SSH_KEY" ] || [ -z "$SSH_KNOWN_HOSTS" ]; then
-            echo "Set PORTFOLIO_SSH_TARGET, PORTFOLIO_SSH_KEY, and PORTFOLIO_SSH_KNOWN_HOSTS." >&2
+            echo "Configure the production SSH target, key, and known hosts." >&2
             exit 1
           fi
-          root="${DEPLOY_ROOT:-/var/www/spatovaliyski.com}"
-          if ! printf '%s' "$root" | grep -Eq '^/[a-zA-Z0-9._/-]+$'; then
-            echo "Invalid PORTFOLIO_DEPLOY_ROOT." >&2
+          if [ -n "$PORTFOLIO_NGINX_SITE" ] && [[ ! "$PORTFOLIO_NGINX_SITE" =~ ^/etc/nginx/[a-zA-Z0-9_./-]+$ || "$PORTFOLIO_NGINX_SITE" == *..* ]]; then
+            echo "PORTFOLIO_NGINX_SITE must be a file path within /etc/nginx/." >&2
             exit 1
           fi
           install -d -m 700 ~/.ssh
           printf '%s\n' "$SSH_KEY" > ~/.ssh/id_ed25519
           printf '%s\n' "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
           chmod 600 ~/.ssh/id_ed25519 ~/.ssh/known_hosts
-          ssh -o BatchMode=yes -o StrictHostKeyChecking=yes "$SSH_TARGET" "mkdir -p ${root}/current"
-          rsync -avzr --delete -e "ssh -o BatchMode=yes -o StrictHostKeyChecking=yes" dist/client/ "${SSH_TARGET}:${root}/current/"
-          ssh -o BatchMode=yes -o StrictHostKeyChecking=yes "$SSH_TARGET" "nginx -t && systemctl reload nginx"
+          ssh -o BatchMode=yes -o StrictHostKeyChecking=yes "$SSH_TARGET" "install -d -m 700 /etc/portfolio; mkdir -p /var/www/spatovaliyski.com/runtime/releases/$GITHUB_SHA"
+          node --experimental-strip-types scripts/runtime-environment.ts | ssh -o BatchMode=yes -o StrictHostKeyChecking=yes "$SSH_TARGET" "umask 077; cat > /etc/portfolio/runtime.env"
+          rsync -az -e "ssh -o BatchMode=yes -o StrictHostKeyChecking=yes" dist deploy package.json package-lock.json "$SSH_TARGET:/var/www/spatovaliyski.com/runtime/releases/$GITHUB_SHA/"
+          ssh -o BatchMode=yes -o StrictHostKeyChecking=yes "$SSH_TARGET" "PORTFOLIO_NGINX_SITE='$PORTFOLIO_NGINX_SITE' bash /var/www/spatovaliyski.com/runtime/releases/$GITHUB_SHA/deploy/runtime.sh $GITHUB_SHA"

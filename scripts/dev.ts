@@ -2,6 +2,14 @@ import { createServer } from 'node:http';
 import { createServer as createViteServer } from 'vite';
 import { readFile } from 'node:fs/promises';
 import { parseArgs } from 'node:util';
+import { ContentStore } from '../src/server/store.ts';
+import { createHandler } from '../src/server/http.ts';
+
+try {
+  process.loadEnvFile('.env.local');
+} catch {
+  /* host env */
+}
 
 const { values } = parseArgs({ options: { port: { type: 'string', default: '5173' } } });
 const port = Number(values.port);
@@ -20,6 +28,10 @@ function withStylesheets(template: string, admin = false): string {
     `${stylesheets.map((path) => `<link rel="stylesheet" href="${path}?direct">`).join('')} </head>`,
   );
 }
+const isolated =
+  process.env.PORTFOLIO_TEST_RUNTIME === '1'
+    ? await (await import('../tests/runtime-store.ts')).testStore()
+    : null;
 const server = createServer();
 const vite = await createViteServer({
   server: { middlewareMode: true, hmr: { server } },
@@ -43,24 +55,17 @@ server.on('request', (req, res) =>
 
         return;
       }
-      const { seedContent } = await vite.ssrLoadModule('/src/content/seed.ts');
-      const { routePaths } = await vite.ssrLoadModule('/src/domain/publication.ts');
-      const normalized = path === '/' ? path : `${path.replace(/\/$/, '')}/`;
-      const found = routePaths(seedContent).includes(normalized);
+      const store =
+        isolated ??
+        new ContentStore(
+          process.env.SUPABASE_URL ?? process.env.VITE_SUPABASE_URL!,
+          process.env.SUPABASE_PUBLISHABLE_KEY ?? process.env.VITE_SUPABASE_PUBLISHABLE_KEY!,
+        );
       const { renderPage } = await vite.ssrLoadModule('/src/entry-server.tsx');
 
-      res.statusCode = found ? 200 : 404;
-      res.setHeader('Content-Type', 'text/html; charset=utf-8');
-      res.end(
-        renderPage(
-          seedContent,
-          found ? normalized : '/404/',
-          await vite.transformIndexHtml(
-            normalized,
-            withStylesheets(await readFile('index.html', 'utf8')),
-          ),
-        ),
-      );
+      await createHandler(store, renderPage, undefined, async () =>
+        vite.transformIndexHtml(path, withStylesheets(await readFile('index.html', 'utf8'))),
+      )(req, res);
     } catch (error) {
       vite.ssrFixStacktrace(error as Error);
       res.statusCode = 500;

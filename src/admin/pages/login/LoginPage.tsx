@@ -11,7 +11,7 @@ export function LoginPage({ workspace }: { workspace: AdminWorkspace }) {
       </a>
       <span className="eyebrow">Private workspace</span>
       <h1>Portfolio editor</h1>
-      <p>Sign in to edit, preview, and publish.</p>
+      <p>Sign in to make quick changes to your website.</p>
       <LoginForm workspace={workspace} />
       <button className="quiet" onClick={() => run(recoverAccess)}>
         Recover access
