@@ -30,9 +30,9 @@ The built runtime listens on `127.0.0.1:4173`. The build packages browser/server
 
 ## Deployment
 
-Push application changes to `main`. The existing production GitHub workflow uploads the code, installs the Node runtime and production dependencies, starts its systemd service, and connects Nginx to it.
+Push application changes to `main`. The production GitHub workflow builds the site, uploads the runtime to the VPS, installs production dependencies, and restarts the systemd service.
 
-It uses the existing production variables `VITE_SUPABASE_URL`, `VITE_SUPABASE_PUBLISHABLE_KEY`, and `PORTFOLIO_SSH_TARGET`, plus `PORTFOLIO_SSH_KEY` and `PORTFOLIO_SSH_KNOWN_HOSTS` secrets. `SUPABASE_ACCESS_TOKEN` optionally updates Edge Functions; the initial functions and database migrations have already been applied. If canonical Nginx configuration discovery is ambiguous, set `PORTFOLIO_NGINX_SITE` to its existing file path. Deployment requires root access for systemd and Nginx setup.
+It uses `VITE_SUPABASE_URL`, `VITE_SUPABASE_PUBLISHABLE_KEY`, and `PORTFOLIO_SSH_TARGET`, plus `PORTFOLIO_SSH_KEY` and `PORTFOLIO_SSH_KNOWN_HOSTS`. `SUPABASE_ACCESS_TOKEN` optionally updates Edge Functions. The service listens on `127.0.0.1:4173`. The VPS web server already proxies to it; deploys do not change that configuration.
 
 Only published content is returned by the Supabase read endpoint. Owner APIs require the protected owner account and MFA. Originals are private; responsive WebP files and the downloadable CV live in the public derivative bucket. Public URLs retain the `/media/` prefix.
 
@@ -43,4 +43,4 @@ npm run verify
 npm run test:browser
 ```
 
-Tests use isolated PostgreSQL and an explicit local fixture server. `tests/fixtures` and historical `public/media` files support tests and the completed one-time migration; they are not production content sources. The 58 existing records and 15 media originals have been migrated to Supabase with saved edits preserved.
+Tests use isolated PostgreSQL and an explicit local fixture server. `tests/fixtures` and historical `public/media` files support tests; they are not production content sources.

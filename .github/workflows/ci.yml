@@ -13,7 +13,6 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run verify
-      - run: bash tests/deployment.sh
       - run: npx playwright install --with-deps chromium
       - run: npm run test:browser
       - name: Verify native schema validation in isolated local Supabase

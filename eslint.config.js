@@ -9,7 +9,6 @@ export default tseslint.config(
       'node_modules/**',
       'dist/**',
       '.cache/**',
-      'migration-export/**',
       'backups/**',
       'test-results/**',
       'playwright-report/**',

@@ -37,9 +37,4 @@ for attempt in {1..20}; do
   if [ "$attempt" = 20 ]; then echo 'Runtime could not load Supabase content' >&2; exit 1; fi
   sleep 1
 done
-install -d /etc/nginx/snippets
-install -m 644 "$candidate/deploy/portfolio-security.conf" /etc/nginx/snippets/portfolio-security.conf
-python3 "$candidate/deploy/configure_nginx.py"
-nginx -t
-systemctl reload nginx
 echo "Deployed application $release; content updates are now served directly from Supabase."

@@ -1,0 +1,20 @@
+{
+  "source": "https://wp.spatovaliyski.com",
+  "counts": {
+    "projects": 7,
+    "experience": 4,
+    "notes": 3,
+    "originals": 40,
+    "mediaRecords": 40,
+    "entities": 57
+  },
+  "issues": [
+    "220: contextual alt text required for media 223.",
+    "220: contextual alt text required for media 224.",
+    "220: contextual alt text required for media 225.",
+    "220: contextual alt text required for media 228.",
+    "220: contextual alt text required for media 226.",
+    "220: contextual alt text required for media 231.",
+    "189: contextual alt text required for media 195."
+  ]
+}

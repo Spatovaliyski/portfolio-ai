@@ -3,14 +3,12 @@ dist/
 .cache/
 .git/
 .env*
-migration-export/
 backups/
 test-results/
 playwright-report/
 supabase/.temp/
 supabase/.branches/
 package-lock.json
-content/imported-drafts.json
 portfolio-implementation-plan.md
 public/media/
 src/content/legacy-notes.json

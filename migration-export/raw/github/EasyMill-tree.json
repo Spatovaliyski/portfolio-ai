@@ -1,0 +1,230 @@
+{
+  "sha": "f5dd773e39e3bfaf2a6d4f8f8ac32aaa2a3c356b",
+  "url": "https://api.github.com/repos/Spatovaliyski/EasyMill/git/trees/f5dd773e39e3bfaf2a6d4f8f8ac32aaa2a3c356b",
+  "tree": [
+    {
+      "path": "EasyMill.lua",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ff0602b4de3a2b28b5fa309e6a63139453d1f60c",
+      "size": 7625,
+      "url": "https://api.github.com/repos/Spatovaliyski/EasyMill/git/blobs/ff0602b4de3a2b28b5fa309e6a63139453d1f60c"
+    },
+    {
+      "path": "EasyMill.toc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "422716ed18cd1a32879cf482728a7737d3398a25",
+      "size": 586,
+      "url": "https://api.github.com/repos/Spatovaliyski/EasyMill/git/blobs/422716ed18cd1a32879cf482728a7737d3398a25"
+    },
+    {
+      "path": "data",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "740588a906b4e8805ff9603ee519f29740bcd7fe",
+      "url": "https://api.github.com/repos/Spatovaliyski/EasyMill/git/trees/740588a906b4e8805ff9603ee519f29740bcd7fe"
+    },
+    {
+      "path": "data/Table.lua",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f9842995ec17bf9e6765cd4fa748d6777fd45f09",
+      "size": 10612,
+      "url": "https://api.github.com/repos/Spatovaliyski/EasyMill/git/blobs/f9842995ec17bf9e6765cd4fa748d6777fd45f09"
+    },
+    {
+      "path": "libs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "abe7ace9a95d77fa0091065569f510f19895cc43",
+      "url": "https://api.github.com/repos/Spatovaliyski/EasyMill/git/trees/abe7ace9a95d77fa0091065569f510f19895cc43"
+    },
+    {
+      "path": "libs/LibDBIcon-1.0",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "62426f3e3da57824809ceffe1c7bd66c2e1b4483",
+      "url": "https://api.github.com/repos/Spatovaliyski/EasyMill/git/trees/62426f3e3da57824809ceffe1c7bd66c2e1b4483"
+    },
+    {
+      "path": "libs/LibDBIcon-1.0/CHANGES.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "98e690d902e4bc88d56daec2c207e5e1636e29e3",
+      "size": 276,
+      "url": "https://api.github.com/repos/Spatovaliyski/EasyMill/git/blobs/98e690d902e4bc88d56daec2c207e5e1636e29e3"
+    },
+    {
+      "path": "libs/LibDBIcon-1.0/CallbackHandler-1.0",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6b9985bd68c93cbe0f14744fac34db84eb310d19",
+      "url": "https://api.github.com/repos/Spatovaliyski/EasyMill/git/trees/6b9985bd68c93cbe0f14744fac34db84eb310d19"
+    },
+    {
+      "path": "libs/LibDBIcon-1.0/CallbackHandler-1.0/CallbackHandler-1.0.lua",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "21569f43329ccd260dcde10736b88142924c3ce7",
+      "size": 7759,
+      "url": "https://api.github.com/repos/Spatovaliyski/EasyMill/git/blobs/21569f43329ccd260dcde10736b88142924c3ce7"
+    },
+    {
+      "path": "libs/LibDBIcon-1.0/LibDBIcon-1.0.toc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1bb0424aefabd5124cab4a16eaf41ada42b63fd3",
+      "size": 416,
+      "url": "https://api.github.com/repos/Spatovaliyski/EasyMill/git/blobs/1bb0424aefabd5124cab4a16eaf41ada42b63fd3"
+    },
+    {
+      "path": "libs/LibDBIcon-1.0/LibDBIcon-1.0",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "340746bb287b4ccc58c7fbe0be2ffae008b04403",
+      "url": "https://api.github.com/repos/Spatovaliyski/EasyMill/git/trees/340746bb287b4ccc58c7fbe0be2ffae008b04403"
+    },
+    {
+      "path": "libs/LibDBIcon-1.0/LibDBIcon-1.0/LibDBIcon-1.0.lua",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "46d6448df8d76404b1704becd3d8de45e1ce8af5",
+      "size": 16902,
+      "url": "https://api.github.com/repos/Spatovaliyski/EasyMill/git/blobs/46d6448df8d76404b1704becd3d8de45e1ce8af5"
+    },
+    {
+      "path": "libs/LibDBIcon-1.0/LibDBIcon-1.0/lib.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5dca17cc3d120ea7d251fc7d9c0d2303a7e95285",
+      "size": 215,
+      "url": "https://api.github.com/repos/Spatovaliyski/EasyMill/git/blobs/5dca17cc3d120ea7d251fc7d9c0d2303a7e95285"
+    },
+    {
+      "path": "libs/LibDBIcon-1.0/LibDataBroker-1.1",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6c0a698add6f6a200a729a9663b2df0815f61990",
+      "url": "https://api.github.com/repos/Spatovaliyski/EasyMill/git/trees/6c0a698add6f6a200a729a9663b2df0815f61990"
+    },
+    {
+      "path": "libs/LibDBIcon-1.0/LibDataBroker-1.1/LibDataBroker-1.1.lua",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f47c0cd73ee4811d4b3664b482e39e7c58f1c0ef",
+      "size": 3139,
+      "url": "https://api.github.com/repos/Spatovaliyski/EasyMill/git/blobs/f47c0cd73ee4811d4b3664b482e39e7c58f1c0ef"
+    },
+    {
+      "path": "libs/LibDBIcon-1.0/LibStub",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0711bdcd569f350ecf0ff52cacbab2376c4f02f2",
+      "url": "https://api.github.com/repos/Spatovaliyski/EasyMill/git/trees/0711bdcd569f350ecf0ff52cacbab2376c4f02f2"
+    },
+    {
+      "path": "libs/LibDBIcon-1.0/LibStub/LibStub.lua",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ae1900e6c25379f9a73c456e8d7c161c8a76ee69",
+      "size": 2196,
+      "url": "https://api.github.com/repos/Spatovaliyski/EasyMill/git/blobs/ae1900e6c25379f9a73c456e8d7c161c8a76ee69"
+    },
+    {
+      "path": "libs/LibDBIcon-1.0/embeds.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "06e68ac4afd84cb34864f749351542a22fea370f",
+      "size": 335,
+      "url": "https://api.github.com/repos/Spatovaliyski/EasyMill/git/blobs/06e68ac4afd84cb34864f749351542a22fea370f"
+    },
+    {
+      "path": "ui",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a6e62369391fe727744c122dcc11e257119fc37b",
+      "url": "https://api.github.com/repos/Spatovaliyski/EasyMill/git/trees/a6e62369391fe727744c122dcc11e257119fc37b"
+    },
+    {
+      "path": "ui/MainFrame.lua",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ce025ae0b39264566f48a2d56f8178d102d9955d",
+      "size": 4980,
+      "url": "https://api.github.com/repos/Spatovaliyski/EasyMill/git/blobs/ce025ae0b39264566f48a2d56f8178d102d9955d"
+    },
+    {
+      "path": "ui/NoticeText.lua",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c5e6caebd94751982c3857dbc784116dd9198281",
+      "size": 2179,
+      "url": "https://api.github.com/repos/Spatovaliyski/EasyMill/git/blobs/c5e6caebd94751982c3857dbc784116dd9198281"
+    },
+    {
+      "path": "ui/SettingsFrame.lua",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d7e8866fa402719445cbded8dc887b104c8aa277",
+      "size": 8115,
+      "url": "https://api.github.com/repos/Spatovaliyski/EasyMill/git/blobs/d7e8866fa402719445cbded8dc887b104c8aa277"
+    },
+    {
+      "path": "ui/TestData.lua",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fcc254cc8298f3729c5860e073074ea6f99854c5",
+      "size": 1474,
+      "url": "https://api.github.com/repos/Spatovaliyski/EasyMill/git/blobs/fcc254cc8298f3729c5860e073074ea6f99854c5"
+    },
+    {
+      "path": "ui/UI.lua",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8af35365a9df6f4b4935966f7e79e5123624d89c",
+      "size": 941,
+      "url": "https://api.github.com/repos/Spatovaliyski/EasyMill/git/blobs/8af35365a9df6f4b4935966f7e79e5123624d89c"
+    },
+    {
+      "path": "utils",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7fcb310542dcceab60a87e6f925fef0f3da8e130",
+      "url": "https://api.github.com/repos/Spatovaliyski/EasyMill/git/trees/7fcb310542dcceab60a87e6f925fef0f3da8e130"
+    },
+    {
+      "path": "utils/AutoLoot.lua",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "da7e756a7bcc7586ce2c374b2aa5fa56a3628f64",
+      "size": 1729,
+      "url": "https://api.github.com/repos/Spatovaliyski/EasyMill/git/blobs/da7e756a7bcc7586ce2c374b2aa5fa56a3628f64"
+    },
+    {
+      "path": "utils/CastBar.lua",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fecd3aad769cc563a537039c03ddc202d770af1a",
+      "size": 4614,
+      "url": "https://api.github.com/repos/Spatovaliyski/EasyMill/git/blobs/fecd3aad769cc563a537039c03ddc202d770af1a"
+    },
+    {
+      "path": "utils/ItemDisplay.lua",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "710198dd6e2d6e92baead11def25f950d3b6cd3f",
+      "size": 14289,
+      "url": "https://api.github.com/repos/Spatovaliyski/EasyMill/git/blobs/710198dd6e2d6e92baead11def25f950d3b6cd3f"
+    },
+    {
+      "path": "utils/MacroManager.lua",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "46e56fc9ac4d90547dd5bf977133cb3aaef505ad",
+      "size": 6675,
+      "url": "https://api.github.com/repos/Spatovaliyski/EasyMill/git/blobs/46e56fc9ac4d90547dd5bf977133cb3aaef505ad"
+    }
+  ],
+  "truncated": false
+}

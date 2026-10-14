@@ -1,0 +1,660 @@
+[
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/resume/",
+    "path": "migration-export/originals/resume-legacy.pdf",
+    "purpose": "Migration recovery only; outdated CV",
+    "rights": "Owner-authored CV; verify and replace before publication",
+    "alt": "Martin Spatovaliyski legacy CV",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "64fb2b485c94ce2c549b3f19f5dfa0532c581159d250ff7f74cfd6bdcb0acf36",
+    "bytes": 86590
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2023/12/chrome_DAKF5X2kTy.png",
+    "path": "migration-export/originals/wp-247.png",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "8f2fd5d5fefc44a13f34a309e7ab14d36b3beff8e01438ec6e7b9555dc8aecfd",
+    "bytes": 320564
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2023/12/chrome_dqYEAomfwc.png",
+    "path": "migration-export/originals/wp-245.png",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "3bfa70ff315b3c468f8d7505a30b8e6e07121a10f029f31222b59e42047e0109",
+    "bytes": 177147
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2023/12/chrome_W4eJodHpk1-e1734602454890.png",
+    "path": "migration-export/originals/wp-243.png",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "f0fcb5cceb218013f423fafef92cfcb09d51b031bec5f615a80e921d45b7aecf",
+    "bytes": 251099
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2024/04/Unity_dk5WNTqJV1.jpg",
+    "path": "migration-export/originals/wp-231.jpg",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "f0d24a1d011b83208406c98df8a75dc9b0bb4a67c27b5f50acac1ec43b01ae60",
+    "bytes": 346585
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2024/04/image-8.png",
+    "path": "migration-export/originals/wp-230.png",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "6cbe72e3ba997367f938232251d16d567a240a92da13b4c34b95a2ac5d074526",
+    "bytes": 626550
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2024/04/image-7.png",
+    "path": "migration-export/originals/wp-229.png",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "6cbe72e3ba997367f938232251d16d567a240a92da13b4c34b95a2ac5d074526",
+    "bytes": 626550
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2024/04/chrome_vB6fK73AnS.png",
+    "path": "migration-export/originals/wp-228.png",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "bec3559a598f19284ad8902f3826c8da18c0a74efcc3a9709cc9817a68aba12b",
+    "bytes": 1781426
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2024/04/image-6.png",
+    "path": "migration-export/originals/wp-227.png",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "3ba4421eecdd2b9259d7987964f60a4c74bee0893a89680ac1a50cf2560b030f",
+    "bytes": 621133
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2024/04/image-5.png",
+    "path": "migration-export/originals/wp-226.png",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "1189478e06ec33f5d0d3d731da0a6b5c89a1ae027baf2aa1a0a9cb7f81c51418",
+    "bytes": 265542
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2024/04/image-4.png",
+    "path": "migration-export/originals/wp-225.png",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "f242273b8a94418b76ae1ef25960b5bd4ef9b28017d9061354d5b99e1f63505a",
+    "bytes": 1237404
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2024/04/image-3.png",
+    "path": "migration-export/originals/wp-224.png",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "66332023d21b3e8759204b1519ec37fa2fe7a357c6596d6bd352cdd5ca9e3091",
+    "bytes": 377190
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2024/04/image-2.png",
+    "path": "migration-export/originals/wp-223.png",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "1249738768ed816ff9a0f14469a4fa4361a755661485bc1f53c610236cf1f075",
+    "bytes": 23932
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2024/04/image-1.png",
+    "path": "migration-export/originals/wp-222.png",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "213542cbe7cdc5c3541beda8e6729768eaf9a6b42541e7e95b87951f7a18fb7e",
+    "bytes": 424206
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2024/04/image.png",
+    "path": "migration-export/originals/wp-221.png",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "1249738768ed816ff9a0f14469a4fa4361a755661485bc1f53c610236cf1f075",
+    "bytes": 23932
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2024/04/6237c.png.480x384.fit_.jpg",
+    "path": "migration-export/originals/wp-219.jpg",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "250a39cfda61caf3f0f5b231ed0b3aaf40fef97c2f54ff8832da4a3d8a78efab",
+    "bytes": 81938
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2024/01/Martin-Spatovaliyski-Resume.pdf",
+    "path": "migration-export/originals/wp-203.pdf",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "64fb2b485c94ce2c549b3f19f5dfa0532c581159d250ff7f74cfd6bdcb0acf36",
+    "bytes": 86590
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2024/01/before_after_rework.jpg",
+    "path": "migration-export/originals/wp-195.jpg",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "95c3d4a5063b9d65df27215edbdf4a1d5ee80077188ec8be841f19f975c07b2e",
+    "bytes": 221119
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2024/01/image-1.png",
+    "path": "migration-export/originals/wp-191.png",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "567b9521a138a96cf0dcfe410929711ff47e7fc80628ae64a5ded9cf39e99713",
+    "bytes": 195439
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2024/01/image-e1705795290814.png",
+    "path": "migration-export/originals/wp-190.png",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "4008932207203b52c46806b2a293e56356d44822ddf98fa5f1c3a9948988189d",
+    "bytes": 241441
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2023/12/chrome_T3hOZ8zGm1-e1702640198808.png",
+    "path": "migration-export/originals/wp-186.png",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "00e2238b600613d4110081a5bd7cb98669fb0ee3cdb70fac67bf6d731d27d42c",
+    "bytes": 775781
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2023/10/handshake-sx-03.jpg",
+    "path": "migration-export/originals/wp-164.jpg",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "73e6fa30aed1afab5c7a52ab8b064e46a5d87b5aaacd1a326aa102c4560dd9fe",
+    "bytes": 7369
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2023/10/handshake-sx-02.jpg",
+    "path": "migration-export/originals/wp-163.jpg",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "bcb6e6e3291f76218632081c8ff9783644eb63dfb94d404fed4510c71f119e8c",
+    "bytes": 7506
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2023/10/handshake-sx-01.jpg",
+    "path": "migration-export/originals/wp-162.jpg",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "37e8ae1fd1d2ed7e2e719bee3e28abbda74b3b3537ef10ab7716ae83edfdce86",
+    "bytes": 7637
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2023/10/handshake-sm.jpg",
+    "path": "migration-export/originals/wp-159.jpg",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "47d9bdb02822d87dd15190d0a63aa1e9ebccf80bb35a9f9af9967a6ea7895fd5",
+    "bytes": 7619
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2023/10/chrome_3vllRsxMxV.webp",
+    "path": "migration-export/originals/wp-149.webp",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "a0fd39b73b7d1049a6d77223c6aee257eebf578e1c779d455bc876e1dce4d6f5",
+    "bytes": 26386
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2023/10/chrome_NI4DZVqn4B.webp",
+    "path": "migration-export/originals/wp-144.webp",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "4c73a89b2c1d8df3c51e6a118073e80685a303cd6dc43d9b334280cbf240b7f3",
+    "bytes": 31500
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2023/10/chrome_oKHPxdr4zL.webp",
+    "path": "migration-export/originals/wp-142.webp",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "b222e100fa9b7ccb8960ce4e080833d9c2f62c6beb0f7633c2716be9c0c06aea",
+    "bytes": 32516
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2023/10/CaqWzGe.webp",
+    "path": "migration-export/originals/wp-140.webp",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "15be4d9535603ab8bb3e00a9f9eafc8e5b09c74c89ec64dae9943320d7bb0420",
+    "bytes": 41614
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2023/10/chrome_hC77g9HnVT.webp",
+    "path": "migration-export/originals/wp-138.webp",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "f60f5e3c2e566b489bf8947ea1e3077e89720c4c5fccf3f05006c0ee9b65e0d7",
+    "bytes": 101230
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2023/10/chrome_qEbCacuGel.webp",
+    "path": "migration-export/originals/wp-136.webp",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "1a1b81a0a4cb58a01d040cf9ef001e3e84343f8f5dce1b3568e314f02dc31938",
+    "bytes": 49454
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2023/10/chrome_3vllRsxMxV.png",
+    "path": "migration-export/originals/wp-124.png",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "00a636091d539792e597ac19f23a1ebc2f152d572d34f3c74acd7517fd9a7517",
+    "bytes": 43491
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2023/10/chrome_NI4DZVqn4B.png",
+    "path": "migration-export/originals/wp-123.png",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "ae4517972b765dbd1bbd0803010b2b762e08a810e0e78606b0aa6d74be644efd",
+    "bytes": 148220
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2022/10/CaqWzGe.png",
+    "path": "migration-export/originals/wp-55.png",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "e178c3ed14519d3f84de3f06926047b36b367e9bc3b90b57eb7725ed435b55d5",
+    "bytes": 239977
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2022/10/cropped-icon.png",
+    "path": "migration-export/originals/wp-49.png",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "75407b5281ed1c968df0a6e7642f3230a1b9b83335e1bc90fb6d409bdce922c9",
+    "bytes": 2565
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2022/10/icon.png",
+    "path": "migration-export/originals/wp-48.png",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "29e8dc00d16777f4421ae4ffddabb6c406008781a893fcc0fbd35e4a144cf281",
+    "bytes": 2000
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2022/10/1620037891381.jpg",
+    "path": "migration-export/originals/wp-29.jpg",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "bf5b20f752effe543e59ac1e664461ed6966f56efaa05dcf2e85a614b7a8075a",
+    "bytes": 138883
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2022/10/chrome_qEbCacuGel.png",
+    "path": "migration-export/originals/wp-28.png",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "10b512573f534ddd028cfd30ea0919c59cd0483fabe831d02f3bdf969e111c95",
+    "bytes": 286036
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2022/10/chrome_oKHPxdr4zL.png",
+    "path": "migration-export/originals/wp-27.png",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "41c2d26fb2e9e0320bb317cdf34bfd74c319c2d6ffa13e82dfe91c9256c2d42a",
+    "bytes": 79256
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2022/10/chrome_hC77g9HnVT.png",
+    "path": "migration-export/originals/wp-26.png",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "ef8f53184f551761cba6579fe751ea9a718debf02dded0929b2be57f29db2392",
+    "bytes": 375828
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2022/10/chrome_9IAdHpKTiN.jpg",
+    "path": "migration-export/originals/wp-25.jpg",
+    "purpose": "Original public WordPress media for migration recovery",
+    "rights": "Previously published on the owner portfolio; copyright/license requires editorial confirmation",
+    "alt": "",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "dd3c106bd6a4a2c533cb2da7ad9f036e62b3418357ca27e2a3e3cbc5190b077c",
+    "bytes": 149140
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2024/04/6237c.png.480x384.fit_.jpg",
+    "path": "public/media/project-sumo-ning.jpg",
+    "purpose": "Historical project screenshot; owner supplied through old portfolio",
+    "rights": "Previously published portfolio media; preserve attribution; confirm right to reuse client images",
+    "alt": "Screenshot of Team Gamejam: “Sumo & Ning”",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "250a39cfda61caf3f0f5b231ed0b3aaf40fef97c2f54ff8832da4a3d8a78efab",
+    "bytes": 81938
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2023/12/chrome_DAKF5X2kTy.png",
+    "path": "public/media/project-cilect.png",
+    "purpose": "Historical project screenshot; owner supplied through old portfolio",
+    "rights": "Previously published portfolio media; preserve attribution; confirm right to reuse client images",
+    "alt": "Screenshot of CILECT",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "8f2fd5d5fefc44a13f34a309e7ab14d36b3beff8e01438ec6e7b9555dc8aecfd",
+    "bytes": 320564
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2023/10/handshake-sx-03.jpg",
+    "path": "public/media/project-portfolio-v2-0-next.jpg",
+    "purpose": "Historical project screenshot; owner supplied through old portfolio",
+    "rights": "Previously published portfolio media; preserve attribution; confirm right to reuse client images",
+    "alt": "Screenshot of Portfolio v2.0 (Current)",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "73e6fa30aed1afab5c7a52ab8b064e46a5d87b5aaacd1a326aa102c4560dd9fe",
+    "bytes": 7369
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2023/10/chrome_NI4DZVqn4B.webp",
+    "path": "public/media/project-portfolio-v1-0-react.webp",
+    "purpose": "Historical project screenshot; owner supplied through old portfolio",
+    "rights": "Previously published portfolio media; preserve attribution; confirm right to reuse client images",
+    "alt": "Screenshot of Portfolio v1.0 (React)",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "4c73a89b2c1d8df3c51e6a118073e80685a303cd6dc43d9b334280cbf240b7f3",
+    "bytes": 31500
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2023/10/chrome_oKHPxdr4zL.webp",
+    "path": "public/media/project-portfolio-v1-0-wordpress.webp",
+    "purpose": "Historical project screenshot; owner supplied through old portfolio",
+    "rights": "Previously published portfolio media; preserve attribution; confirm right to reuse client images",
+    "alt": "Screenshot of Portfolio v1.0 (WordPress)",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "b222e100fa9b7ccb8960ce4e080833d9c2f62c6beb0f7633c2716be9c0c06aea",
+    "bytes": 32516
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2023/10/CaqWzGe.webp",
+    "path": "public/media/project-granny-goes-deep.webp",
+    "purpose": "Historical project screenshot; owner supplied through old portfolio",
+    "rights": "Previously published portfolio media; preserve attribution; confirm right to reuse client images",
+    "alt": "Screenshot of Team Gamejam: “Granny Goes Deep”",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "15be4d9535603ab8bb3e00a9f9eafc8e5b09c74c89ec64dae9943320d7bb0420",
+    "bytes": 41614
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2023/10/chrome_qEbCacuGel.webp",
+    "path": "public/media/project-league-of-legends-beta-launcher-html5-challenge.webp",
+    "purpose": "Historical project screenshot; owner supplied through old portfolio",
+    "rights": "Previously published portfolio media; preserve attribution; confirm right to reuse client images",
+    "alt": "Screenshot of League of Legends – Beta Launcher HTML5 Challenge",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "1a1b81a0a4cb58a01d040cf9ef001e3e84343f8f5dce1b3568e314f02dc31938",
+    "bytes": 49454
+  },
+  {
+    "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/0a/6f/a2/0a6fa2b8-576e-d61b-007c-40870529e58e/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+    "path": "public/media/bausy-icon.jpg",
+    "purpose": "Bausy App Store product icon",
+    "rights": "Owner product artwork from Apple public listing; used to identify Bausy",
+    "alt": "Bausy app icon",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "49e215b70daa01515cd8b954ca33f271b61e9e1feb4b377345d560c27e6951da",
+    "bytes": 23806
+  },
+  {
+    "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/0e/e9/d4/0ee9d4cc-050c-bc6d-4916-6dc41f209753/01-home.png/1284x2778bb.jpg",
+    "path": "public/media/bausy-screen-1.jpg",
+    "purpose": "Bausy App Store product screenshot",
+    "rights": "Owner product marketing screenshot from Apple public listing; no generated product UI",
+    "alt": "Bausy published product screenshot 1",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "9890c795729935b365d7dd2f5c40f280d9ac720195d01b6a2146822ea759be38",
+    "bytes": 328420
+  },
+  {
+    "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5a/7e/56/5a7e5670-d3bc-25c9-fbb6-ef880c611ec2/02-pets.png/1284x2778bb.jpg",
+    "path": "public/media/bausy-screen-2.jpg",
+    "purpose": "Bausy App Store product screenshot",
+    "rights": "Owner product marketing screenshot from Apple public listing; no generated product UI",
+    "alt": "Bausy published product screenshot 2",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "6d967af9ea0fa5126522cceafea9ba70a11fb020528c2d0b1b423713c245f9a0",
+    "bytes": 284419
+  },
+  {
+    "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/06/54/0f/06540fed-fa83-fad8-8930-1c8046394fdc/03-finder.png/1284x2778bb.jpg",
+    "path": "public/media/bausy-screen-3.jpg",
+    "purpose": "Bausy App Store product screenshot",
+    "rights": "Owner product marketing screenshot from Apple public listing; no generated product UI",
+    "alt": "Bausy published product screenshot 3",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "aebe75847549341fd55a93ef05f01c7d308c1feab404e0bc64df92a0dba7d90e",
+    "bytes": 524649
+  },
+  {
+    "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f0/42/b6/f042b603-0ae9-d86f-ef42-ce624a4bb849/04-groups.png/1284x2778bb.jpg",
+    "path": "public/media/bausy-screen-4.jpg",
+    "purpose": "Bausy App Store product screenshot",
+    "rights": "Owner product marketing screenshot from Apple public listing; no generated product UI",
+    "alt": "Bausy published product screenshot 4",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "cbb585d48e5b7c1a8464bf4eaab1b936dc4e7bb0122ca60b58c8d613b3739fd7",
+    "bytes": 258405
+  },
+  {
+    "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ff/a8/39/ffa8390d-faff-1b91-f46d-a1ff93aedbdf/05-weight.png/1284x2778bb.jpg",
+    "path": "public/media/bausy-screen-5.jpg",
+    "purpose": "Bausy App Store product screenshot",
+    "rights": "Owner product marketing screenshot from Apple public listing; no generated product UI",
+    "alt": "Bausy published product screenshot 5",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "ba7fd55c75205b7459af38b7f23c26fcc9cf42de85f48cbb40cd4141c0994b84",
+    "bytes": 305871
+  },
+  {
+    "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7b/fc/9c/7bfc9cb7-b15b-1528-01b3-881a32768e24/06-sharo-chat.png/1284x2778bb.jpg",
+    "path": "public/media/bausy-screen-6.jpg",
+    "purpose": "Bausy App Store product screenshot",
+    "rights": "Owner product marketing screenshot from Apple public listing; no generated product UI",
+    "alt": "Bausy published product screenshot 6",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "fcfa683a1207bf2a6f0ede0cedc2b709b59385476ce3de7a26e3988a5c966a35",
+    "bytes": 397322
+  },
+  {
+    "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8c/70/6b/8c706bd5-e096-6b0c-2d9d-ed7e3d17623d/07-sharo-questions.png/1284x2778bb.jpg",
+    "path": "public/media/bausy-screen-7.jpg",
+    "purpose": "Bausy App Store product screenshot",
+    "rights": "Owner product marketing screenshot from Apple public listing; no generated product UI",
+    "alt": "Bausy published product screenshot 7",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "575c94a43f92643f1920884350fc049781b513ae7ee87da06253f5c1fcde109d",
+    "bytes": 315346
+  },
+  {
+    "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b2/e9/95/b2e99504-f5e1-f58b-30b9-52ead2c2376f/08-activity.png/1284x2778bb.jpg",
+    "path": "public/media/bausy-screen-8.jpg",
+    "purpose": "Bausy App Store product screenshot",
+    "rights": "Owner product marketing screenshot from Apple public listing; no generated product UI",
+    "alt": "Bausy published product screenshot 8",
+    "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+    "sha256": "79442ad8b5dc4bc70730df6c8f6028fe583bdf727781f036d304d9e85e36aba5",
+    "bytes": 303661
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2023/12/chrome_T3hOZ8zGm1-e1702640198808.png",
+    "sourcePage": "https://spatovaliyski.com/projects",
+    "path": "public/media/project-cilect-interface.png",
+    "purpose": "Legacy owner portfolio project screenshot",
+    "rights": "Published on the owner portfolio; confirm client imagery reuse before final publication",
+    "alt": "CILECT homepage showing association navigation and editorial cards",
+    "retrievedAt": "2026-10-12T16:24:11.3074695Z",
+    "sha256": "00e2238b600613d4110081a5bd7cb98669fb0ee3cdb70fac67bf6d731d27d42c",
+    "bytes": 775781
+  },
+  {
+    "sourceUrl": "https://wp.spatovaliyski.com/wp-content/uploads/2022/10/1620037891381.jpg",
+    "sourcePage": "https://spatovaliyski.com/",
+    "path": "public/media/martin-portrait.jpg",
+    "purpose": "Owner portrait from the existing portfolio",
+    "rights": "Previously published owner portrait; owner requested portfolio migration",
+    "alt": "Portrait of Martin Spatovaliyski",
+    "retrievedAt": "2026-10-12T16:24:11.3074695Z",
+    "sha256": "bf5b20f752effe543e59ac1e664461ed6966f56efaa05dcf2e85a614b7a8075a",
+    "bytes": 138883
+  },
+  {
+    "sourceUrl": "https://media.forgecdn.net/attachments/2043/596/platesct_damage1-png.png",
+    "sourcePage": "https://www.curseforge.com/wow/addons/platesct/gallery",
+    "path": "public/media/addon-platesct-combat.png",
+    "purpose": "Published addon combat screenshot",
+    "rights": "Owner addon screenshot from author distribution page; World of Warcraft imagery belongs to Blizzard Entertainment",
+    "alt": "PlateSCT damage numbers over a World of Warcraft enemy nameplate",
+    "retrievedAt": "2026-10-12T16:24:11.3074695Z",
+    "sha256": "6ed2ed3a36c22956411c49a9fee03e4964523a62c92d64c4999cf955946ece85",
+    "bytes": 200125
+  },
+  {
+    "sourceUrl": "https://media.forgecdn.net/attachments/2040/936/platesct_settings1.png",
+    "sourcePage": "https://www.curseforge.com/wow/addons/platesct/gallery",
+    "path": "public/media/addon-platesct-settings.png",
+    "purpose": "Published addon settings screenshot",
+    "rights": "Owner addon screenshot from author distribution page; World of Warcraft imagery belongs to Blizzard Entertainment",
+    "alt": "PlateSCT settings window with combat options and appearance preview",
+    "retrievedAt": "2026-10-12T16:24:11.3074695Z",
+    "sha256": "2f8ff020e8fc2fb346e6a1af7f2536e87db92caefdd8f2756b193263d1abe8e1",
+    "bytes": 68056
+  },
+  {
+    "sourceUrl": "https://raw.githubusercontent.com/Spatovaliyski/PlateSCT/main/Media/psct-logo-mini.png",
+    "sourcePage": "https://github.com/Spatovaliyski/PlateSCT",
+    "path": "public/media/addon-platesct-icon.png",
+    "purpose": "Addon product icon",
+    "rights": "Owner addon asset from its public source repository; license is not declared by the GitHub API",
+    "alt": "PlateSCT addon icon",
+    "retrievedAt": "2026-10-12T16:24:11.3074695Z",
+    "sha256": "309c1e1904fa01d940f9b46c1a2effc8e6a5738848408c30273d7cb7bbda451c",
+    "bytes": 21246
+  },
+  {
+    "sourceUrl": "https://media.forgecdn.net/attachments/1466/992/raidopacity.png",
+    "sourcePage": "https://www.curseforge.com/wow/addons/raidopacity",
+    "path": "public/media/addon-raidopacity.png",
+    "purpose": "Published addon screenshot",
+    "rights": "Owner addon screenshot from author distribution page; World of Warcraft imagery belongs to Blizzard Entertainment",
+    "alt": "RaidOpacity showing raid members at different opacity levels",
+    "retrievedAt": "2026-10-12T16:24:11.3074695Z",
+    "sha256": "9c5c10c312520080e37bbc6e012c798dff0ae98618b9dd251faab7d67057186d",
+    "bytes": 236137
+  },
+  {
+    "sourceUrl": "https://media.forgecdn.net/attachments/1435/816/easysummon_1.jpg",
+    "sourcePage": "https://www.curseforge.com/wow/addons/easysummon",
+    "path": "public/media/addon-easysummon.jpg",
+    "purpose": "Published addon screenshot",
+    "rights": "Owner addon screenshot from author distribution page; World of Warcraft imagery belongs to Blizzard Entertainment",
+    "alt": "EasySummon request queue in World of Warcraft",
+    "retrievedAt": "2026-10-12T16:24:11.3074695Z",
+    "sha256": "b3ba363882a49d73d19ef5d569b728a0bd1ee62061e53c442b14e94f4b37669c",
+    "bytes": 109699
+  },
+  {
+    "sourceUrl": "https://media.forgecdn.net/attachments/1246/528/easymill_01.png",
+    "sourcePage": "https://www.curseforge.com/wow/addons/easymill",
+    "path": "public/media/addon-easymill.png",
+    "purpose": "Published addon screenshot",
+    "rights": "Owner addon screenshot from author distribution page; World of Warcraft imagery belongs to Blizzard Entertainment",
+    "alt": "EasyMill milling interface and pricing details",
+    "retrievedAt": "2026-10-12T16:24:11.3074695Z",
+    "sha256": "ed27b5a5a116d6e42ba530a9ee9dfb2b79075bd7b8b9db53b27da83223f7a71a",
+    "bytes": 590169
+  }
+]

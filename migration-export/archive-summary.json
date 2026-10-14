@@ -1,0 +1,23 @@
+{
+  "retrievedAt": "2026-10-12T16:18:21.2492832Z",
+  "source": "https://wp.spatovaliyski.com",
+  "archiveScope": "Public REST records and original publicly served media only. Does not include private drafts, database, server configuration, or plugin sources.",
+  "counts": {
+    "projects": 7,
+    "experience": 4,
+    "posts": 3,
+    "pages": 4,
+    "media": 40,
+    "downloadedAssets": 65,
+    "addons": 6
+  },
+  "errors": 12,
+  "mediaReconciliation": {
+    "publicMediaRecords": 40,
+    "downloadedOriginals": 40,
+    "missingOriginals": 0,
+    "rootReadme404s": 6,
+    "failedCurseForgeHtmlArchives": 5,
+    "curseForgeDescriptionsVerifiedBy": "web connector"
+  }
+}

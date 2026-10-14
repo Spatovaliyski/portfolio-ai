@@ -1,0 +1,444 @@
+{
+  "verifiedAt": "2026-10-12T16:24:11.3074695Z",
+  "profile": {
+    "name": "Martin Spatovaliyski",
+    "email": "martinspatovaliyski@gmail.com",
+    "github": "https://github.com/Spatovaliyski",
+    "linkedin": "https://www.linkedin.com/in/martin-spatovaliyski-554622aa/",
+    "availability": false,
+    "availabilitySource": "raw/wordpress/availability.json",
+    "portrait": "/media/martin-portrait.jpg"
+  },
+  "bausy": {
+    "title": "Bausy",
+    "summary": "A pet-care app that brings pet profiles, health records, reminders, and shared access together.",
+    "website": "https://bausy.app/",
+    "android": "https://play.google.com/store/apps/details?id=com.bausy.app",
+    "ios": "https://apps.apple.com/bg/app/bausy/id6787374200",
+    "seller": "Martin Spatovaliyski",
+    "bundleId": "com.bausy.app",
+    "initialAppStoreRelease": "2026-07-18T07:00:00Z",
+    "currentAppStoreVersion": "1.1.8",
+    "currentAppStoreRelease": "2026-09-11T03:01:59Z",
+    "features": [
+      "Pet profiles and veterinary records",
+      "Vaccination and medication reminders",
+      "Weight history and charts",
+      "Document storage",
+      "Family pet sharing with view/edit permissions",
+      "Sharo AI pet assistant",
+      "Watchdog health alerts"
+    ],
+    "image": "/media/bausy-screen-1.jpg",
+    "screenshots": [
+      "/media/bausy-screen-1.jpg",
+      "/media/bausy-screen-2.jpg",
+      "/media/bausy-screen-3.jpg",
+      "/media/bausy-screen-4.jpg",
+      "/media/bausy-screen-5.jpg",
+      "/media/bausy-screen-6.jpg",
+      "/media/bausy-screen-7.jpg",
+      "/media/bausy-screen-8.jpg"
+    ],
+    "source": "raw/bausy/app-store-lookup.json",
+    "editorialStatus": "Public product overview verified. Personal architecture, decisions, release workflow, and outcomes still require owner-approved content."
+  },
+  "projects": [
+    {
+      "legacyId": 218,
+      "title": "Team Gamejam: “Sumo & Ning”",
+      "slug": "sumo-ning",
+      "publishedAtUtc": "2024-04-15T22:47:03Z",
+      "modifiedAtUtc": "2024-11-08T09:17:44Z",
+      "oldBackendUrl": "https://wp.spatovaliyski.com/work-projects/sumo-ning/",
+      "oldFrontendUrl": "https://spatovaliyski.com/projects",
+      "summary": "Ludum Dare 55! Yet another Team Game Jam to create a game in under 3 days, this time the jam theme was \"Summoning\", and so the idea of Sumo, a cook, able to produce the craftiest recipes, helps Ning, a witch, fight off an army of very angry villagers",
+      "year": "2024",
+      "technologies": [
+        "C#",
+        "Photoshop",
+        "Unity"
+      ],
+      "link": "https://ldjam.com/events/ludum-dare/55/sumo-ning-2",
+      "featuredMediaId": 219,
+      "importStatus": "draft"
+    },
+    {
+      "legacyId": 185,
+      "title": "CILECT",
+      "slug": "cilect",
+      "publishedAtUtc": "2023-12-15T11:36:44Z",
+      "modifiedAtUtc": "2024-12-19T10:04:00Z",
+      "oldBackendUrl": "https://wp.spatovaliyski.com/work-projects/cilect/",
+      "oldFrontendUrl": "https://spatovaliyski.com/projects",
+      "summary": "The International Association of Film and Television Schools now with a revamped custom platform. By 2024 CILECT includes 180+ film, TV and media schools from 60+ countries on 6 continents with 9,000+ teachers and staff that annually train 55,000+ students and communicate with an alumni network of over 1,330,000+ strong.",
+      "year": "2021-2022",
+      "technologies": [
+        "Custom Theme",
+        "JavaScript",
+        "jQuery",
+        "PHP",
+        "Plugins",
+        "SCSS",
+        "WordPress"
+      ],
+      "link": "https://cilect.org/",
+      "featuredMediaId": 247,
+      "importStatus": "draft"
+    },
+    {
+      "legacyId": 145,
+      "title": "Portfolio v2.0 (Current)",
+      "slug": "portfolio-v2-0-next",
+      "publishedAtUtc": "2023-10-12T21:11:21Z",
+      "modifiedAtUtc": "2023-10-21T14:34:06Z",
+      "oldBackendUrl": "https://wp.spatovaliyski.com/work-projects/portfolio-v2-0-next/",
+      "oldFrontendUrl": "https://spatovaliyski.com/projects",
+      "summary": "This project uses WordPress as its backend where I pull data from. In other words, I'm using Headless WordPress with NextJS 13 and DigitalOcean (Ubuntu) to run my server",
+      "year": "2023",
+      "technologies": [
+        "JavaScript",
+        "Next.js",
+        "Nginx",
+        "PHP",
+        "REST API",
+        "WordPress"
+      ],
+      "link": "https://github.com/Spatovaliyski/portfolio-next",
+      "featuredMediaId": 164,
+      "importStatus": "draft"
+    },
+    {
+      "legacyId": 143,
+      "title": "Portfolio v1.0 (React)",
+      "slug": "portfolio-v1-0-react",
+      "publishedAtUtc": "2023-10-12T21:10:35Z",
+      "modifiedAtUtc": "2023-10-12T21:10:35Z",
+      "oldBackendUrl": "https://wp.spatovaliyski.com/work-projects/portfolio-v1-0-react/",
+      "oldFrontendUrl": "https://spatovaliyski.com/projects",
+      "summary": "Upgraded, GreenSock'd, reactified (although there's not a lot of content to react to the user input yet). This is a close recreation of the personal _s WordPress theme prior to this project",
+      "year": "2022",
+      "technologies": [
+        "Gsap",
+        "React",
+        "SCSS"
+      ],
+      "link": "https://github.com/Spatovaliyski/portfolio-react",
+      "featuredMediaId": 144,
+      "importStatus": "draft"
+    },
+    {
+      "legacyId": 141,
+      "title": "Portfolio v1.0 (WordPress)",
+      "slug": "portfolio-v1-0-wordpress",
+      "publishedAtUtc": "2023-10-12T21:09:38Z",
+      "modifiedAtUtc": "2023-10-12T21:09:38Z",
+      "oldBackendUrl": "https://wp.spatovaliyski.com/work-projects/portfolio-v1-0-wordpress/",
+      "oldFrontendUrl": "https://spatovaliyski.com/projects",
+      "summary": "A quick mockup of a barebones WordPress install with some design work. I stopped working on it to focus on the React version instead",
+      "year": "2021",
+      "technologies": [
+        "Gulp",
+        "Headroom",
+        "jQuery",
+        "MySQL",
+        "PHP",
+        "SCSS",
+        "WordPress"
+      ],
+      "link": "https://github.com/Spatovaliyski/portfolio",
+      "featuredMediaId": 142,
+      "importStatus": "draft"
+    },
+    {
+      "legacyId": 139,
+      "title": "Team Gamejam: “Granny Goes Deep”",
+      "slug": "granny-goes-deep",
+      "publishedAtUtc": "2023-10-12T21:08:29Z",
+      "modifiedAtUtc": "2024-11-08T09:17:30Z",
+      "oldBackendUrl": "https://wp.spatovaliyski.com/work-projects/granny-goes-deep/",
+      "oldFrontendUrl": "https://spatovaliyski.com/projects",
+      "summary": "A noteworthy playable project to say the least! This was a team Game Jam to create a game in under 5 days. I took part in Interface Development, Tooltips, End screen messages, and more!",
+      "year": "2021",
+      "technologies": [
+        "C#",
+        "Photoshop",
+        "UI/UX",
+        "Unity"
+      ],
+      "link": "https://ldjam.com/events/ludum-dare/48/granny-goes-deep",
+      "featuredMediaId": 140,
+      "importStatus": "draft"
+    },
+    {
+      "legacyId": 135,
+      "title": "League of Legends – Beta Launcher HTML5 Challenge",
+      "slug": "league-of-legends-beta-launcher-html5-challenge",
+      "publishedAtUtc": "2023-10-12T21:07:10Z",
+      "modifiedAtUtc": "2024-02-07T10:26:16Z",
+      "oldBackendUrl": "https://wp.spatovaliyski.com/work-projects/league-of-legends-beta-launcher-html5-challenge/",
+      "oldFrontendUrl": "https://spatovaliyski.com/projects",
+      "summary": "League of Legends was about to update its launcher so I decided to create a mockup web version of their prototype image source",
+      "year": "2019",
+      "technologies": [
+        "Gulp",
+        "jQuery",
+        "SCSS"
+      ],
+      "link": "https://github.com/Spatovaliyski/LeagueWeb",
+      "featuredMediaId": 136,
+      "importStatus": "draft"
+    }
+  ],
+  "experience": [
+    {
+      "legacyId": 216,
+      "employer": "Crownpeak",
+      "slug": "crownpeak",
+      "title": "Senior Front end Developer",
+      "startDateAsPublished": "April 2024",
+      "endDateAsPublished": "Now",
+      "location": "Sofia, Bulgaria",
+      "body": "",
+      "source": "https://wp.spatovaliyski.com/work-experience/crownpeak/",
+      "editorialStatus": "Owner-published claims; confirm dates and numerical claims before republishing"
+    },
+    {
+      "legacyId": 148,
+      "employer": "Almacena Platform",
+      "slug": "almacena-platform",
+      "title": "Sr. Front-End Developer",
+      "startDateAsPublished": "December 2022",
+      "endDateAsPublished": "October 2023",
+      "location": "Remote",
+      "body": "Revamped web tools, pages, and the marketplace with a keen eye for visual enhancement. Took ownership of several internal tools and public-listed website, making creative decisions to elevate its overall appeal, ensuring a seamless and engaging user experience.\n\n▪ Developing and maintaining the WooCommerce marketplace WordPress marketing platform;\n▪ Developing and maintaining the internal tools built on React and TypeScript;\n▪ Initiated a campaign and executed a visual rebrand for the Coffee startup's Marketplace and\npublic web platform look as well as the internal Inventory & Trading platforms;",
+      "source": "https://wp.spatovaliyski.com/work-experience/almacena-platform/",
+      "editorialStatus": "Owner-published claims; confirm dates and numerical claims before republishing"
+    },
+    {
+      "legacyId": 147,
+      "employer": "Freelance / CILECT",
+      "slug": "freelance-client",
+      "title": "Full-stack / Product Owner",
+      "startDateAsPublished": "July 2021",
+      "endDateAsPublished": "November 2022",
+      "location": "Remote",
+      "body": "I successfully integrated a well-established platform into WordPress, overseeing the seamless migration of content, user data, and media. I crafted custom templates and plugins to deliver a distinctive user experience, complemented by refined Locomotive and GSAP animations. Additionally, I implemented robust user management, authentication, and content moderation for a secure and professional WordPress environment.\n\n▪ Migration to a new CMS, which hosts over 9000 teachers and 180+ school profiles;\n▪ Led the complete end-to-end rework of the movie association's platform, transitioning it to a new\nenvironment, using WordPress, and bringing it up to 2022 standards. Implemented a custom-built\nTheme from scratch as well as Custom Post Types utilising ACF;\n▪ Applied several custom modifications to the WPAdmin as well as migrated all content from 2009\nup to 2022.",
+      "source": "https://wp.spatovaliyski.com/work-experience/freelance-client/",
+      "editorialStatus": "Owner-published claims; confirm dates and numerical claims before republishing"
+    },
+    {
+      "legacyId": 146,
+      "employer": "DevriX",
+      "slug": "devrix",
+      "title": "Front-end Developer & Project Owner",
+      "startDateAsPublished": "May 2017",
+      "endDateAsPublished": "June 2021",
+      "location": "Hybrid / Sofia, Bulgaria",
+      "body": "Led diverse web development projects by implementing best practices and standards, collaborating with clients and teams as a \"Project Owner\" of several projects, designing interfaces, themes, and plugins, mentoring front-end team-members, and coordinating with Project Managers to drive successful sprints and launches.\n\n▪ Project Owner of several high-end large products and startups. Designed and developed\ninterfaces, themes, and plugins;\n▪ Created and maintained the marketing website of a workplace analytics startup managed to set up\na successful campaign which raised $51 Million, with over 15,000 concurrent daily users;\n▪ Mentored a handful of Jr. Developers within the front-end team, creating challenges and setting up\ncoding standards, peer programming, code reviews, and more",
+      "source": "https://wp.spatovaliyski.com/work-experience/devrix/",
+      "editorialStatus": "Owner-published claims; confirm dates and numerical claims before republishing"
+    }
+  ],
+  "notes": [
+    {
+      "legacyId": 220,
+      "title": "Ludum Dare 55: Sumo & Ning – Summoning!",
+      "slug": "ludum-dare-55-summoning",
+      "publishedAtUtc": "2024-04-17T22:28:53Z",
+      "oldFrontendUrl": "https://spatovaliyski.com/blog/220",
+      "oldBackendUrl": "https://wp.spatovaliyski.com/ludum-dare-55-summoning/",
+      "newPath": "/notes/ludum-dare-55-summoning/",
+      "bodyArchive": "posts.json",
+      "importStatus": "draft"
+    },
+    {
+      "legacyId": 189,
+      "title": "Improving the interface",
+      "slug": "improving-the-interface",
+      "publishedAtUtc": "2024-01-21T00:01:38Z",
+      "oldFrontendUrl": "https://spatovaliyski.com/blog/189",
+      "oldBackendUrl": "https://wp.spatovaliyski.com/improving-the-interface/",
+      "newPath": "/notes/improving-the-interface/",
+      "bodyArchive": "posts.json",
+      "importStatus": "draft"
+    },
+    {
+      "legacyId": 121,
+      "title": "Is anyone there?",
+      "slug": "is-anyone-there",
+      "publishedAtUtc": "2023-10-07T07:12:35Z",
+      "oldFrontendUrl": "https://spatovaliyski.com/blog/121",
+      "oldBackendUrl": "https://wp.spatovaliyski.com/is-anyone-there/",
+      "newPath": "/notes/is-anyone-there/",
+      "bodyArchive": "posts.json",
+      "importStatus": "draft"
+    }
+  ],
+  "addons": [
+    {
+      "name": "PlateSCT",
+      "description": "Midnight Nameplate Scrolling Combat Text",
+      "source": "https://github.com/Spatovaliyski/PlateSCT",
+      "homepage": null,
+      "repositoryId": 1343190310,
+      "language": "Lua",
+      "createdAt": "2026-08-22T21:44:29Z",
+      "updatedAt": "2026-10-12T12:29:11Z",
+      "archived": false,
+      "defaultBranch": "main",
+      "license": null,
+      "distribution": {
+        "url": "https://www.curseforge.com/wow/addons/platesct",
+        "verified": true,
+        "verification": "Author public listing inspected using web connector; direct shell archive returned HTTP 403",
+        "retrievedAt": "2026-10-12T16:24:11.3074695Z"
+      },
+      "readmePath": null,
+      "summary": "Floating combat text on enemy nameplates, with damage thresholds, abbreviations, configurable number styles, and optional critical-hit sounds.",
+      "maintenanceStatus": "active",
+      "authors": [
+        "Limitedby"
+      ],
+      "tocPath": "raw/github/PlateSCT-PlateSCT.toc",
+      "image": "/media/addon-platesct-combat.png",
+      "editorialNotes": "Midnight/Forever personal damage attribution is experimental; do not promise exact ownership under restricted APIs."
+    },
+    {
+      "name": "ClassicNumbersEx",
+      "description": "ClassicNumbersTWW",
+      "source": "https://github.com/Spatovaliyski/ClassicNumbersEx",
+      "homepage": null,
+      "repositoryId": 841917085,
+      "language": "Lua",
+      "createdAt": "2024-08-13T09:56:26Z",
+      "updatedAt": "2026-08-23T07:24:23Z",
+      "archived": false,
+      "defaultBranch": "main",
+      "license": null,
+      "distribution": {
+        "url": "https://www.curseforge.com/wow/addons/classicnumbers-ex",
+        "verified": true,
+        "verification": "Author public listing inspected using web connector; direct shell archive returned HTTP 403",
+        "retrievedAt": "2026-10-12T16:24:11.3074695Z"
+      },
+      "readmePath": null,
+      "summary": "A maintenance update to the original ClassicNumbers addon. Its Midnight features have moved into PlateSCT.",
+      "maintenanceStatus": "discontinued",
+      "authors": [
+        "zeldarsprod",
+        "Limitedby"
+      ],
+      "tocPath": "raw/github/ClassicNumbersEx-ClassicNumbersEx.toc",
+      "image": null,
+      "editorialNotes": "The current manifest and author distribution page explicitly say this addon is no longer supported. Credit the original author."
+    },
+    {
+      "name": "EasySummon",
+      "description": null,
+      "source": "https://github.com/Spatovaliyski/EasySummon",
+      "homepage": null,
+      "repositoryId": 959503918,
+      "language": "Lua",
+      "createdAt": "2025-04-02T22:26:31Z",
+      "updatedAt": "2026-02-14T20:14:44Z",
+      "archived": false,
+      "defaultBranch": "main",
+      "license": null,
+      "distribution": {
+        "url": "https://www.curseforge.com/wow/addons/easysummon",
+        "verified": true,
+        "verification": "Author public listing inspected using web connector; direct shell archive returned HTTP 403",
+        "retrievedAt": "2026-10-12T16:24:11.3074695Z"
+      },
+      "readmePath": null,
+      "summary": "Detects summon requests in chat and gives Warlocks an organized summon queue, with list and grid views.",
+      "maintenanceStatus": "published",
+      "authors": [
+        "Limitedby"
+      ],
+      "tocPath": "raw/github/EasySummon-EasySummon.toc",
+      "image": "/media/addon-easysummon.jpg",
+      "editorialNotes": "Public description supports Classic and TBC party/raid use; no adoption metrics included."
+    },
+    {
+      "name": "RaidOpacity",
+      "description": null,
+      "source": "https://github.com/Spatovaliyski/RaidOpacity",
+      "homepage": null,
+      "repositoryId": 1134458912,
+      "language": "Lua",
+      "createdAt": "2026-01-14T18:43:32Z",
+      "updatedAt": "2026-01-14T18:45:25Z",
+      "archived": false,
+      "defaultBranch": "main",
+      "license": null,
+      "distribution": {
+        "url": "https://www.curseforge.com/wow/addons/raidopacity",
+        "verified": true,
+        "verification": "Author public listing inspected using web connector; direct shell archive returned HTTP 403",
+        "retrievedAt": "2026-10-12T16:24:11.3074695Z"
+      },
+      "readmePath": null,
+      "summary": "Controls opacity and background fade levels for in-range and out-of-range Blizzard raid frames.",
+      "maintenanceStatus": "published",
+      "authors": [
+        "Limitedby"
+      ],
+      "tocPath": "raw/github/RaidOpacity-RaidOpacity.toc",
+      "image": "/media/addon-raidopacity.png",
+      "editorialNotes": "GitHub manifest is v1.0.0; public CurseForge listing serves 1.0.1. Do not equate repository pushes with distribution release times."
+    },
+    {
+      "name": "sBoard",
+      "description": "Channel Spam board in a tidy list",
+      "source": "https://github.com/Spatovaliyski/sBoard",
+      "homepage": null,
+      "repositoryId": 1053249260,
+      "language": "Lua",
+      "createdAt": "2025-09-09T07:32:05Z",
+      "updatedAt": "2025-09-09T23:19:34Z",
+      "archived": false,
+      "defaultBranch": "main",
+      "license": null,
+      "distribution": null,
+      "readmePath": null,
+      "summary": "Collects chat messages into a tidy services list.",
+      "maintenanceStatus": "source-available",
+      "authors": [
+        "Limitedby"
+      ],
+      "tocPath": "raw/github/sBoard-ServicesBoard.toc",
+      "image": null,
+      "editorialNotes": "Public manifest title is Services Board. External distribution and screenshots are not confirmed; link to the verified GitHub repository only."
+    },
+    {
+      "name": "EasyMill",
+      "description": null,
+      "source": "https://github.com/Spatovaliyski/EasyMill",
+      "homepage": null,
+      "repositoryId": 1016232714,
+      "language": "Lua",
+      "createdAt": "2025-07-08T17:31:08Z",
+      "updatedAt": "2025-07-28T18:53:33Z",
+      "archived": false,
+      "defaultBranch": "main",
+      "license": null,
+      "distribution": {
+        "url": "https://www.curseforge.com/wow/addons/easymill",
+        "verified": true,
+        "verification": "Author public listing inspected using web connector; direct shell archive returned HTTP 403",
+        "retrievedAt": "2026-10-12T16:24:11.3074695Z"
+      },
+      "readmePath": null,
+      "summary": "Finds millable herbs and estimates batch profit or loss using Auctionator pricing, with a test mode.",
+      "maintenanceStatus": "published",
+      "authors": [
+        "Limitedby"
+      ],
+      "tocPath": "raw/github/EasyMill-EasyMill.toc",
+      "image": "/media/addon-easymill.png",
+      "editorialNotes": "The estimates use Auctionator pricing; they are not guaranteed sale results."
+    }
+  ]
+}

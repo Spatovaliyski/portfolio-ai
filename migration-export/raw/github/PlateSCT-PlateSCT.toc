@@ -1,0 +1,42 @@
+## Interface: 120100, 16001, 50504, 20506, 11509
+## Title: PlateSCT
+## Notes: Nameplate damage numbers with threshold filtering and abbreviation. Midnight, Forever, and Classic clients supported.
+## Notes-frFR: Nombres de dégâts sur les barres de nom avec seuil et abréviations. Midnight, Forever et Classic pris en charge.
+## Notes-deDE: Schadenszahlen auf Namensplaketten mit Schwellenwert und Abkürzungen. Midnight, Forever und Classic unterstützt.
+## Notes-esES: Números de daño en placas de nombre con umbral y abreviaturas. Compatible con Midnight, Forever y Classic.
+## Notes-esMX: Números de daño en placas de nombre con umbral y abreviaturas. Compatible con Midnight, Forever y Classic.
+## Notes-ruRU: Числа урона на индикаторах с порогом и сокращениями. Поддержка Midnight, Forever и Classic.
+## Notes-itIT: Numeri di danno sulle barre del nome con soglia e abbreviazioni. Supporta Midnight, Forever e Classic.
+## Notes-ptBR: Números de dano em placas de nome com limite e abreviações. Suporta Midnight, Forever e Classic.
+## Author: Limitedby
+## Version: 1.2.1
+## SavedVariables: PlateSCTDB
+## IconTexture: Interface\AddOns\PlateSCT\Media\psct-logo-mini.png
+## AddonCompartmentFunc: PlateSCT_OnAddonCompartmentClick
+## AddonCompartmentFuncOnEnter: PlateSCT_OnAddonCompartmentEnter
+## AddonCompartmentFuncOnLeave: PlateSCT_OnAddonCompartmentLeave
+
+Core/Init.lua
+Core/API.lua
+Locales/Locale.lua
+Locales/enUS.lua
+Locales/frFR.lua
+Locales/deDE.lua
+Locales/esES.lua
+Locales/ruRU.lua
+Locales/itIT.lua
+Locales/ptBR.lua
+Core/Constants.lua
+Core/Animation.lua
+Core/Util.lua
+Core/Pool.lua
+Core/Display.lua
+Core/Attribution.lua
+Core/Combat.lua
+Core/CombatClassic.lua
+Core/Probe.lua
+Core/Events.lua
+Options/Widgets.lua
+Options/Pages.lua
+Options/Options.lua
+Core/Minimap.lua

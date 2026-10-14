@@ -1,0 +1,23 @@
+## Interface: 50500
+## Title: EasyMill
+## Notes: Automatically detects millable herbs and displays estimated profit
+## Author: Limitedby
+## OptionalDeps: LibStub, LibDataBroker-1.1, LibDBIcon-1.0
+## Version: 1.1.0
+## SavedVariables: EasyMillDB
+
+libs\LibDBIcon-1.0\LibStub\LibStub.lua
+libs\LibDBIcon-1.0\LibDataBroker-1.1\LibDataBroker-1.1.lua
+libs\LibDBIcon-1.0\LibDBIcon-1.0\LibDBIcon-1.0.lua
+
+data\Table.lua
+EasyMill.lua
+ui\MainFrame.lua
+utils\AutoLoot.lua
+utils\CastBar.lua
+utils\MacroManager.lua
+utils\ItemDisplay.lua
+ui\SettingsFrame.lua
+ui\NoticeText.lua
+ui\TestData.lua
+ui\UI.lua

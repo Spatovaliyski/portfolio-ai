@@ -3,8 +3,6 @@ dist/
 .cache/
 .env*
 !.env.example
-release-input.json
-migration-export/
 backups/
 test-results/
 playwright-report/
@@ -13,4 +11,3 @@ coverage/
 *.log
 supabase/.temp/
 supabase/.branches/
-content/imported-drafts.json
