@@ -42,7 +42,18 @@ server.listen(8080);
 const http = httpServerHandler({ port: 8080 });
 
 export default {
-  fetch: http.fetch,
+  fetch(request: Request) {
+    const url = new URL(request.url);
+
+    if (url.hostname === 'www.spatovaliyski.com') {
+      url.hostname = 'spatovaliyski.com';
+      url.protocol = 'https:';
+
+      return Response.redirect(url.toString(), 308);
+    }
+
+    return http.fetch(request);
+  },
   async scheduled() {
     // External traffic reaches the database through the public-content Edge Function.
     // Unlike an internal pg_cron job, this exercises the project's public API too.
