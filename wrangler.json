@@ -5,6 +5,10 @@
   "main": "dist/worker/index.js",
   "compatibility_date": "2026-10-30",
   "compatibility_flags": ["nodejs_compat"],
+  "routes": [
+    { "pattern": "spatovaliyski.com", "custom_domain": true },
+    { "pattern": "www.spatovaliyski.com", "custom_domain": true }
+  ],
   "assets": {
     "directory": "./dist/client",
     "binding": "ASSETS",
