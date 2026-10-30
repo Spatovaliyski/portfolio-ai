@@ -1,6 +1,7 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "portfolio",
+  "workers_dev": true,
   "account_id": "8ba588648771e0790a64f4340bdcba1d",
   "main": "dist/worker/index.js",
   "compatibility_date": "2026-10-30",
