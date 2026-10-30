@@ -1,10 +1,15 @@
-import sharp from 'sharp';
 import { createHash, randomUUID } from 'node:crypto';
 import type { SupabaseClient } from '@supabase/supabase-js';
 import type { Entity } from '../domain/schema.ts';
 import { checked, HttpError } from './store.ts';
 
+export interface ImageProcessor {
+  inspect(bytes: Buffer): Promise<{ mime: string; width: number; height: number }>;
+  webp(bytes: Buffer, width: number): Promise<Buffer>;
+}
+
 export async function processMedia(
+  images: ImageProcessor,
   bytes: Buffer,
   mime: string,
   id = `media-${randomUUID()}`,
@@ -38,32 +43,19 @@ export async function processMedia(
     publicPath = `/media/${hash}.pdf`;
     derivatives.push({ path: `${hash}.pdf`, bytes, mime });
   } else {
-    const image = sharp(bytes, { limitInputPixels: 40000000 });
-    const info = await image.metadata().catch(() => {
+    const info = await images.inspect(bytes).catch(() => {
       throw new HttpError(400, 'The image is invalid or exceeds 40 million pixels.');
     });
-    const actual = (
-      {
-        png: 'image/png',
-        jpeg: 'image/jpeg',
-        webp: 'image/webp',
-        heif: 'image/avif',
-        avif: 'image/avif',
-      } as Record<string, string>
-    )[info.format ?? ''];
 
-    if (actual !== mime || !info.width || !info.height)
-      throw new HttpError(400, 'The file does not match its image type.');
-    const rotated = info.orientation && info.orientation >= 5;
-
-    width = rotated ? info.height : info.width;
-    height = rotated ? info.width : info.height;
+    if (info.mime !== mime || !info.width || !info.height || info.width * info.height > 40000000)
+      throw new HttpError(
+        400,
+        'The file does not match its image type or exceeds 40 million pixels.',
+      );
+    width = info.width;
+    height = info.height;
     for (const size of [...new Set([400, 800, 1200].map((w) => Math.min(w, width!)))]) {
-      const buffer = await sharp(bytes, { limitInputPixels: 40000000 })
-        .rotate()
-        .resize({ width: size, withoutEnlargement: true })
-        .webp({ quality: 80 })
-        .toBuffer();
+      const buffer = await images.webp(bytes, size);
       const path = `${createHash('sha256').update(buffer).digest('hex').slice(0, 24)}-${size}.webp`;
 
       derivatives.push({ path, bytes: buffer, mime: 'image/webp' });

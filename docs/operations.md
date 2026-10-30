@@ -1,6 +1,6 @@
 # Portfolio operations
 
-The Node service `portfolio-runtime` renders the existing frontend from the current Supabase content version. The VPS web server serves code assets and forwards page, media, and API requests to `127.0.0.1:4173`.
+The Cloudflare Worker `portfolio` renders the frontend from the current Supabase content version. Its static-assets binding serves browser code and the editor. Page, media, and API requests use the shared server handler. Supabase owns content, revisions, and media.
 
 ## Normal operation
 
@@ -10,6 +10,18 @@ GitHub synchronization updates the database content version directly. It does no
 
 ## Application deployment
 
-A push to main builds code and runs `deploy/runtime.sh` over the configured SSH connection. Runtime files live in `/var/www/spatovaliyski.com/runtime`. The service environment contains only the public Supabase URL/key; owner authentication is checked against Supabase on each editor request. Deploys do not change the web server configuration.
+A push to main triggers Cloudflare Builds for `Spatovaliyski/portfolio-3`: build `npm run build`, deploy `npx wrangler deploy`. Cloudflare stores deployment history and supports rolling back to a previous Worker version. The public Supabase URL/key in `wrangler.json` configure the runtime and the editor build. Never put a service-role or secret key in this configuration or a VITE variable.
 
-Use `systemctl status portfolio-runtime` and `journalctl -u portfolio-runtime` for runtime problems. `GET /healthz` checks that published Supabase content is readable. A provider failure returns 503 rather than serving repository placeholders. Never set a service-role key in a VITE variable. Content edits go through [content-api.md](content-api.md).
+Use the Worker's Cloudflare dashboard logs for request failures. `GET /healthz` checks that published Supabase content is readable. A provider failure returns 503 rather than serving repository placeholders. Owner APIs still require owner MFA, validate inputs, check versions, and atomically save revisions and live content. Content edits go through [content-api.md](content-api.md).
+
+## Keep-alive
+
+The Worker cron `23 7 * * *` runs daily at 07:23 UTC. It reads the public-content Edge Function, which queries the current published database version, and logs `supabase_keep_alive` on success. A failure throws and appears as a failed scheduled invocation in Cloudflare. This external request is independent of website visits and GitHub Actions. It is a best-effort safeguard against inactivity pausing on Supabase Free, not an uptime guarantee. Supabase controls pausing; a paid Supabase plan is the supported way to eliminate inactivity pauses.
+
+For a local scheduled check, build, run `npm run preview:worker -- --test-scheduled`, then request `/__scheduled`. This reads current public Supabase content and does not write content.
+
+## Images
+
+The Images binding validates input, applies EXIF orientation, and creates immutable responsive WebP derivatives. Originals and derivatives are still stored in Supabase. Images Free includes 5,000 unique transformations per month; new transformations fail when that allowance is exhausted rather than creating an automatic paid upgrade. Image upload validation, the 20 MiB file limit, and the 40-million-pixel limit remain enforced. PNG share previews use the bundled WebAssembly renderer and Manrope font, not uploaded content or a VPS process.
+
+The Node runtime and old deployment scripts remain available as a fallback. They are not run by the production deployment workflow.

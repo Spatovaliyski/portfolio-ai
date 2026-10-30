@@ -3,7 +3,7 @@ import type { PGlite } from '@electric-sql/pglite';
 import { portfolioDatabase } from './database-fixture.ts';
 import { seedContent } from './fixtures/content.ts';
 import { composeRelease } from '../src/domain/publication.ts';
-import { processMedia } from '../src/server/media.ts';
+import { processMedia } from '../src/server/node-media.ts';
 import sharp from 'sharp';
 
 let db: PGlite;

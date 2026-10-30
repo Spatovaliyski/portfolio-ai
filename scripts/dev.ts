@@ -3,7 +3,7 @@ import { createServer as createViteServer } from 'vite';
 import { readFile } from 'node:fs/promises';
 import { parseArgs } from 'node:util';
 import { ContentStore } from '../src/server/store.ts';
-import { createHandler } from '../src/server/http.ts';
+import { createHandler } from '../src/server/node-http.ts';
 
 try {
   process.loadEnvFile('.env.local');

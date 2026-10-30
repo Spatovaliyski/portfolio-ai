@@ -1,6 +1,6 @@
 # Martin Spatovaliyski’s portfolio
 
-React/Vite frontend, a small Node runtime, and a single-owner editor. Supabase owns content, saved versions, and images. Repository changes deploy application code; editing content never requires a commit or deployment.
+React/Vite frontend, a Cloudflare Worker runtime, and a single-owner editor. Supabase owns content, saved versions, and images. Repository changes deploy application code; editing content never requires a commit or deployment.
 
 ## Content editing
 
@@ -30,9 +30,11 @@ The built runtime listens on `127.0.0.1:4173`. The build packages browser/server
 
 ## Deployment
 
-Push application changes to `main`. The production GitHub workflow builds the site, uploads the runtime to the VPS, installs production dependencies, and restarts the systemd service.
+Push application changes to `main`. Cloudflare Builds builds `Spatovaliyski/portfolio-3` with `npm run build` and deploys with `npx wrangler deploy`. The Worker configuration is in `wrangler.json`; it includes the public Supabase URL and publishable key, static code assets, Images binding, and a daily keep-alive schedule. No privileged database key is deployed.
 
-It uses `VITE_SUPABASE_URL`, `VITE_SUPABASE_PUBLISHABLE_KEY`, and `PORTFOLIO_SSH_TARGET`, plus `PORTFOLIO_SSH_KEY` and `PORTFOLIO_SSH_KNOWN_HOSTS`. `SUPABASE_ACCESS_TOKEN` optionally updates Edge Functions. The service listens on `127.0.0.1:4173`. The VPS web server already proxies to it; deploys do not change that configuration.
+Cloudflare runs the existing HTTP handler through its Node compatibility layer. Supabase remains the content and media source. Cloudflare Images creates responsive uploads; WebAssembly renders PNG share previews. The local Node server remains available for development and preview.
+
+The GitHub deployment workflow only verifies the build and optionally updates Supabase Edge Functions using `SUPABASE_ACCESS_TOKEN`. It no longer uploads or restarts a VPS. Cloudflare owns application deployment.
 
 Only published content is returned by the Supabase read endpoint. Owner APIs require the protected owner account and MFA. Originals are private; responsive WebP files and the downloadable CV live in the public derivative bucket. Public URLs retain the `/media/` prefix.
 

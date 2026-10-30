@@ -1,13 +1,12 @@
 import type { IncomingMessage, ServerResponse } from 'node:http';
-import { readFile } from 'node:fs/promises';
-import { resolve, extname, sep } from 'node:path';
+import { extname } from 'node:path';
 import { randomUUID } from 'node:crypto';
 import { z } from 'zod';
-import sharp from 'sharp';
 import { entitySchema, records, type PortfolioContent } from '../domain/schema.ts';
 import { routePaths } from '../domain/publication.ts';
 import { ContentStore, HttpError, checked } from './store.ts';
-import { processMedia, storeMedia } from './media.ts';
+import { storeMedia } from './media.ts';
+import type { processMedia } from './media.ts';
 
 const saveSchema = z
   .object({
@@ -52,6 +51,13 @@ function json(res: ServerResponse, value: unknown, status = 200) {
   res.end(JSON.stringify(value));
 }
 
+export interface HttpRuntime {
+  template(): Promise<string>;
+  asset(path: string): Promise<Buffer>;
+  processMedia: (bytes: Buffer, mime: string) => ReturnType<typeof processMedia>;
+  socialPreview(title: string): Promise<Buffer>;
+}
+
 export function createHandler(
   store: ContentStore,
   render: (
@@ -60,8 +66,7 @@ export function createHandler(
     template: string,
     previews: Record<string, string>,
   ) => string,
-  root = resolve('dist/client'),
-  getTemplate = () => readFile(resolve(root, 'index.html'), 'utf8'),
+  runtime: HttpRuntime,
 ) {
   const rendered = new Map<string, string>();
   let cached: PortfolioContent | null = null;
@@ -134,7 +139,7 @@ export function createHandler(
           return;
         }
         if (path === '/api/admin/media' && req.method === 'POST') {
-          const media = await processMedia(
+          const media = await runtime.processMedia(
             await body(req, 20 * 1024 * 1024),
             String(req.headers['content-type'] ?? '').split(';')[0],
           );
@@ -166,16 +171,11 @@ export function createHandler(
         path.startsWith('/admin') ||
         path === '/social-preview.svg'
       ) {
-        const file = resolve(
-          root,
-          '.' + (path === '/admin' || path === '/admin/' ? '/admin/index.html' : path),
-        );
-
-        if (!file.startsWith(root + sep)) throw new HttpError(400, 'Invalid path.');
+        const file = path === '/admin' || path === '/admin/' ? '/admin/index.html' : path;
         let bytes: Buffer;
 
         try {
-          bytes = await readFile(file);
+          bytes = await runtime.asset(file);
         } catch {
           throw new HttpError(404, 'File not found.');
         }
@@ -254,10 +254,11 @@ export function createHandler(
           records(content, 'note').find((p) => route.endsWith(`/${p.slug}/`))?.title ??
           records(content, 'page').find((p) => p.path === route)?.eyebrow ??
           'Portfolio';
-        const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630"><rect width="1200" height="630" fill="#f5f2ec"/><text x="70" y="105" font-family="sans-serif" font-size="26" fill="#161923">MARTIN SPATOVALIYSKI</text><text x="70" y="310" font-family="sans-serif" font-size="${title.length > 30 ? 48 : 70}" fill="#2445e8">${escapeXml(title.slice(0, 55))}</text><text x="70" y="520" font-family="sans-serif" font-size="24" fill="#525866">Engineering · Products · Selected work</text></svg>`;
 
         res.setHeader('Content-Type', 'image/png');
-        res.end(await sharp(Buffer.from(svg)).png().toBuffer());
+        const preview = await runtime.socialPreview(title);
+
+        res.end(req.method === 'HEAD' ? undefined : preview);
 
         return;
       }
@@ -291,7 +292,7 @@ export function createHandler(
           routePaths(content).map((p) => [p, `/social/preview.png?path=${encodeURIComponent(p)}`]),
         );
 
-        html = render(content, renderPath, await getTemplate(), previews);
+        html = render(content, renderPath, await runtime.template(), previews);
         if (rendered.size < 100) rendered.set(key, html);
       }
       res.setHeader('Content-Type', 'text/html; charset=utf-8');

@@ -2,7 +2,7 @@ import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { createHandler } from '../src/server/http.ts';
+import { createHandler } from '../src/server/node-http.ts';
 import { testStore } from '../tests/runtime-store.ts';
 
 if (process.env.PORTFOLIO_TEST_RUNTIME !== '1' || process.env.NODE_ENV === 'production')

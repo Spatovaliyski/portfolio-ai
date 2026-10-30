@@ -13,3 +13,5 @@ portfolio-implementation-plan.md
 public/media/
 src/content/legacy-notes.json
 content/github.json
+
+.wrangler/

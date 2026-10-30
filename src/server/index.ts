@@ -1,6 +1,6 @@
 import { createServer } from 'node:http';
 import { ContentStore } from './store.ts';
-import { createHandler } from './http.ts';
+import { createHandler } from './node-http.ts';
 import { renderPage } from '../entry-server.tsx';
 
 try {

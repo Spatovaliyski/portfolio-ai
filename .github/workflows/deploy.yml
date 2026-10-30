@@ -1,4 +1,4 @@
-name: Deploy
+name: Deploy Supabase functions
 on:
   push:
     branches: [main]
@@ -29,24 +29,5 @@ jobs:
           if [ -n "$SUPABASE_ACCESS_TOKEN" ]; then
             npx --yes supabase@2.120.0 functions deploy content publication automation public-content --project-ref lmxukzcvxhpbwtgsbrai
           fi
-      - name: Deploy the application runtime
-        env:
-          SSH_KEY: ${{ secrets.PORTFOLIO_SSH_KEY }}
-          SSH_KNOWN_HOSTS: ${{ secrets.PORTFOLIO_SSH_KNOWN_HOSTS }}
-          SSH_TARGET: ${{ vars.PORTFOLIO_SSH_TARGET }}
-          VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
-          VITE_SUPABASE_PUBLISHABLE_KEY: ${{ vars.VITE_SUPABASE_PUBLISHABLE_KEY }}
-        run: |
-          set -euo pipefail
-          if [ -z "$SSH_TARGET" ] || [ -z "$SSH_KEY" ] || [ -z "$SSH_KNOWN_HOSTS" ]; then
-            echo "Configure the production SSH target, key, and known hosts." >&2
-            exit 1
-          fi
-          install -d -m 700 ~/.ssh
-          printf '%s\n' "$SSH_KEY" > ~/.ssh/id_ed25519
-          printf '%s\n' "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
-          chmod 600 ~/.ssh/id_ed25519 ~/.ssh/known_hosts
-          ssh -o BatchMode=yes -o StrictHostKeyChecking=yes "$SSH_TARGET" "install -d -m 700 /etc/portfolio; mkdir -p /var/www/spatovaliyski.com/runtime/releases/$GITHUB_SHA"
-          node --experimental-strip-types scripts/runtime-environment.ts | ssh -o BatchMode=yes -o StrictHostKeyChecking=yes "$SSH_TARGET" "umask 077; cat > /etc/portfolio/runtime.env"
-          rsync -az -e "ssh -o BatchMode=yes -o StrictHostKeyChecking=yes" dist deploy package.json package-lock.json "$SSH_TARGET:/var/www/spatovaliyski.com/runtime/releases/$GITHUB_SHA/"
-          ssh -o BatchMode=yes -o StrictHostKeyChecking=yes "$SSH_TARGET" "bash /var/www/spatovaliyski.com/runtime/releases/$GITHUB_SHA/deploy/runtime.sh $GITHUB_SHA"
+
+# The portfolio Worker builds and deploys from main through Cloudflare Builds.
