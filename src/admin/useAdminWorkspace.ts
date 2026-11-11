@@ -147,7 +147,7 @@ export function useAdminWorkspace() {
         );
       }
     } catch (e) {
-      setSaveStatus('Save failed — your edits are still here');
+      setSaveStatus('Save failed - your edits are still here');
       throw e;
     }
   }

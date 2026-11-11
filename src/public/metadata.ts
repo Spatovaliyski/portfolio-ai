@@ -15,7 +15,7 @@ export function pageMetadata(
   const seo = project?.seo ??
     note?.seo ??
     page?.seo ?? {
-      title: 'Page not found — Martin Spatovaliyski',
+      title: 'Page not found - Martin Spatovaliyski',
       description: 'Find your way back to selected work and contact details.',
     };
   const image =

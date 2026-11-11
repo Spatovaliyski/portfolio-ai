@@ -239,8 +239,8 @@
 }
 
 .projectMedia {
+  position: relative;
   min-height: 430px;
-  padding: 40px 32px;
   background: #dfdcd5;
   display: flex;
   justify-content: center;
@@ -249,10 +249,14 @@
   overflow: hidden;
 }
 
+/* Screenshots fill the media half edge to edge; the row's rounded corners clip them. */
 .projectMedia img {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  border-radius: 4px;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
   transition: transform 0.28s var(--ease);
 }
 
@@ -277,9 +281,13 @@
   position: relative;
   align-items: center;
   gap: 1.6rem;
+  padding: 40px 32px;
 }
 
 .phoneMedia img {
+  position: static;
+  height: auto;
+  object-fit: contain;
   width: 190px;
   max-height: 425px;
   border-radius: 19px;
@@ -575,7 +583,7 @@
   .projectCopy {
     padding: 30px;
   }
-  .projectMedia {
+  .phoneMedia {
     padding: 30px 20px;
   }
   .phoneMedia img {
@@ -641,11 +649,11 @@
   }
   .projectMedia {
     min-height: 330px;
-    padding: 30px;
   }
   .phoneMedia {
     min-height: 390px;
     gap: 3rem;
+    padding: 30px;
   }
   .phoneMedia img {
     width: 160px;

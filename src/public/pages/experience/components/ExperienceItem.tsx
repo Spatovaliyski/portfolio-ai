@@ -1,4 +1,5 @@
 import { records } from '../../../../domain/records.ts';
+import { experienceDuration } from '../duration.ts';
 
 type Experience = ReturnType<typeof records<'experience'>>[number];
 
@@ -13,8 +14,9 @@ export function ExperienceItem({
     <article>
       <div>
         <time>
-          {experience.start.slice(0, 7)} — {experience.end?.slice(0, 7) ?? presentLabel}
+          {experience.start.slice(0, 7)} - {experience.end?.slice(0, 7) ?? presentLabel}
         </time>
+        <span>{experienceDuration(experience.start, experience.end)}</span>
         <span>{experience.location}</span>
       </div>
       <section>
