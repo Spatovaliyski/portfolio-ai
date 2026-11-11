@@ -10,7 +10,7 @@ GitHub synchronization updates the database content version directly. It does no
 
 ## Application deployment
 
-A push to main triggers Cloudflare Builds for `Spatovaliyski/portfolio-3`: build `npm run build`, deploy `npx wrangler deploy`. Cloudflare stores deployment history and supports rolling back to a previous Worker version. The public Supabase URL/key in `wrangler.json` configure the runtime and the editor build. Never put a service-role or secret key in this configuration or a VITE variable.
+A push to main triggers Cloudflare Builds for `Spatovaliyski/portfolio-ai`: build `npm run build`, deploy `npx wrangler deploy`. Cloudflare stores deployment history and supports rolling back to a previous Worker version. The public Supabase URL/key in `wrangler.json` configure the runtime and the editor build. Never put a service-role or secret key in this configuration or a VITE variable.
 
 Use the Worker's Cloudflare dashboard logs for request failures. `GET /healthz` checks that published Supabase content is readable. A provider failure returns 503 rather than serving repository placeholders. Owner APIs still require owner MFA, validate inputs, check versions, and atomically save revisions and live content. Content edits go through [content-api.md](content-api.md).
 

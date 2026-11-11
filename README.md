@@ -30,7 +30,7 @@ The built runtime listens on `127.0.0.1:4173`. The build packages browser/server
 
 ## Deployment
 
-Push application changes to `main`. Cloudflare Builds builds `Spatovaliyski/portfolio-3` with `npm run build` and deploys with `npx wrangler deploy`. The Worker configuration is in `wrangler.json`; it includes the public Supabase URL and publishable key, static code assets, Images binding, and a daily keep-alive schedule. No privileged database key is deployed.
+Push application changes to `main`. Cloudflare Builds builds `Spatovaliyski/portfolio-ai` with `npm run build` and deploys with `npx wrangler deploy`. The Worker configuration is in `wrangler.json`; it includes the public Supabase URL and publishable key, static code assets, Images binding, and a daily keep-alive schedule. No privileged database key is deployed.
 
 Cloudflare runs the existing HTTP handler through its Node compatibility layer. Supabase remains the content and media source. Cloudflare Images creates responsive uploads; WebAssembly renders PNG share previews. The local Node server remains available for development and preview.
 
