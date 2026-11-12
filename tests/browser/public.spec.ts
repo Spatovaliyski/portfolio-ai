@@ -52,7 +52,7 @@ test('every public route contains readable HTML, metadata and true status codes'
 
   if (target) {
     await page
-      .locator('header details nav')
+      .locator('#site-menu nav')
       .getByRole('link', { name: target.label, exact: true })
       .click();
     await expect(page).toHaveURL(new URL(target.url, settings.siteUrl).pathname);
@@ -169,11 +169,13 @@ test('keyboard navigation and reduced-motion fallback remain usable', async ({ p
   await page.keyboard.press('Tab');
   await expect(page.getByRole('link', { name: 'Skip to content' })).toBeFocused();
   await page.getByLabel(settings.labels.openMenu, { exact: true }).click();
-  await expect(page.locator('header details nav')).toBeVisible();
-  const link = page.locator('header details nav a').first();
+  await expect(page.locator('#site-menu nav')).toBeVisible();
+  await expect(page.getByLabel(settings.labels.closeMenu, { exact: true })).toBeFocused();
+  const link = page.locator('#site-menu nav a').first();
 
   if (await link.count()) await link.focus();
   await page.keyboard.press('Escape');
+  await expect(page.locator('#site-menu')).toBeHidden();
   await expect(page.getByLabel(settings.labels.openMenu, { exact: true })).toBeFocused();
   expect(
     await page

@@ -140,10 +140,12 @@ test('mobile navigation closes the menu, supports fragments and preserves query 
   await page.setViewportSize({ width: 375, height: 812 });
   await page.goto('/');
   await page.waitForFunction(() => history.scrollRestoration === 'manual');
-  await page.locator('header summary').click();
-  await page.locator('header details nav a[href="/projects/"]').click();
+  await page.getByLabel(records(content, 'settings')[0].labels.openMenu, { exact: true }).click();
+  await expect(page.locator('#site-menu')).toBeVisible();
+  await page.locator('#site-menu nav a[href="/projects/"]').click();
   await waitForNavigation(page, '/projects/');
-  await expect(page.locator('header details')).not.toHaveAttribute('open');
+  await expect(page.locator('#site-menu')).toBeHidden();
+  expect(await page.evaluate(() => document.documentElement.style.overflow)).toBe('');
 
   await page.locator('header a[href="/"]').first().click();
   await waitForNavigation(page, '/');

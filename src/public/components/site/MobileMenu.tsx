@@ -1,63 +1,67 @@
-import { useCallback, useEffect, useRef, useState, type CSSProperties } from 'react';
+import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import type { PortfolioContent } from '../../../domain/schema.ts';
 import { records } from '../../../domain/records.ts';
 import { Arrow } from '../ui/Arrow.tsx';
 import styles from '../../app.module.css';
 
+export const mobileMenuId = 'site-menu';
 const desktop = '(min-width: 801px)';
-const exitMs = 260;
 
 function isCurrent(url: string, path: string): boolean {
   return url === '/' ? path === '/' : path.startsWith(url);
 }
 
-function reducedMotion(): boolean {
-  return matchMedia('(prefers-reduced-motion: reduce)').matches;
-}
-
+/*
+ * The sheet is a native popover, so the toggle, the close button and Escape work
+ * from the server-rendered HTML before (or without) JavaScript. Scripts only add
+ * focus placement, scroll locking and closing on route changes.
+ */
 export function MobileMenu({ content, path }: { content: PortfolioContent; path: string }) {
   const profile = records(content, 'profile')[0];
   const settings = records(content, 'settings')[0];
   const labels = settings.labels;
-  const dialog = useRef<HTMLDialogElement>(null);
-  const exitTimer = useRef(0);
+  const sheet = useRef<HTMLDivElement>(null);
+  const closeButton = useRef<HTMLButtonElement>(null);
+  const toggleButton = useRef<HTMLButtonElement>(null);
   const [open, setOpen] = useState(false);
-  const [closing, setClosing] = useState(false);
-  const closeNow = useCallback(() => {
-    window.clearTimeout(exitTimer.current);
-    setClosing(false);
-    setOpen(false);
-    if (dialog.current?.open) dialog.current.close();
-  }, []);
-  const close = useCallback(() => {
-    if (!dialog.current?.open) return;
-    if (reducedMotion()) return closeNow();
-    setClosing(true);
-    window.clearTimeout(exitTimer.current);
-    exitTimer.current = window.setTimeout(closeNow, exitMs);
-  }, [closeNow]);
 
-  function show() {
-    window.clearTimeout(exitTimer.current);
-    setClosing(false);
-    dialog.current?.showModal();
-    setOpen(true);
+  function hide() {
+    if (sheet.current?.matches(':popover-open')) sheet.current.hidePopover();
   }
 
-  // Navigating to a new route always leaves the menu closed.
-  useEffect(closeNow, [path, closeNow]);
+  // Mirror the native popover state and move focus into the sheet when it opens.
+  useEffect(() => {
+    const element = sheet.current;
 
-  // The overlay only exists below the desktop breakpoint.
+    if (!element) return;
+    const onToggle = (event: Event) => {
+      const isOpen = (event as ToggleEvent).newState === 'open';
+
+      setOpen(isOpen);
+      if (isOpen) closeButton.current?.focus();
+      // Never leave focus on a hidden control; route changes have already moved it to <main>.
+      else if (element.contains(document.activeElement)) toggleButton.current?.focus();
+    };
+
+    element.addEventListener('toggle', onToggle);
+
+    return () => element.removeEventListener('toggle', onToggle);
+  }, []);
+
+  // Navigating to a new route always leaves the menu closed.
+  useEffect(hide, [path]);
+
+  // The sheet only exists below the desktop breakpoint.
   useEffect(() => {
     const query = matchMedia(desktop);
-    const onChange = () => query.matches && closeNow();
+    const onChange = () => query.matches && hide();
 
     query.addEventListener('change', onChange);
 
     return () => query.removeEventListener('change', onChange);
-  }, [closeNow]);
+  }, []);
 
-  // Freeze the page behind the overlay.
+  // Freeze the page behind the sheet.
   useEffect(() => {
     if (!open) return;
     const root = document.documentElement;
@@ -70,31 +74,27 @@ export function MobileMenu({ content, path }: { content: PortfolioContent; path:
     };
   }, [open]);
 
-  useEffect(() => () => window.clearTimeout(exitTimer.current), []);
-
   return (
     <>
       <button
+        ref={toggleButton}
         type="button"
         className={styles.menuToggle}
-        aria-haspopup="dialog"
-        aria-expanded={open}
+        popoverTarget={mobileMenuId}
+        popoverTargetAction="show"
         aria-label={labels.openMenu}
-        onClick={show}
       >
         Menu <span className={styles.menuIcon} aria-hidden="true" />
       </button>
-      <dialog
-        ref={dialog}
-        className={styles.menuSheet}
-        data-closing={closing || undefined}
+      <div
+        ref={sheet}
+        id={mobileMenuId}
+        popover="auto"
+        role="dialog"
         aria-label="Menu"
-        onCancel={(event) => {
-          event.preventDefault();
-          close();
-        }}
+        className={styles.menuSheet}
         onClick={(event) => {
-          if (event.target instanceof Element && event.target.closest('a[href]')) close();
+          if (event.target instanceof Element && event.target.closest('a[href]')) hide();
         }}
       >
         <div className={styles.menuBar}>
@@ -102,11 +102,12 @@ export function MobileMenu({ content, path }: { content: PortfolioContent; path:
             ms<span aria-hidden="true">.</span>
           </a>
           <button
+            ref={closeButton}
             type="button"
             className={styles.menuClose}
+            popoverTarget={mobileMenuId}
+            popoverTargetAction="hide"
             aria-label={labels.closeMenu}
-            onClick={close}
-            autoFocus
           >
             Close <span className={styles.menuIcon} data-open aria-hidden="true" />
           </button>
@@ -147,7 +148,7 @@ export function MobileMenu({ content, path }: { content: PortfolioContent; path:
             {labels.resume} <Arrow />
           </a>
         </div>
-      </dialog>
+      </div>
     </>
   );
 }
