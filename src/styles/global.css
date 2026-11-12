@@ -634,6 +634,113 @@ caption {
   }
 }
 
+/* Mobile rhythm for inner pages: calmer body copy, tighter groups, more air between them. */
+@media (max-width: 600px) {
+  p {
+    font-size: 1.0625rem;
+    line-height: 1.65;
+  }
+  .eyebrow {
+    letter-spacing: 0.1em;
+  }
+  .actions {
+    margin-top: 1.75rem;
+  }
+  .blocks {
+    margin: 2.5rem auto;
+  }
+  .block {
+    margin-bottom: 2rem;
+  }
+  .block h2 {
+    font-size: 1.5rem;
+    margin: 2.25rem 0 0.75rem;
+  }
+  .block p,
+  .block li {
+    font-size: 1.0625rem;
+  }
+  .ownership-panel,
+  .decision {
+    padding: 1rem 1.25rem;
+  }
+  .architecture {
+    flex-direction: column;
+  }
+  .case-meta {
+    gap: 1.25rem;
+    padding: 1.5rem 0;
+  }
+  .case-hero {
+    padding: 1.5rem 1rem;
+  }
+  .case-links {
+    margin-top: 2.5rem;
+  }
+  .case-links a {
+    margin-right: 1.25rem;
+  }
+  .timeline article {
+    gap: 0.75rem;
+    padding: 2rem 0 2.25rem;
+  }
+  .timeline article > div {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 0.25rem;
+  }
+  .timeline article > div > :nth-child(2)::before {
+    content: '·';
+    margin: 0 0.5rem;
+  }
+  .timeline article > div > :nth-child(3) {
+    flex-basis: 100%;
+  }
+  .timeline h2 {
+    font-size: 1.6rem;
+  }
+  .timeline h3 {
+    margin-top: 0.4rem;
+  }
+  .timeline ul {
+    padding-left: 1.1rem;
+    margin: 1.25rem 0 0;
+  }
+  .timeline li {
+    margin-bottom: 0.6rem;
+    line-height: 1.6;
+  }
+  .qualifications,
+  .skill-evidence {
+    margin: 2.5rem 0;
+    gap: 1.5rem;
+  }
+  .about-copy > p:first-child {
+    font-size: 1.3rem;
+    line-height: 1.55;
+  }
+  .about-copy h2 {
+    margin-top: 2.5rem;
+  }
+  .contact-email {
+    font-size: 1.35rem;
+    margin: 1.5rem 0;
+  }
+  .contact-details > div {
+    gap: 0 1.5rem;
+  }
+  .notes-list article,
+  .repo {
+    padding: 1.75rem 0;
+  }
+  .repo h2 {
+    font-size: 1.35rem;
+  }
+  .activity-highlight {
+    padding: 1.5rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

@@ -28,14 +28,14 @@
   color: var(--cobalt);
 }
 
-.header nav {
+.header .desktopNav {
   display: flex;
   align-items: center;
   gap: 2.1rem;
   margin-left: auto;
 }
 
-.header nav a {
+.header .desktopNav a {
   font-size: 1rem;
   min-height: 44px;
   display: flex;
@@ -43,7 +43,7 @@
   text-decoration: none;
 }
 
-.header nav a[aria-current] {
+.header .desktopNav a[aria-current] {
   color: var(--cobalt);
   box-shadow: inset 0 -2px var(--cobalt);
 }
@@ -59,10 +59,6 @@
 
 .cvLink span {
   margin-left: 1rem;
-}
-
-.menuToggle {
-  display: none;
 }
 
 .hero,
@@ -471,11 +467,34 @@
   color: var(--canvas);
 }
 
+.contactActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 2rem;
+}
+
 .contactBand .contactCareer {
   color: var(--canvas);
-  margin-left: 2rem;
   display: inline-block;
   padding: 1rem 0;
+}
+
+@media (max-width: 600px) {
+  .contactActions > * {
+    flex: 1 1 100%;
+  }
+  .contactBand .contactCareer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 48px;
+    padding: 0.95rem 1.2rem;
+    border: 1px solid rgb(245 242 236 / 0.45);
+    border-radius: 4px;
+    font-weight: 650;
+    text-decoration: none;
+  }
 }
 
 .page {
@@ -539,7 +558,7 @@
 @media (hover: hover) {
   .petCard:hover h3,
   .petCard:hover h2,
-  .header nav a:hover {
+  .header .desktopNav a:hover {
     color: var(--cobalt);
   }
   .projectMedia:hover img {
@@ -571,7 +590,7 @@
   .header {
     gap: 1.5rem;
   }
-  .header nav {
+  .header .desktopNav {
     gap: 1.2rem;
   }
   .heroGrid {
@@ -596,23 +615,9 @@
 
 @media (max-width: 800px) {
   .header {
-    flex-wrap: wrap;
     padding-top: 20px;
     padding-bottom: 20px;
     gap: 1rem;
-    position: relative;
-  }
-  .header nav {
-    display: flex;
-    order: 4;
-    width: 100%;
-    margin-left: 0;
-    flex-wrap: wrap;
-    border-top: 1px solid var(--border);
-    padding-top: 0.7rem;
-  }
-  .cvLink {
-    font-size: 1rem;
   }
   .hero {
     padding-top: 30px;
@@ -769,51 +774,561 @@
   }
 }
 
-.mobileMenu {
+/* Mobile menu: header toggle + fullscreen sheet */
+
+.menuToggle,
+.menuClose {
   display: none;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 44px;
+  padding: 0 0.25rem;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.menuClose {
+  display: inline-flex;
+}
+
+.menuIcon {
+  position: relative;
+  width: 22px;
+  height: 10px;
+}
+
+.menuIcon::before,
+.menuIcon::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  transition:
+    transform 300ms var(--ease),
+    top 300ms var(--ease),
+    width 300ms var(--ease);
+}
+
+.menuIcon::before {
+  top: 0;
+  width: 100%;
+}
+
+.menuIcon::after {
+  top: 8px;
+  width: 65%;
+}
+
+.menuIcon[data-open]::before,
+.menuIcon[data-open]::after {
+  top: 4px;
+  width: 100%;
+}
+
+.menuIcon[data-open]::before {
+  transform: rotate(45deg);
+}
+
+.menuIcon[data-open]::after {
+  transform: rotate(-45deg);
+}
+
+.menuSheet {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  max-width: none;
+  height: 100vh;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: 0 32px calc(24px + env(safe-area-inset-bottom));
+  border: 0;
+  background: var(--canvas);
+  color: var(--ink);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.menuSheet[open] {
+  display: flex;
+  flex-direction: column;
+  animation: sheet-in 460ms var(--ease) both;
+}
+
+.menuSheet[data-closing] {
+  animation: sheet-out 260ms cubic-bezier(0.55, 0, 0.75, 0.2) both;
+}
+
+.menuSheet::backdrop {
+  background: transparent;
+}
+
+.menuBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.menuLinks {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 0;
+}
+
+.menuLinks ol {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menuLinks li {
+  border-bottom: 1px solid var(--border);
+}
+
+.menuSheet[open] .menuLinks li,
+.menuSheet[open] .menuFoot {
+  animation: menu-item-in 560ms var(--ease) both;
+  animation-delay: calc(140ms + var(--i, 0) * 50ms);
+}
+
+.menuSheet[open] .menuFoot {
+  --i: 6;
+}
+
+.menuLinks a {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr auto;
+  align-items: center;
+  padding: 0.85rem 0;
+  font-family: 'Manrope Variable', sans-serif;
+  font-size: clamp(1.5rem, 6.8vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.menuIndex {
+  align-self: start;
+  padding-top: 0.35em;
+  font-family: 'Source Sans 3 Variable', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+
+.menuLabel {
+  transition: transform 300ms var(--ease);
+}
+
+.menuLinks a > span:last-child {
+  font-size: 1.2rem;
+  color: var(--muted);
+  transition: transform 300ms var(--ease);
+}
+
+.menuLinks a:active .menuLabel {
+  transform: translateX(6px);
+}
+
+.menuLinks a[aria-current],
+.menuLinks a[aria-current] .menuIndex,
+.menuLinks a[aria-current] > span:last-child {
+  color: var(--cobalt);
+}
+
+.menuFoot {
+  display: grid;
+  gap: 1rem;
+}
+
+.menuStatus {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0;
+  color: var(--muted);
+}
+
+.menuStatus i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #176947;
+}
+
+.menuEmail {
+  font-size: 1.15rem;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+  text-underline-offset: 0.25em;
+}
+
+.menuSocial {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.75rem;
+}
+
+.menuSocial a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  text-decoration: none;
+}
+
+.menuCv {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 56px;
+  margin-top: 0.25rem;
+  padding: 0 1.25rem;
+  border-radius: 4px;
+  background: var(--ink);
+  color: var(--canvas);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+@media (hover: hover) {
+  .menuLinks a:hover .menuLabel {
+    transform: translateX(6px);
+  }
+  .menuLinks a:hover > span:last-child {
+    transform: translate(3px, -3px);
+    color: var(--cobalt);
+  }
 }
 
 @media (max-width: 800px) {
   .header .desktopNav {
     display: none;
   }
-  .mobileMenu {
-    display: block;
+  .cvLink {
     margin-left: auto;
+    padding: 0.6rem 0.9rem;
   }
-  .mobileMenu .menuToggle {
-    display: flex;
-    list-style: none;
-    cursor: pointer;
-    min-height: 44px;
-    padding: 0.6rem;
-    gap: 1rem;
-  }
-  .menuToggle::-webkit-details-marker {
-    display: none;
-  }
-  .header .mobileMenu nav {
-    display: flex;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    padding: 1rem 2rem;
-    background: var(--canvas);
-    z-index: 20;
-    border-bottom: 1px solid var(--border);
-    width: 100%;
-  }
-  .mobileMenu[open] nav {
-    animation: menu-enter 200ms var(--ease);
+  .menuToggle {
+    display: inline-flex;
   }
 }
 
-@keyframes menu-enter {
+@media (max-width: 400px) {
+  .menuSheet {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 359px) {
+  .cvLink {
+    display: none;
+  }
+  .menuToggle {
+    margin-left: auto;
+  }
+}
+
+@media (min-width: 801px) {
+  .menuSheet {
+    display: none !important;
+  }
+}
+
+@keyframes sheet-in {
   from {
-    transform: translateY(-6px);
+    clip-path: inset(0 0 100% 0);
   }
   to {
+    clip-path: inset(0);
+  }
+}
+
+@keyframes sheet-out {
+  from {
+    clip-path: inset(0);
+  }
+  to {
+    clip-path: inset(0 0 100% 0);
+  }
+}
+
+@keyframes menu-item-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
     transform: none;
+  }
+}
+
+/*
+ * Mobile rhythm. One column, a wider gutter, generous space between sections,
+ * tighter space inside them, and side-by-side metadata stacked instead of squeezed.
+ */
+@media (max-width: 600px) {
+  .header,
+  .hero,
+  .workSection,
+  .petSection,
+  .approach,
+  .githubPulse,
+  .page,
+  .footer,
+  .menuSheet {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .header {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  /* Hero */
+  .hero {
+    padding-top: 40px;
+    padding-bottom: 8px;
+  }
+  .heroMeta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .heroGrid {
+    padding: 32px 0 48px;
+    gap: 48px;
+  }
+  .heroRole {
+    margin-top: 16px;
+  }
+  .heroStatement h2 {
+    font-size: 1.5rem;
+    max-width: 17ch;
+  }
+  .heroMark {
+    font-size: 1.5rem;
+  }
+  .heroStatement :global(.actions) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-top: 28px;
+  }
+  .heroStatement :global(.text-link) {
+    justify-content: space-between;
+    min-height: 48px;
+    padding: 0.95rem 1.2rem;
+    border: 1px solid #737984;
+    border-radius: 4px;
+  }
+  .heroBottom {
+    padding-top: 20px;
+  }
+  .heroBottom a {
+    display: none;
+  }
+
+  /* Section headings: label first, supporting copy underneath */
+  .sectionHeading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+  .sectionHeading p {
+    max-width: none;
+    text-align: left;
+  }
+
+  /* Space between sections */
+  .workSection {
+    padding-top: 64px;
+  }
+  .petSection {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+  .approach {
+    padding-top: 64px;
+    padding-bottom: 72px;
+  }
+  .githubPulse {
+    padding-top: 64px;
+    padding-bottom: 72px;
+    gap: 32px;
+  }
+  .contactBand {
+    padding: 64px 24px 72px;
+  }
+  .page {
+    padding-top: 40px;
+    padding-bottom: 72px;
+  }
+
+  /* Project cards */
+  .projectRow {
+    margin-bottom: 24px;
+  }
+  .projectCopy {
+    padding: 28px 24px 32px;
+  }
+  .projectTop {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    margin-bottom: 28px;
+  }
+  .projectCopy h3 {
+    font-size: 2rem;
+  }
+  .projectCopy h3 a {
+    gap: 1rem;
+  }
+  .projectCopy > .contribution {
+    margin: 0.75rem 0 1.5rem;
+  }
+  .projectMedia {
+    min-height: 240px;
+  }
+  .phoneMedia {
+    min-height: 320px;
+    gap: 1.5rem;
+    padding: 32px 24px;
+  }
+  .phoneMedia img {
+    width: 128px;
+  }
+  .productCaption {
+    font-size: 1.1rem;
+  }
+  .sectionEnd {
+    padding-bottom: 0;
+  }
+
+  /* Pet projects */
+  .petIntro {
+    margin: 16px 0 36px;
+    gap: 12px;
+  }
+  .petIntro h2 {
+    font-size: 2.125rem;
+  }
+  .petCard {
+    gap: 14px;
+    padding: 24px 0;
+  }
+  .addonNumber {
+    flex: none;
+    min-width: 1.5rem;
+  }
+  .petCard h3,
+  .petCard h2 {
+    font-size: 1.15rem;
+  }
+  .petCard p {
+    margin: 0.5rem 0 0.75rem;
+  }
+  .petCard :global(.pill) {
+    display: inline-block;
+    margin: 0 0 0 0.5rem;
+  }
+  .petCard :global(.eyebrow) {
+    color: var(--muted);
+    font-weight: 650;
+    letter-spacing: 0.08em;
+  }
+  /* The section link reads better after the list than between label and heading. */
+  .petSection {
+    display: flex;
+    flex-direction: column;
+  }
+  .petSection .sectionHeading {
+    display: contents;
+  }
+  .petSection .sectionHeading :global(.text-link) {
+    order: 1;
+    align-self: flex-start;
+    margin-top: 28px;
+  }
+
+  /* Approach */
+  .approach > h2 {
+    font-size: 2.125rem;
+    margin: 16px 0 40px;
+  }
+  .approach > div {
+    gap: 32px;
+  }
+  .approach article > span {
+    margin-bottom: 8px;
+  }
+  .approach p {
+    margin-bottom: 0;
+  }
+
+  /* Public development */
+  .githubPulse h2 {
+    font-size: 2.125rem;
+    margin-top: 16px;
+  }
+  .repoTeaser {
+    padding-top: 0;
+  }
+  .repoTeaser a {
+    padding: 18px 0;
+  }
+
+  /* Contact band */
+  .contactBand h2 {
+    font-size: 2.25rem;
+    margin-top: 16px;
+  }
+  .contactBand p {
+    margin-bottom: 28px;
+  }
+
+  /* Inner page header */
+  .pageHeader {
+    margin-bottom: 40px;
+  }
+  .pageHeader h1 {
+    font-size: 2.25rem;
+    margin-top: 16px;
+  }
+  .pageHeader > p {
+    font-size: 1.125rem;
+    margin-top: 16px;
+  }
+
+  /* Footer */
+  .footer {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    gap: 20px;
+  }
+  .footer nav {
+    gap: 0 1.5rem;
+  }
+  .footer > span {
+    margin-top: 0;
   }
 }
